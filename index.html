@@ -165,8 +165,11 @@
         </header>
 
         <div class="cta">
-            <!-- TODO: Replace with actual Stripe Payment Link URL -->
-            <a class="cta-button" href="https://buy.stripe.com/28E6oJ78vcW0bY29dQak000">Subscribe — Starting at $10/month for 3 users</a>
+            <script async src="https://js.stripe.com/v3/buy-button.js"></script>
+            <stripe-buy-button
+                buy-button-id="buy_btn_1TJgSVRuSKZAORtNCc5XjvFF"
+                publishable-key="pk_live_51TJeBURuSKZAORtNDq1LHzVpoXTW8vintdAn0pGvA5uo488Pqo7yJBjYeLDwfUP9SOKTmkicPPeudSqEQhWIHvnu00nvsv8X0u"
+            ></stripe-buy-button>
             <p class="cta-subtext">Cancel anytime. <a href="https://billing.stripe.com/p/login/28E6oJ78vcW0bY29dQak000">Manage your subscription</a></p>
         </div>
 
