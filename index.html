@@ -98,6 +98,42 @@
             color: #666;
         }
 
+        /* Admin Consent */
+        .admin-consent {
+            background: #f7f9fb;
+            border: 1px solid #e4e9ef;
+            border-radius: 10px;
+            padding: 28px 32px;
+            margin-bottom: 48px;
+        }
+
+        .admin-consent h2 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 8px;
+        }
+
+        .admin-consent p {
+            font-size: 0.9rem;
+            color: #555;
+            margin-bottom: 14px;
+        }
+
+        .admin-consent .consent-button {
+            display: inline-block;
+            background: #1b6ec2;
+            color: #fff;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 600;
+            padding: 10px 22px;
+            border-radius: 6px;
+            transition: opacity 0.2s;
+        }
+
+        .admin-consent .consent-button:hover { opacity: 0.9; }
+
         /* Footer */
         footer {
             border-top: 1px solid #eee;
@@ -172,6 +208,12 @@
                 <h3>Works Everywhere</h3>
                 <p>Compatible with Outlook on the desktop and on the web.</p>
             </div>
+        </section>
+
+        <section class="admin-consent">
+            <h2>IT Admins</h2>
+            <p>Some organizations require admin consent for the SharePoint and mail permissions this add-in uses (<code>Sites.Read.All</code>, <code>Files.ReadWrite.All</code>). Use the link below to grant consent for your entire organization.</p>
+            <a class="consent-button" href="https://login.microsoftonline.com/common/adminconsent?client_id=5fd42821-f8c8-47db-90c9-fea300290255">Grant Admin Consent</a>
         </section>
 
         <footer>
