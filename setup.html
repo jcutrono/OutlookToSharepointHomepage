@@ -77,14 +77,18 @@
         <h1>You're all set!</h1>
         <p class="subtitle">Thank you for subscribing to Save to SharePoint. Follow the steps below to deploy the add-in to your organization.</p>
 
-        <h2>Manifest URL</h2>
-        <p>Copy this URL — you'll paste it into the Microsoft 365 admin center in the next step.</p>
+        <h2>Choose your setup method</h2>
+        <p>How you install depends on your role. Pick the option that applies to you:</p>
+
+        <h2>Option A: IT Admin — Deploy to your entire organization</h2>
+        <p>If you are a <strong>Microsoft 365 admin</strong> and want to roll out the add-in to multiple users at once, use centralized deployment.</p>
+
+        <p>Copy the manifest URL below — you'll paste it into the admin center.</p>
         <div class="manifest-box">
             <span class="manifest-url" id="manifestUrl">https://app.filemy.email/manifest.xml</span>
-            <button class="copy-btn" id="copyBtn" onclick="copyManifest()">Copy</button>
+            <button class="copy-btn" id="copyBtn" onclick="copyManifest()">Copy URL</button>
         </div>
 
-        <h2>Deploy to your organization</h2>
         <ol>
             <li>
                 Go to the <a href="https://admin.microsoft.com" target="_blank" rel="noopener">Microsoft 365 admin center</a>.
@@ -110,9 +114,33 @@
             </li>
         </ol>
 
+        <h2>Option B: Individual User — Install for yourself</h2>
+        <p>If you are installing the add-in <strong>just for your own Outlook account</strong>, follow these steps.</p>
+
+        <p>First, download the manifest file:</p>
+        <div class="manifest-box">
+            <span class="manifest-url">manifest.xml</span>
+            <a class="copy-btn" href="https://app.filemy.email/manifest.xml" download="manifest.xml" style="text-decoration: none; color: #fff;">Download</a>
+        </div>
+
+        <ol>
+            <li>
+                Open <a href="https://aka.ms/olksideload" target="_blank" rel="noopener">Outlook Add-ins</a> (this link opens the add-ins panel directly).
+            </li>
+            <li>
+                Click <strong>My add-ins</strong> in the left sidebar.
+            </li>
+            <li>
+                Under "Custom add-ins", click <strong>Add a custom add-in</strong> &rarr; <strong>Add from file</strong>.
+            </li>
+            <li>
+                Select the <strong>manifest.xml</strong> file you downloaded above and click <strong>Install</strong>.
+            </li>
+        </ol>
+
         <div class="next-section">
             <h2>What happens next</h2>
-            <p>Once deployed, users will see a <strong>"Save to SharePoint"</strong> button in their Outlook ribbon when reading emails. On first use, they'll be prompted to sign in with their Microsoft 365 account. After that, saving emails and attachments to SharePoint is just one click.</p>
+            <p>Once installed, you'll see a <strong>"Save to SharePoint"</strong> button in your Outlook ribbon when reading emails. On first use, you'll be prompted to sign in with your Microsoft 365 account. After that, saving emails and attachments to SharePoint is just one click.</p>
         </div>
 
         <h2>Need help?</h2>
