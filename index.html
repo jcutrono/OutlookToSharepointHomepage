@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Save to SharePoint — Email Filing Made Simple</title>
+    <meta name="description" content="Save emails and attachments from Outlook to SharePoint with smart folder suggestions. One-click filing for busy teams.">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif;
+            color: #1a1a1a;
+            background: #fff;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Header */
+        header {
+            padding: 48px 0 0;
+            text-align: center;
+        }
+
+        .logo {
+            width: 80px;
+            height: 80px;
+            border-radius: 18px;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 8px;
+        }
+
+        .tagline {
+            font-size: 1.15rem;
+            color: #555;
+            max-width: 520px;
+            margin: 0 auto;
+        }
+
+        /* CTA */
+        .cta {
+            text-align: center;
+            padding: 40px 0;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #1b6ec2, #0d7377);
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.05rem;
+            font-weight: 600;
+            padding: 14px 32px;
+            border-radius: 8px;
+            transition: opacity 0.2s;
+        }
+
+        .cta-button:hover { opacity: 0.9; }
+
+        /* Features */
+        .features {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 32px;
+            padding: 24px 0 56px;
+        }
+
+        .feature {
+            text-align: center;
+        }
+
+        .feature-icon {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .feature h3 {
+            font-size: 0.95rem;
+            font-weight: 600;
+            margin-bottom: 6px;
+            color: #1b6ec2;
+        }
+
+        .feature p {
+            font-size: 0.88rem;
+            color: #666;
+        }
+
+        /* Footer */
+        footer {
+            border-top: 1px solid #eee;
+            padding: 24px 0;
+            text-align: center;
+            font-size: 0.82rem;
+            color: #999;
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .features {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+
+            h1 { font-size: 1.6rem; }
+            .tagline { font-size: 1rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <!-- Inlined icon-full.svg -->
+            <svg class="logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 192">
+                <defs>
+                    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="0">
+                        <stop offset="0%" stop-color="#1b6ec2"/>
+                        <stop offset="40%" stop-color="#127d9e"/>
+                        <stop offset="100%" stop-color="#0d7377"/>
+                    </linearGradient>
+                </defs>
+                <rect width="192" height="192" rx="38" fill="url(#bg)"/>
+                <text x="74" y="136" font-family="'Segoe UI', Arial, Helvetica, sans-serif" font-weight="bold" font-size="105" fill="white" text-anchor="middle">@</text>
+                <g opacity="0.85">
+                    <path d="M 110 70 C 122 67 131 63 137 60" fill="none" stroke="white" stroke-width="5" stroke-linecap="round"/>
+                    <path d="M 135 55 L 150 55 L 139 66 Z" fill="white"/>
+                </g>
+                <g opacity="0.65">
+                    <path d="M 117 92 C 128 90 136 88 142 87" fill="none" stroke="white" stroke-width="4.5" stroke-linecap="round"/>
+                    <path d="M 141 81 L 156 83 L 144 93 Z" fill="white"/>
+                </g>
+                <g opacity="0.45">
+                    <path d="M 110 116 C 122 120 131 124 137 128" fill="none" stroke="white" stroke-width="4" stroke-linecap="round"/>
+                    <path d="M 139 122 L 150 133 L 135 133 Z" fill="white"/>
+                </g>
+            </svg>
+
+            <h1>Save to SharePoint</h1>
+            <p class="tagline">Save emails and attachments from Outlook to SharePoint folders — with smart folder suggestions that learn your filing habits.</p>
+        </header>
+
+        <div class="cta">
+            <!-- TODO: Replace with actual Microsoft AppSource listing URL -->
+            <a class="cta-button" href="https://appsource.microsoft.com">Get it on Microsoft AppSource</a>
+        </div>
+
+        <section class="features">
+            <div class="feature">
+                <div class="feature-icon">&#128640;</div>
+                <h3>One-Click Save</h3>
+                <p>File emails and attachments to SharePoint without leaving Outlook.</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">&#129504;</div>
+                <h3>Smart Suggestions</h3>
+                <p>Learns which folders you use for which senders and suggests them automatically.</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">&#127760;</div>
+                <h3>Works Everywhere</h3>
+                <p>Compatible with Outlook on the desktop and on the web.</p>
+            </div>
+        </section>
+
+        <footer>
+            &copy; 2026 Save to SharePoint. Your emails stay yours — we never read or store email content.
+        </footer>
+    </div>
+</body>
+</html>
