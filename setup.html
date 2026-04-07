@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Setup — Save to SharePoint</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif;
+            color: #1a1a1a;
+            background: #fff;
+            line-height: 1.7;
+        }
+        .container { max-width: 720px; margin: 0 auto; padding: 48px 24px; }
+        h1 { font-size: 1.8rem; margin-bottom: 8px; }
+        .subtitle { color: #555; font-size: 1.05rem; margin-bottom: 32px; }
+        h2 { font-size: 1.15rem; margin: 28px 0 8px; color: #1b6ec2; }
+        p, li { margin-bottom: 12px; font-size: 0.95rem; }
+        ol { padding-left: 24px; }
+        a { color: #1b6ec2; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+
+        .manifest-box {
+            background: #f5f7fa;
+            border: 1px solid #e0e4e8;
+            border-radius: 8px;
+            padding: 16px 20px;
+            margin: 16px 0 24px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .manifest-url {
+            flex: 1;
+            font-family: 'Cascadia Code', 'Consolas', monospace;
+            font-size: 0.9rem;
+            color: #1a1a1a;
+            word-break: break-all;
+        }
+        .copy-btn {
+            background: linear-gradient(135deg, #1b6ec2, #0d7377);
+            color: #fff;
+            border: none;
+            font-size: 0.85rem;
+            font-weight: 600;
+            padding: 8px 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            white-space: nowrap;
+            transition: opacity 0.2s;
+        }
+        .copy-btn:hover { opacity: 0.9; }
+
+        .step-detail {
+            color: #555;
+            font-size: 0.88rem;
+            margin-top: -4px;
+            margin-bottom: 16px;
+        }
+
+        .next-section {
+            background: #f0f7f0;
+            border: 1px solid #d4e8d4;
+            border-radius: 8px;
+            padding: 20px 24px;
+            margin-top: 24px;
+        }
+        .next-section h2 { margin-top: 0; color: #2a7a2a; }
+
+        footer { border-top: 1px solid #eee; margin-top: 48px; padding-top: 24px; text-align: center; font-size: 0.82rem; color: #999; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>You're all set!</h1>
+        <p class="subtitle">Thank you for subscribing to Save to SharePoint. Follow the steps below to deploy the add-in to your organization.</p>
+
+        <h2>Manifest URL</h2>
+        <p>Copy this URL — you'll paste it into the Microsoft 365 admin center in the next step.</p>
+        <div class="manifest-box">
+            <span class="manifest-url" id="manifestUrl">https://app.filemy.email/manifest.xml</span>
+            <button class="copy-btn" id="copyBtn" onclick="copyManifest()">Copy</button>
+        </div>
+
+        <h2>Deploy to your organization</h2>
+        <ol>
+            <li>
+                Go to the <a href="https://admin.microsoft.com" target="_blank" rel="noopener">Microsoft 365 admin center</a>.
+                <p class="step-detail">Sign in with your admin account.</p>
+            </li>
+            <li>
+                Navigate to <strong>Settings</strong> &rarr; <strong>Integrated apps</strong>.
+                <p class="step-detail">If you don't see this option, go to Settings &rarr; Add-ins instead.</p>
+            </li>
+            <li>
+                Click <strong>Upload custom apps</strong>.
+            </li>
+            <li>
+                Select <strong>"Provide link to manifest file"</strong> and paste the manifest URL from above.
+            </li>
+            <li>
+                Choose which <strong>users or groups</strong> should have access to the add-in.
+                <p class="step-detail">Your subscription includes seats for the users in your plan.</p>
+            </li>
+            <li>
+                Click <strong>Deploy</strong> and wait for deployment to complete.
+                <p class="step-detail">It may take up to 24 hours for the add-in to appear in users' Outlook.</p>
+            </li>
+        </ol>
+
+        <div class="next-section">
+            <h2>What happens next</h2>
+            <p>Once deployed, users will see a <strong>"Save to SharePoint"</strong> button in their Outlook ribbon when reading emails. On first use, they'll be prompted to sign in with their Microsoft 365 account. After that, saving emails and attachments to SharePoint is just one click.</p>
+        </div>
+
+        <h2>Need help?</h2>
+        <p>Visit <a href="https://filemy.email">filemy.email</a> or <a href="https://billing.stripe.com/p/login/28E6oJ78vcW0bY29dQak000">manage your subscription</a>.</p>
+
+        <footer>
+            <a href="/">Home</a> &middot; <a href="/privacy">Privacy Policy</a> &middot; <a href="/terms">Terms of Service</a><br><br>
+            &copy; 2026 Save to SharePoint
+        </footer>
+    </div>
+
+    <script>
+        function copyManifest() {
+            var url = document.getElementById('manifestUrl').textContent;
+            navigator.clipboard.writeText(url).then(function() {
+                var btn = document.getElementById('copyBtn');
+                btn.textContent = 'Copied!';
+                setTimeout(function() { btn.textContent = 'Copy'; }, 2000);
+            });
+        }
+    </script>
+</body>
+</html>
