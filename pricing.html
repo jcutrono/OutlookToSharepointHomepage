@@ -4,8 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pricing — Save to SharePoint</title>
-    <meta name="description" content="Simple, transparent pricing for Save to SharePoint. Starting at $10/month for 3 users.">
+    <meta name="description" content="Simple, transparent pricing for Save to SharePoint. Starting at $10/month for 3 users. $3 per additional user.">
+    <link rel="canonical" href="https://filemy.email/pricing">
     <link rel="icon" type="image/png" href="favicon.png">
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://filemy.email/pricing">
+    <meta property="og:title" content="Pricing — Save to SharePoint">
+    <meta property="og:description" content="Simple, transparent pricing for Save to SharePoint. Starting at $10/month for 3 users. $3 per additional user.">
+    <meta property="og:image" content="https://filemy.email/logo.svg">
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Pricing — Save to SharePoint">
+    <meta name="twitter:description" content="Simple, transparent pricing for Save to SharePoint. Starting at $10/month for 3 users. $3 per additional user.">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
@@ -133,6 +144,15 @@
             <div class="addon">+ $3 / month for each additional user</div>
         </div>
 
+        <div class="cta">
+            <script async src="https://js.stripe.com/v3/buy-button.js"></script>
+            <stripe-buy-button
+                buy-button-id="buy_btn_1TJgSVRuSKZAORtNCc5XjvFF"
+                publishable-key="pk_live_51TJeBURuSKZAORtNDq1LHzVpoXTW8vintdAn0pGvA5uo488Pqo7yJBjYeLDwfUP9SOKTmkicPPeudSqEQhWIHvnu00nvsv8X0u"
+            ></stripe-buy-button>
+            <p class="cta-subtext"><a href="https://billing.stripe.com/p/login/28E6oJ78vcW0bY29dQak000">Manage existing subscription</a></p>
+        </div>
+
         <h2>Example Costs</h2>
         <table class="example-table">
             <thead>
@@ -190,15 +210,6 @@
 
         <h3>What payment methods do you accept?</h3>
         <p>All major credit and debit cards through Stripe. We never see or store your card details.</p>
-
-        <div class="cta">
-            <script async src="https://js.stripe.com/v3/buy-button.js"></script>
-            <stripe-buy-button
-                buy-button-id="buy_btn_1TJgSVRuSKZAORtNCc5XjvFF"
-                publishable-key="pk_live_51TJeBURuSKZAORtNDq1LHzVpoXTW8vintdAn0pGvA5uo488Pqo7yJBjYeLDwfUP9SOKTmkicPPeudSqEQhWIHvnu00nvsv8X0u"
-            ></stripe-buy-button>
-            <p class="cta-subtext"><a href="/">Back to homepage</a></p>
-        </div>
 
         <div class="help-section">
             <h2>Need Help?</h2>
