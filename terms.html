@@ -58,12 +58,24 @@
         <p>We may update these terms from time to time. The revised version will be indicated by the "Last updated" date above. Continued use after changes constitutes acceptance.</p>
 
         <h2>Contact</h2>
-        <p>If you have questions about these terms, please visit <a href="https://filemy.email">filemy.email</a>.</p>
+        <p>If you have questions about these terms, please visit <a href="https://filemy.email">filemy.email</a> or <a href="#" onclick="revealEmail(event, this)">contact support</a>.</p>
 
         <footer>
-            <a href="/">Home</a> &middot; <a href="/privacy">Privacy Policy</a><br><br>
+            <a href="/">Home</a> &middot; <a href="/pricing">Pricing</a> &middot; <a href="/privacy">Privacy Policy</a> &middot; <a href="#" onclick="revealEmail(event, this)">Contact Support</a><br><br>
             &copy; 2026 Save to SharePoint
         </footer>
     </div>
+
+    <script>
+        function revealEmail(e, el) {
+            e.preventDefault();
+            var u = 'support', d = 'filemy.email';
+            var addr = u + '@' + d;
+            el.href = 'mail' + 'to:' + addr;
+            el.textContent = addr;
+            el.onclick = null;
+            window.location.href = el.href;
+        }
+    </script>
 </body>
 </html>

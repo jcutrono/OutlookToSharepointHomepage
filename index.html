@@ -120,6 +120,9 @@
             color: #999;
         }
 
+        footer a { color: #1b6ec2; text-decoration: none; }
+        footer a:hover { text-decoration: underline; }
+
         /* Responsive */
         @media (max-width: 600px) {
             .features {
@@ -170,7 +173,7 @@
                 buy-button-id="buy_btn_1TJgSVRuSKZAORtNCc5XjvFF"
                 publishable-key="pk_live_51TJeBURuSKZAORtNDq1LHzVpoXTW8vintdAn0pGvA5uo488Pqo7yJBjYeLDwfUP9SOKTmkicPPeudSqEQhWIHvnu00nvsv8X0u"
             ></stripe-buy-button>
-            <p class="cta-subtext">Cancel anytime. <a href="https://billing.stripe.com/p/login/28E6oJ78vcW0bY29dQak000">Manage your subscription</a></p>
+            <p class="cta-subtext">Starting at $10/mo for 3 users. <a href="/pricing">See pricing</a> &middot; <a href="https://billing.stripe.com/p/login/28E6oJ78vcW0bY29dQak000">Manage subscription</a></p>
         </div>
 
         <section class="features">
@@ -193,8 +196,21 @@
 
 
         <footer>
-            &copy; 2026 Save to SharePoint. Your emails stay yours — we never read or store email content.
+            <a href="/pricing">Pricing</a> &middot; <a href="/setup">Setup Guide</a> &middot; <a href="/privacy">Privacy Policy</a> &middot; <a href="/terms">Terms of Service</a> &middot; <a href="#" onclick="revealEmail(event, this)">Contact Support</a><br><br>
+            &copy; 2026 Save to SharePoint
         </footer>
     </div>
+
+    <script>
+        function revealEmail(e, el) {
+            e.preventDefault();
+            var u = 'support', d = 'filemy.email';
+            var addr = u + '@' + d;
+            el.href = 'mail' + 'to:' + addr;
+            el.textContent = addr;
+            el.onclick = null;
+            window.location.href = el.href;
+        }
+    </script>
 </body>
 </html>

@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing — Save to SharePoint</title>
+    <meta name="description" content="Simple, transparent pricing for Save to SharePoint. Starting at $10/month for 3 users.">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif;
+            color: #1a1a1a;
+            background: #fff;
+            line-height: 1.7;
+        }
+        .container { max-width: 720px; margin: 0 auto; padding: 48px 24px; }
+        h1 { font-size: 1.8rem; margin-bottom: 8px; }
+        .subtitle { color: #555; font-size: 1.05rem; margin-bottom: 32px; }
+        h2 { font-size: 1.15rem; margin: 28px 0 8px; color: #1b6ec2; }
+        p, li { margin-bottom: 12px; font-size: 0.95rem; }
+        a { color: #1b6ec2; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+
+        /* Pricing card */
+        .pricing-card {
+            background: linear-gradient(135deg, #f0f6ff, #eef8f8);
+            border: 2px solid #1b6ec2;
+            border-radius: 12px;
+            padding: 32px;
+            text-align: center;
+            margin: 24px 0 32px;
+        }
+        .price {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #1b6ec2;
+        }
+        .price-period {
+            font-size: 1rem;
+            color: #555;
+        }
+        .includes {
+            font-size: 1.1rem;
+            color: #1a1a1a;
+            margin-top: 8px;
+        }
+        .addon {
+            font-size: 0.95rem;
+            color: #0d7377;
+            margin-top: 12px;
+            font-weight: 600;
+        }
+
+        /* Example table */
+        .example-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 16px 0 24px;
+            font-size: 0.92rem;
+        }
+        .example-table th {
+            text-align: left;
+            padding: 8px 12px;
+            border-bottom: 2px solid #1b6ec2;
+            color: #1b6ec2;
+            font-weight: 600;
+        }
+        .example-table td {
+            padding: 8px 12px;
+            border-bottom: 1px solid #eee;
+        }
+
+        /* FAQ */
+        h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin: 20px 0 6px;
+            color: #1a1a1a;
+        }
+
+        /* CTA */
+        .cta {
+            text-align: center;
+            padding: 32px 0;
+        }
+        .cta-subtext {
+            font-size: 0.85rem;
+            color: #777;
+            margin-top: 12px;
+        }
+
+        /* Help section */
+        .help-section {
+            background: #f5f7fa;
+            border: 1px solid #e0e4e8;
+            border-radius: 8px;
+            padding: 20px 24px;
+            margin-top: 24px;
+        }
+        .help-section h2 { margin-top: 0; }
+
+        .manage-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #1b6ec2, #0d7377);
+            color: #fff;
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 600;
+            padding: 10px 24px;
+            border-radius: 8px;
+            transition: opacity 0.2s;
+        }
+        .manage-btn:hover { opacity: 0.9; text-decoration: none; color: #fff; }
+
+        footer { border-top: 1px solid #eee; margin-top: 48px; padding-top: 24px; text-align: center; font-size: 0.82rem; color: #999; }
+
+        @media (max-width: 600px) {
+            .price { font-size: 2rem; }
+            .example-table { font-size: 0.85rem; }
+            .example-table th, .example-table td { padding: 6px 8px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Pricing</h1>
+        <p class="subtitle">Simple, transparent pricing. No contracts, cancel anytime.</p>
+
+        <div class="pricing-card">
+            <div class="price">$10 <span class="price-period">/ month</span></div>
+            <div class="includes">Includes 3 users</div>
+            <div class="addon">+ $3 / month for each additional user</div>
+        </div>
+
+        <h2>Example Costs</h2>
+        <table class="example-table">
+            <thead>
+                <tr>
+                    <th>Users</th>
+                    <th>Monthly Cost</th>
+                    <th>Breakdown</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>3</td>
+                    <td><strong>$10</strong></td>
+                    <td>Base plan</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td><strong>$16</strong></td>
+                    <td>$10 + 2 extra &times; $3</td>
+                </tr>
+                <tr>
+                    <td>10</td>
+                    <td><strong>$31</strong></td>
+                    <td>$10 + 7 extra &times; $3</td>
+                </tr>
+                <tr>
+                    <td>25</td>
+                    <td><strong>$76</strong></td>
+                    <td>$10 + 22 extra &times; $3</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>How Subscriptions Work</h2>
+        <p>When you subscribe, you'll check out through Stripe. The base plan covers 3 users. If you need more seats, increase the <strong>quantity</strong> during checkout to add additional users.</p>
+        <p>After subscribing, you can manage everything through the Stripe billing portal — add or remove seats, update your payment method, or cancel your plan.</p>
+        <p style="text-align: center; margin: 24px 0;">
+            <a href="https://billing.stripe.com/p/login/28E6oJ78vcW0bY29dQak000" class="manage-btn">Manage Subscription</a>
+        </p>
+        <p>Changes are prorated — if you add users mid-cycle, you only pay for the remaining days. If you remove users, you'll receive a credit toward your next invoice.</p>
+
+        <h2>Frequently Asked Questions</h2>
+
+        <h3>Can I cancel anytime?</h3>
+        <p>Yes. Cancel through the billing portal and your access continues until the end of your current billing period.</p>
+
+        <h3>How do I add more users?</h3>
+        <p>Log into the <a href="https://billing.stripe.com/p/login/28E6oJ78vcW0bY29dQak000">billing portal</a> and update your subscription quantity. The change takes effect immediately.</p>
+
+        <h3>Are charges prorated?</h3>
+        <p>Yes. You're only charged for what you use. Adding users mid-cycle bills only for the remaining days; removing users gives you a credit.</p>
+
+        <h3>What counts as a "user"?</h3>
+        <p>Each person who uses the add-in occupies one seat. Seats are claimed automatically on first use. Tenant admins can remove users from seats in the add-in's settings to free up space.</p>
+
+        <h3>What payment methods do you accept?</h3>
+        <p>All major credit and debit cards through Stripe. We never see or store your card details.</p>
+
+        <div class="cta">
+            <script async src="https://js.stripe.com/v3/buy-button.js"></script>
+            <stripe-buy-button
+                buy-button-id="buy_btn_1TJgSVRuSKZAORtNCc5XjvFF"
+                publishable-key="pk_live_51TJeBURuSKZAORtNDq1LHzVpoXTW8vintdAn0pGvA5uo488Pqo7yJBjYeLDwfUP9SOKTmkicPPeudSqEQhWIHvnu00nvsv8X0u"
+            ></stripe-buy-button>
+            <p class="cta-subtext"><a href="/">Back to homepage</a></p>
+        </div>
+
+        <div class="help-section">
+            <h2>Need Help?</h2>
+            <p>Have a billing question or need support? <a href="#" onclick="revealEmail(event, this)">Contact Support</a></p>
+        </div>
+
+        <footer>
+            <a href="/">Home</a> &middot; <a href="/setup">Setup Guide</a> &middot; <a href="/privacy">Privacy Policy</a> &middot; <a href="/terms">Terms of Service</a> &middot; <a href="#" onclick="revealEmail(event, this)">Contact Support</a><br><br>
+            &copy; 2026 Save to SharePoint
+        </footer>
+    </div>
+
+    <script>
+        function revealEmail(e, el) {
+            e.preventDefault();
+            var u = 'support', d = 'filemy.email';
+            var addr = u + '@' + d;
+            el.href = 'mail' + 'to:' + addr;
+            el.textContent = addr;
+            el.onclick = null;
+            window.location.href = el.href;
+        }
+    </script>
+</body>
+</html>

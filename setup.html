@@ -144,10 +144,10 @@
         </div>
 
         <h2>Need help?</h2>
-        <p>Visit <a href="https://filemy.email">filemy.email</a> or <a href="https://billing.stripe.com/p/login/28E6oJ78vcW0bY29dQak000">manage your subscription</a>.</p>
+        <p>Visit <a href="https://filemy.email">filemy.email</a>, <a href="#" onclick="revealEmail(event, this)">contact support</a>, or <a href="https://billing.stripe.com/p/login/28E6oJ78vcW0bY29dQak000">manage your subscription</a>.</p>
 
         <footer>
-            <a href="/">Home</a> &middot; <a href="/privacy">Privacy Policy</a> &middot; <a href="/terms">Terms of Service</a><br><br>
+            <a href="/">Home</a> &middot; <a href="/pricing">Pricing</a> &middot; <a href="/privacy">Privacy Policy</a> &middot; <a href="/terms">Terms of Service</a> &middot; <a href="#" onclick="revealEmail(event, this)">Contact Support</a><br><br>
             &copy; 2026 Save to SharePoint
         </footer>
     </div>
@@ -160,6 +160,16 @@
                 btn.textContent = 'Copied!';
                 setTimeout(function() { btn.textContent = 'Copy'; }, 2000);
             });
+        }
+
+        function revealEmail(e, el) {
+            e.preventDefault();
+            var u = 'support', d = 'filemy.email';
+            var addr = u + '@' + d;
+            el.href = 'mail' + 'to:' + addr;
+            el.textContent = addr;
+            el.onclick = null;
+            window.location.href = el.href;
         }
     </script>
 </body>
