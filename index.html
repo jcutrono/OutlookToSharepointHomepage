@@ -1,71 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-WMH8P2QB');</script>
+    <!-- End Google Tag Manager -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Save to SharePoint — Email Filing Made Simple</title>
-    <meta name="description" content="Save emails and attachments from Outlook to SharePoint with smart folder suggestions. One-click filing for busy teams.">
+    <meta name="description" content="Save emails and attachments from Outlook to SharePoint with smart folder suggestions, batch inbox cleanup, and automatic metadata. One-click filing for busy teams.">
     <link rel="canonical" href="https://filemy.email/">
     <link rel="icon" type="image/png" href="favicon.png">
     <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://filemy.email/">
     <meta property="og:title" content="Save to SharePoint — Email Filing Made Simple">
-    <meta property="og:description" content="Save emails and attachments from Outlook to SharePoint with smart folder suggestions. One-click filing for busy teams.">
+    <meta property="og:description" content="Save emails and attachments from Outlook to SharePoint with smart folder suggestions, batch inbox cleanup, and automatic metadata. One-click filing for busy teams.">
     <meta property="og:image" content="https://filemy.email/logo.svg">
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="Save to SharePoint — Email Filing Made Simple">
-    <meta name="twitter:description" content="Save emails and attachments from Outlook to SharePoint with smart folder suggestions. One-click filing for busy teams.">
+    <meta name="twitter:description" content="Save emails and attachments from Outlook to SharePoint with smart folder suggestions, batch inbox cleanup, and automatic metadata. One-click filing for busy teams.">
+    <link rel="stylesheet" href="styles.css">
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-
-        body {
-            font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif;
-            color: #1a1a1a;
-            background: #fff;
-            line-height: 1.6;
-        }
-
-        .container {
-            max-width: 720px;
-            margin: 0 auto;
-            padding: 0 24px;
-        }
+        body { line-height: 1.6; }
+        .container { padding: 0 24px; }
 
         /* Header */
-        header {
-            padding: 48px 0 0;
-            text-align: center;
-        }
-
-        .logo {
-            width: 80px;
-            height: 80px;
-            border-radius: 18px;
-            margin-bottom: 20px;
-        }
-
-        h1 {
-            font-size: 2rem;
-            font-weight: 700;
-            color: #1a1a1a;
-            margin-bottom: 8px;
-        }
-
-        .tagline {
-            font-size: 1.15rem;
-            color: #555;
-            max-width: 520px;
-            margin: 0 auto;
-        }
+        header { padding: 48px 0 0; text-align: center; }
+        .logo { width: 80px; height: 80px; border-radius: 18px; margin-bottom: 20px; }
+        h1 { font-size: 2rem; font-weight: 700; color: #1a1a1a; }
+        .tagline { font-size: 1.15rem; color: #555; max-width: 560px; margin: 0 auto; }
 
         /* CTA */
-        .cta {
-            text-align: center;
-            padding: 40px 0;
-        }
-
+        .cta { text-align: center; padding: 40px 0; }
         .cta-button {
             display: inline-block;
             background: linear-gradient(135deg, #1b6ec2, #0d7377);
@@ -77,108 +48,75 @@
             border-radius: 8px;
             transition: opacity 0.2s;
         }
-
         .cta-button:hover { opacity: 0.9; }
-
-        .cta-subtext {
-            font-size: 0.85rem;
-            color: #777;
-            margin-top: 12px;
-        }
-
-        .cta-subtext a {
-            color: #1b6ec2;
-            text-decoration: none;
-        }
-
+        .cta-subtext { font-size: 0.85rem; color: #777; margin-top: 12px; }
+        .cta-subtext a { color: #1b6ec2; text-decoration: none; }
         .cta-subtext a:hover { text-decoration: underline; }
 
         /* Features */
-        .features {
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            gap: 32px;
-            padding: 24px 0 56px;
-        }
+        .features { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 32px; padding: 24px 0 56px; }
+        .feature { text-align: center; }
+        .feature-icon { font-size: 2rem; margin-bottom: 10px; }
+        .feature h3 { font-size: 0.95rem; font-weight: 600; margin-bottom: 6px; color: #1b6ec2; }
+        .feature p { font-size: 0.88rem; color: #666; }
 
-        .feature {
-            text-align: center;
-        }
+        /* Section headings */
+        .section-heading { text-align: center; font-size: 1.5rem; font-weight: 700; color: #1a1a1a; margin-bottom: 8px; }
+        .section-subheading { text-align: center; font-size: 1rem; color: #555; margin-bottom: 32px; }
 
-        .feature-icon {
-            font-size: 2rem;
-            margin-bottom: 10px;
+        /* How It Works */
+        .how-it-works { padding: 48px 0; border-top: 1px solid #eee; }
+        .steps { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 32px; margin-top: 8px; }
+        .step { text-align: center; }
+        .step-number {
+            display: inline-flex; align-items: center; justify-content: center;
+            width: 44px; height: 44px; border-radius: 50%;
+            background: linear-gradient(135deg, #1b6ec2, #0d7377);
+            color: #fff; font-size: 1.2rem; font-weight: 700; margin-bottom: 12px;
         }
+        .step h3 { font-size: 0.95rem; font-weight: 600; margin-bottom: 6px; color: #1a1a1a; }
+        .step p { font-size: 0.88rem; color: #666; }
 
-        .feature h3 {
-            font-size: 0.95rem;
-            font-weight: 600;
-            margin-bottom: 6px;
-            color: #1b6ec2;
-        }
+        /* Differentiators */
+        .differentiators { padding: 48px 0; border-top: 1px solid #eee; }
+        .differentiator-list { display: flex; flex-direction: column; gap: 20px; margin-top: 8px; }
+        .differentiator { border-left: 4px solid #1b6ec2; padding: 16px 20px; background: #f8fafb; border-radius: 0 8px 8px 0; }
+        .differentiator h3 { font-size: 0.95rem; font-weight: 600; color: #1a1a1a; margin-bottom: 4px; }
+        .differentiator p { font-size: 0.88rem; color: #666; }
 
-        .feature p {
-            font-size: 0.88rem;
-            color: #666;
-        }
+        /* Built for Teams */
+        .built-for-teams { padding: 48px 0; border-top: 1px solid #eee; text-align: center; }
+        .built-for-teams p { font-size: 0.95rem; color: #555; max-width: 520px; margin: 0 auto 12px; }
+        .built-for-teams a { color: #1b6ec2; text-decoration: none; font-weight: 600; }
+        .built-for-teams a:hover { text-decoration: underline; }
 
-        /* Footer */
-        footer {
-            border-top: 1px solid #eee;
-            padding: 24px 0;
-            text-align: center;
-            font-size: 0.82rem;
-            color: #999;
-        }
+        /* Private by Design */
+        .private-section { padding: 48px 0; border-top: 1px solid #eee; }
+        .private-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 8px; }
+        .private-item { display: flex; align-items: flex-start; gap: 12px; }
+        .private-icon { font-size: 1.4rem; flex-shrink: 0; margin-top: 2px; }
+        .private-item p { font-size: 0.9rem; color: #555; }
+        .private-item strong { color: #1a1a1a; }
 
-        footer a { color: #1b6ec2; text-decoration: none; }
-        footer a:hover { text-decoration: underline; }
-
-        /* Top nav */
-        .top-nav {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            max-width: 720px;
-            margin: 0 auto;
-            padding: 16px 24px;
-        }
-        .top-nav .brand {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            text-decoration: none;
-            color: #1a1a1a;
-            font-weight: 700;
-            font-size: 0.95rem;
-        }
-        .top-nav .brand img {
-            width: 28px;
-            height: 28px;
-            border-radius: 6px;
-        }
-        .top-nav nav { display: flex; gap: 20px; }
-        .top-nav nav a {
-            color: #555;
-            text-decoration: none;
-            font-size: 0.88rem;
-            font-weight: 500;
-        }
-        .top-nav nav a:hover { color: #1b6ec2; }
+        /* Footer override */
+        footer { padding: 24px 0; margin-top: 0; }
 
         /* Responsive */
         @media (max-width: 600px) {
-            .features {
-                grid-template-columns: 1fr;
-                gap: 24px;
-            }
-
+            .features { grid-template-columns: 1fr; gap: 24px; }
+            .steps { grid-template-columns: 1fr; gap: 24px; }
+            .private-grid { grid-template-columns: 1fr; }
             h1 { font-size: 1.6rem; }
             .tagline { font-size: 1rem; }
+            .section-heading { font-size: 1.3rem; }
         }
     </style>
 </head>
 <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WMH8P2QB"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
     <div class="top-nav">
         <a href="/" class="brand">
             <img src="favicon.png" alt="Logo">
@@ -218,7 +156,7 @@
             </svg>
 
             <h1>Save to SharePoint</h1>
-            <p class="tagline">Save emails and attachments from Outlook to SharePoint folders — with smart folder suggestions that learn your filing habits.</p>
+            <p class="tagline">Save emails and attachments from Outlook to SharePoint — with smart suggestions, batch inbox cleanup, and metadata that fills itself in.</p>
         </header>
 
         <div class="cta">
@@ -242,12 +180,117 @@
                 <p>Learns which folders you use for which senders and suggests them automatically.</p>
             </div>
             <div class="feature">
+                <div class="feature-icon">&#129529;</div>
+                <h3>Inbox Cleanup</h3>
+                <p>Scan unfiled emails, preview matches, and batch-save them all at once.</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">&#128202;</div>
+                <h3>Column Mapping</h3>
+                <p>Map email metadata to SharePoint library columns automatically.</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">&#128196;</div>
+                <h3>Save as EML or PDF</h3>
+                <p>Choose the format that works best for your team.</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">&#11088;</div>
+                <h3>Favorite Folders</h3>
+                <p>Star your most-used folders for instant access.</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">&#128274;</div>
+                <h3>Duplicate Detection</h3>
+                <p>Never accidentally save the same email twice.</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">&#128206;</div>
+                <h3>Attachment Subfolder</h3>
+                <p>Save attachments in a separate subfolder alongside the email.</p>
+            </div>
+            <div class="feature">
                 <div class="feature-icon">&#127760;</div>
                 <h3>Works Everywhere</h3>
-                <p>Compatible with Outlook on the desktop and on the web.</p>
+                <p>Outlook desktop and web, across Microsoft 365 tenants.</p>
             </div>
         </section>
 
+        <section class="how-it-works">
+            <h2 class="section-heading">How It Works</h2>
+            <p class="section-subheading">Three steps. No training required.</p>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Open an Email</h3>
+                    <p>The add-in panel appears alongside your message.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Pick a Folder</h3>
+                    <p>Accept the smart suggestion, or browse and search your SharePoint libraries.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Click Save</h3>
+                    <p>The email and attachments are filed instantly. Metadata columns fill in automatically.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="differentiators">
+            <h2 class="section-heading">What Makes This Different</h2>
+            <p class="section-subheading">Built for the way you actually work.</p>
+            <div class="differentiator-list">
+                <div class="differentiator">
+                    <h3>Gets smarter the more you use it</h3>
+                    <p>Most tools make you set up rules manually. This one learns your habits automatically and gets better over time.</p>
+                </div>
+                <div class="differentiator">
+                    <h3>Batch-process your entire inbox</h3>
+                    <p>Stop filing one email at a time. Scan your inbox, preview where everything goes, and save it all in one click.</p>
+                </div>
+                <div class="differentiator">
+                    <h3>Metadata fills itself in</h3>
+                    <p>SharePoint column mapping means you never have to manually type in the sender, date, or subject. It's done for you.</p>
+                </div>
+                <div class="differentiator">
+                    <h3>Private by design</h3>
+                    <p>Your emails go directly to your SharePoint. We never read, store, or route email content through our servers. No middleware, no middleman.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="built-for-teams">
+            <h2 class="section-heading">Built for Teams</h2>
+            <p>Seat-based subscriptions starting at $10/month for 3 users. Add more seats anytime.</p>
+            <p>Tenant admins manage users directly — add or remove seats without contacting support.</p>
+            <p>Works across Microsoft 365 tenants, so multi-tenant firms are covered.</p>
+            <p><a href="/pricing">See pricing &rarr;</a></p>
+        </section>
+
+        <section class="private-section">
+            <h2 class="section-heading">Private by Design</h2>
+            <p class="section-subheading">Your data stays yours.</p>
+            <div class="private-grid">
+                <div class="private-item">
+                    <div class="private-icon">&#128274;</div>
+                    <p><strong>Never reads or stores email content.</strong> Only metadata is used for suggestions and file naming.</p>
+                </div>
+                <div class="private-item">
+                    <div class="private-icon">&#9889;</div>
+                    <p><strong>Direct to SharePoint.</strong> Files transfer straight to your environment — nothing stored in between.</p>
+                </div>
+                <div class="private-item">
+                    <div class="private-icon">&#128100;</div>
+                    <p><strong>Your existing Microsoft 365 login.</strong> No new accounts, no new passwords.</p>
+                </div>
+                <div class="private-item">
+                    <div class="private-icon">&#128272;</div>
+                    <p><strong>Encrypted in transit.</strong> All data travels over secure, encrypted connections.</p>
+                </div>
+            </div>
+        </section>
 
         <footer>
             <a href="/pricing">Pricing</a> &middot; <a href="/setup">Setup Guide</a> &middot; <a href="/privacy">Privacy Policy</a> &middot; <a href="/terms">Terms of Service</a> &middot; <a href="#" onclick="revealEmail(event, this)">Contact Support</a><br><br>
