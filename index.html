@@ -34,6 +34,54 @@
     <meta name="twitter:title" content="Save to SharePoint — Email Filing Made Simple">
     <meta name="twitter:description" content="Save emails and attachments from Outlook to SharePoint with smart folder suggestions, batch inbox cleanup, and automatic metadata. One-click filing for busy teams.">
     <link rel="stylesheet" href="styles.css">
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Save to SharePoint",
+        "url": "https://filemy.email",
+        "logo": "https://filemy.email/logo.svg",
+        "description": "Save emails and attachments from Outlook to SharePoint with smart folder suggestions, batch inbox cleanup, and automatic metadata.",
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "contactType": "customer support",
+            "email": "support@filemy.email"
+        }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Save to SharePoint",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Windows, Web",
+        "url": "https://filemy.email",
+        "description": "Outlook add-in that saves emails and attachments to SharePoint with smart folder suggestions, batch inbox cleanup, and automatic metadata.",
+        "offers": {
+            "@type": "Offer",
+            "price": "10.00",
+            "priceCurrency": "USD",
+            "priceValidUntil": "2027-12-31",
+            "availability": "https://schema.org/InStock"
+        }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://filemy.email/"
+            }
+        ]
+    }
+    </script>
     <style>
         body { line-height: 1.6; }
         .container { padding: 0 24px; }
@@ -140,7 +188,7 @@
     <div class="container">
         <header>
             <!-- Inlined icon-full.svg -->
-            <svg class="logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 192">
+            <svg class="logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 192" role="img" aria-label="Save to SharePoint logo">
                 <defs>
                     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="0">
                         <stop offset="0%" stop-color="#1b6ec2"/>
@@ -179,47 +227,47 @@
 
         <section class="features">
             <div class="feature">
-                <div class="feature-icon">&#128640;</div>
+                <div class="feature-icon" role="img" aria-label="Rocket">&#128640;</div>
                 <h3>One-Click Save</h3>
                 <p>File emails and attachments to SharePoint without leaving Outlook.</p>
             </div>
             <div class="feature">
-                <div class="feature-icon">&#129504;</div>
+                <div class="feature-icon" role="img" aria-label="Brain">&#129504;</div>
                 <h3>Smart Suggestions</h3>
                 <p>Learns which folders you use for which senders and suggests them automatically.</p>
             </div>
             <div class="feature">
-                <div class="feature-icon">&#129529;</div>
+                <div class="feature-icon" role="img" aria-label="Broom">&#129529;</div>
                 <h3>Inbox Cleanup</h3>
                 <p>Scan unfiled emails, preview matches, and batch-save them all at once.</p>
             </div>
             <div class="feature">
-                <div class="feature-icon">&#128202;</div>
+                <div class="feature-icon" role="img" aria-label="Chart">&#128202;</div>
                 <h3>Column Mapping</h3>
                 <p>Map email metadata to SharePoint library columns automatically.</p>
             </div>
             <div class="feature">
-                <div class="feature-icon">&#128196;</div>
+                <div class="feature-icon" role="img" aria-label="Document">&#128196;</div>
                 <h3>Save as EML or PDF</h3>
                 <p>Choose the format that works best for your team.</p>
             </div>
             <div class="feature">
-                <div class="feature-icon">&#11088;</div>
+                <div class="feature-icon" role="img" aria-label="Star">&#11088;</div>
                 <h3>Favorite Folders</h3>
                 <p>Star your most-used folders for instant access.</p>
             </div>
             <div class="feature">
-                <div class="feature-icon">&#128274;</div>
+                <div class="feature-icon" role="img" aria-label="Lock">&#128274;</div>
                 <h3>Duplicate Detection</h3>
                 <p>Never accidentally save the same email twice.</p>
             </div>
             <div class="feature">
-                <div class="feature-icon">&#128206;</div>
+                <div class="feature-icon" role="img" aria-label="Paperclip">&#128206;</div>
                 <h3>Attachment Subfolder</h3>
                 <p>Save attachments in a separate subfolder alongside the email.</p>
             </div>
             <div class="feature">
-                <div class="feature-icon">&#127760;</div>
+                <div class="feature-icon" role="img" aria-label="Globe">&#127760;</div>
                 <h3>Works Everywhere</h3>
                 <p>Outlook desktop and web, across Microsoft 365 tenants.</p>
             </div>
