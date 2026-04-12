@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-WMH8P2QB');</script>
+    <!-- End Google Tag Manager -->
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8QC98XTWTR"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-8QC98XTWTR');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entra ID Setup — Save to SharePoint</title>
+    <meta name="description" content="Configure Microsoft Entra ID app roles for Save to SharePoint. Assign user and admin roles to control who can use the add-in and manage seats.">
+    <link rel="canonical" href="https://filemy.email/entra-setup">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://filemy.email/entra-setup">
+    <meta property="og:title" content="Entra ID Setup — Save to SharePoint">
+    <meta property="og:description" content="Configure Microsoft Entra ID app roles for Save to SharePoint. Assign user and admin roles to control who can use the add-in and manage seats.">
+    <meta property="og:image" content="https://filemy.email/logo.svg">
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Entra ID Setup — Save to SharePoint">
+    <meta name="twitter:description" content="Configure Microsoft Entra ID app roles for Save to SharePoint. Assign user and admin roles to control who can use the add-in and manage seats.">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://filemy.email/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Setup",
+                "item": "https://filemy.email/setup"
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Entra ID Setup",
+                "item": "https://filemy.email/entra-setup"
+            }
+        ]
+    }
+    </script>
+    <style>
+        .role-card {
+            border: 1px solid #e0e4e8;
+            border-radius: 8px;
+            padding: 16px 20px;
+            margin: 12px 0;
+        }
+        .role-card h3 {
+            font-size: 0.95rem;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+        .role-card .role-value {
+            font-family: 'Cascadia Code', 'Consolas', monospace;
+            font-size: 0.85rem;
+            color: #555;
+            margin-bottom: 8px;
+        }
+        .role-card p {
+            font-size: 0.88rem;
+            margin-bottom: 0;
+        }
+        .role-user { border-left: 4px solid #1b6ec2; }
+        .role-admin { border-left: 4px solid #d4380d; }
+        .step-detail {
+            color: #555;
+            font-size: 0.88rem;
+            margin-top: -4px;
+            margin-bottom: 16px;
+        }
+        .info-box {
+            background: #f5f7fa;
+            border: 1px solid #e0e4e8;
+            border-radius: 8px;
+            padding: 16px 20px;
+            margin: 16px 0;
+            font-size: 0.9rem;
+        }
+        .info-box strong { color: #1a1a1a; }
+        .next-section {
+            background: #f0f7f0;
+            border: 1px solid #d4e8d4;
+            border-radius: 8px;
+            padding: 20px 24px;
+            margin-top: 24px;
+        }
+        .next-section h2 { margin-top: 0; color: #2a7a2a; }
+    </style>
+</head>
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WMH8P2QB"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div class="top-nav">
+        <a href="/" class="brand">
+            <img src="favicon.png" alt="Logo">
+            File My Email
+        </a>
+        <nav>
+            <a href="/pricing">Pricing</a>
+            <a href="/setup">Setup</a>
+        </nav>
+    </div>
+
+    <div class="container">
+        <h1>Entra ID Setup</h1>
+        <p class="subtitle">Configure Microsoft Entra ID roles to control who can use Save to SharePoint and who can manage your organization's seats and subscription.</p>
+
+        <h2>How access works</h2>
+        <p>Save to SharePoint uses two app roles in Microsoft Entra ID to control access:</p>
+
+        <div class="role-card role-user">
+            <h3>FileMyEmail.User</h3>
+            <div class="role-value">Required for all users</div>
+            <p>Allows the user to save emails and attachments to SharePoint. Each user with this role consumes one seat in your subscription.</p>
+        </div>
+
+        <div class="role-card role-admin">
+            <h3>FileMyEmail.Admin</h3>
+            <div class="role-value">Optional &mdash; for tenant administrators</div>
+            <p>Allows the user to view subscription details, manage seated users, and remove users who have left the organization. Admins do not consume a seat unless they also have the User role.</p>
+        </div>
+
+        <div class="info-box">
+            <strong>Note:</strong> Microsoft 365 Global Administrators and SharePoint Administrators automatically have admin access without needing the FileMyEmail.Admin role assigned.
+        </div>
+
+        <h2>Step 1: Assign roles to users</h2>
+        <p>You assign roles through the <strong>Enterprise Applications</strong> section of the Microsoft Entra admin center.</p>
+
+        <ol>
+            <li>
+                Go to the <a href="https://entra.microsoft.com" target="_blank" rel="noopener">Microsoft Entra admin center</a>.
+                <p class="step-detail">Sign in with a Global Administrator or Privileged Role Administrator account.</p>
+            </li>
+            <li>
+                Navigate to <strong>Identity</strong> &rarr; <strong>Applications</strong> &rarr; <strong>Enterprise applications</strong>.
+            </li>
+            <li>
+                Search for <strong>"OutlookToSharePoint"</strong> and click on the application.
+            </li>
+            <li>
+                In the left sidebar, click <strong>Users and groups</strong>.
+            </li>
+            <li>
+                Click <strong>Add user/group</strong>.
+            </li>
+            <li>
+                Under <strong>Users</strong>, select the user or group you want to assign.
+                <p class="step-detail">Assigning a security group gives all members of that group the role automatically. This is the easiest way to manage access at scale.</p>
+            </li>
+            <li>
+                Under <strong>Select a role</strong>, choose <strong>FileMyEmail User</strong> or <strong>FileMyEmail Admin</strong>.
+            </li>
+            <li>
+                Click <strong>Assign</strong>.
+            </li>
+        </ol>
+
+        <p>Repeat for each user or group. A user can have both roles &mdash; they will have admin access and consume a seat.</p>
+
+        <h2>Step 2: Grant API permissions (one-time)</h2>
+        <p>The add-in needs permission to look up user display names so that admins can see who is using each seat. This requires a one-time admin consent.</p>
+
+        <ol>
+            <li>
+                In the <a href="https://entra.microsoft.com" target="_blank" rel="noopener">Entra admin center</a>, go to <strong>Identity</strong> &rarr; <strong>Applications</strong> &rarr; <strong>App registrations</strong>.
+            </li>
+            <li>
+                Search for <strong>"OutlookToSharePoint"</strong> and click on the application.
+            </li>
+            <li>
+                In the left sidebar, click <strong>API permissions</strong>.
+            </li>
+            <li>
+                Verify that <strong>User.ReadBasic.All</strong> appears in the list of permissions.
+                <p class="step-detail">If it's missing, click "Add a permission" &rarr; Microsoft Graph &rarr; Delegated permissions &rarr; search for "User.ReadBasic.All" &rarr; Add.</p>
+            </li>
+            <li>
+                Click <strong>Grant admin consent for [your organization]</strong>.
+                <p class="step-detail">This button appears at the top of the permissions list. You need Global Administrator privileges for this step.</p>
+            </li>
+        </ol>
+
+        <h2>Common scenarios</h2>
+
+        <p><strong>Give everyone in my company access:</strong> Create a security group containing all employees (or use an existing "All Users" group). Assign the <strong>FileMyEmail User</strong> role to that group.</p>
+
+        <p><strong>Designate an admin:</strong> Assign the <strong>FileMyEmail Admin</strong> role to the person who should manage seats. They will see an "Admin" tab in the add-in where they can view subscription status, see who is using each seat, and remove users.</p>
+
+        <p><strong>Remove a departed employee:</strong> An admin can remove a user's seat directly from the Admin tab in the add-in, with the option to purge their saved data. You can also remove their role assignment from Entra to revoke access.</p>
+
+        <p><strong>Add more seats:</strong> Admins can click "Manage Subscription" in the Admin tab to go to the Stripe billing portal, where they can increase the seat quantity on your plan.</p>
+
+        <div class="next-section">
+            <h2>You're all set</h2>
+            <p>Once roles are assigned, users will see the Save to SharePoint button in their Outlook ribbon. Admins will see an additional "Admin" tab for managing seats and subscriptions.</p>
+            <p>The add-in may take a few minutes to recognize newly assigned roles. If a user doesn't have access immediately, ask them to close and reopen Outlook.</p>
+        </div>
+
+        <h2>Need help?</h2>
+        <p>Visit <a href="https://filemy.email">filemy.email</a>, <a href="#" onclick="revealEmail(event, this)">contact support</a>, or <a href="https://billing.stripe.com/p/login/28E6oJ78vcW0bY29dQak000">manage your subscription</a>.</p>
+
+        <footer>
+            <a href="/">Home</a> &middot; <a href="/pricing">Pricing</a> &middot; <a href="/setup">Setup</a> &middot; <a href="/entra-setup">Entra ID Setup</a> &middot; <a href="/privacy">Privacy Policy</a> &middot; <a href="/terms">Terms of Service</a> &middot; <a href="#" onclick="revealEmail(event, this)">Contact Support</a><br><br>
+            &copy; 2026 Save to SharePoint
+        </footer>
+    </div>
+
+    <script>
+        function revealEmail(e, el) {
+            e.preventDefault();
+            var u = 'support', d = 'filemy.email';
+            var addr = u + '@' + d;
+            el.href = 'mail' + 'to:' + addr;
+            el.textContent = addr;
+            el.onclick = null;
+            window.location.href = el.href;
+        }
+    </script>
+</body>
+</html>
