@@ -184,7 +184,7 @@
         <p>Repeat for each user or group. A user can have both roles &mdash; they will have admin access and consume a seat.</p>
 
         <h2>Step 2: Grant API permissions (one-time)</h2>
-        <p>The add-in needs permission to look up user display names so that admins can see who is using each seat. This requires a one-time admin consent.</p>
+        <p>The add-in uses several delegated Microsoft Graph permissions. Most are requested automatically when a user first signs in; the ones below benefit from a one-time admin consent so users don't see extra prompts.</p>
 
         <ol>
             <li>
@@ -197,12 +197,18 @@
                 In the left sidebar, click <strong>API permissions</strong>.
             </li>
             <li>
-                Verify that <strong>User.ReadBasic.All</strong> appears in the list of permissions.
-                <p class="step-detail">If it's missing, click "Add a permission" &rarr; Microsoft Graph &rarr; Delegated permissions &rarr; search for "User.ReadBasic.All" &rarr; Add.</p>
+                Verify that the following <strong>delegated</strong> Microsoft Graph permissions appear in the list:
+                <ul>
+                    <li><strong>User.ReadBasic.All</strong> &mdash; so admins can see display names for seat management.</li>
+                    <li><strong>Mail.Read</strong>, <strong>Mail.ReadWrite</strong>, <strong>Sites.Read.All</strong>, <strong>Files.ReadWrite.All</strong>, <strong>User.Read</strong> &mdash; so the add-in can read email and save to SharePoint on the user's behalf.</li>
+                    <li><strong>offline_access</strong> &mdash; required for Auto-Archive. Lets the service keep filing matching mail while a user is out of office.</li>
+                    <li><strong>MailboxSettings.Read</strong> &mdash; required for Auto-Archive. Lets the service check the user's Out-of-Office state.</li>
+                </ul>
+                <p class="step-detail">If any are missing, click "Add a permission" &rarr; Microsoft Graph &rarr; Delegated permissions &rarr; search for the name &rarr; Add. All are delegated (per-user), not application-level &mdash; the service always acts as the signed-in user, not tenant-wide.</p>
             </li>
             <li>
                 Click <strong>Grant admin consent for [your organization]</strong>.
-                <p class="step-detail">This button appears at the top of the permissions list. You need Global Administrator privileges for this step.</p>
+                <p class="step-detail">This button appears at the top of the permissions list. You need Global Administrator privileges for this step. Skipping it is fine &mdash; individual users will be prompted to consent the first time they enable Auto-Archive.</p>
             </li>
         </ol>
 

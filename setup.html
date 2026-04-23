@@ -189,6 +189,21 @@
             <p><a href="/entra-setup">Continue to Entra ID Setup &rarr;</a></p>
         </div>
 
+        <h2>Optional: Enable Auto-Archive</h2>
+        <p>Once the add-in is installed and a user has set up at least one mapping rule (sender &rarr; SharePoint folder), they can enable hands-off filing from the add-in's <strong>Settings</strong> tab.</p>
+        <ol>
+            <li>Open the add-in inside Outlook and click <strong>Settings</strong>.</li>
+            <li>Scroll to the <strong>Auto-Archive</strong> section.</li>
+            <li>Pick one or both:
+                <ul>
+                    <li><strong>Run automatically while I'm Out of Office</strong> &mdash; uses your Outlook Automatic Replies setting as the trigger. Best for vacation/PTO.</li>
+                    <li><strong>Always run automatically</strong> &mdash; files matching mail as soon as it arrives, regardless of OOF.</li>
+                </ul>
+            </li>
+            <li>Click <strong>Apply Auto-Archive</strong>. The first time, Microsoft 365 will prompt for two additional permissions (<code>offline_access</code> and <code>MailboxSettings.Read</code>) so the service can keep filing while the user is offline and check their OOF state.</li>
+        </ol>
+        <p class="step-detail">Only emails matching an existing mapping rule are auto-archived &mdash; nothing is filed by surprise. Either toggle can be turned off at any time; doing so tears down the background subscription immediately.</p>
+
         <h2>Need help?</h2>
         <p>Visit <a href="https://filemy.email">filemy.email</a>, <a href="#" onclick="revealEmail(event, this)">contact support</a>, or <a href="https://billing.stripe.com/p/login/28E6oJ78vcW0bY29dQak000">manage your subscription</a>.</p>
 
