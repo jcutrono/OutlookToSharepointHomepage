@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OfficeApp
+    xmlns="http://schemas.microsoft.com/office/appforoffice/1.1"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0"
+    xmlns:mailappor="http://schemas.microsoft.com/office/mailappversionoverrides/1.0"
+    xsi:type="MailApp">
+
+  <Id>a1b2c3d4-e5f6-7890-abcd-ef1234567890</Id>
+  <Version>1.1.0.0</Version>
+  <ProviderName>OutlookToSharePoint</ProviderName>
+  <DefaultLocale>en-US</DefaultLocale>
+  <DisplayName DefaultValue="Save to SharePoint" />
+  <Description DefaultValue="Save emails and attachments to SharePoint folders with auto-mapping and optional auto-archive while Out of Office." />
+
+  <IconUrl DefaultValue="https://app.filemy.email/images/icon-32.png" />
+  <HighResolutionIconUrl DefaultValue="https://app.filemy.email/images/icon-64.png" />
+  <SupportUrl DefaultValue="https://filemy.email" />
+
+  <AppDomains>
+    <AppDomain>https://app.filemy.email</AppDomain>
+  </AppDomains>
+
+  <Hosts>
+    <Host Name="Mailbox" />
+  </Hosts>
+
+  <Requirements>
+    <Sets>
+      <Set Name="Mailbox" MinVersion="1.5" />
+    </Sets>
+  </Requirements>
+
+  <FormSettings>
+    <Form xsi:type="ItemRead">
+      <DesktopSettings>
+        <SourceLocation DefaultValue="https://app.filemy.email/" />
+        <RequestedHeight>450</RequestedHeight>
+      </DesktopSettings>
+    </Form>
+  </FormSettings>
+
+  <Permissions>ReadItem</Permissions>
+  <Rule xsi:type="RuleCollection" Mode="Or">
+    <Rule xsi:type="ItemIs" ItemType="Message" FormType="Read" />
+  </Rule>
+
+  <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides" xsi:type="VersionOverridesV1_0">
+
+    <Requirements>
+      <bt:Sets DefaultMinVersion="1.5">
+        <bt:Set Name="Mailbox" />
+      </bt:Sets>
+    </Requirements>
+
+    <Hosts>
+      <Host xsi:type="MailHost">
+        <DesktopFormFactor>
+          <FunctionFile resid="residFunctionUrl" />
+
+          <!-- Message Read surface -->
+          <ExtensionPoint xsi:type="MessageReadCommandSurface">
+            <OfficeTab id="TabDefault">
+              <Group id="msgReadGroup">
+                <Label resid="residGroupLabel" />
+
+                <!-- Task Pane Button -->
+                <Control xsi:type="Button" id="showTaskpaneBtn">
+                  <Label resid="residTaskpaneButtonLabel" />
+                  <Supertip>
+                    <Title resid="residTaskpaneButtonLabel" />
+                    <Description resid="residTaskpaneButtonDesc" />
+                  </Supertip>
+                  <Icon>
+                    <bt:Image size="16" resid="residIcon16" />
+                    <bt:Image size="32" resid="residIcon32" />
+                    <bt:Image size="80" resid="residIcon80" />
+                  </Icon>
+                  <Action xsi:type="ShowTaskpane">
+                    <SourceLocation resid="residTaskpaneUrl" />
+                  </Action>
+                </Control>
+              </Group>
+            </OfficeTab>
+          </ExtensionPoint>
+        </DesktopFormFactor>
+      </Host>
+    </Hosts>
+
+    <Resources>
+      <bt:Images>
+        <bt:Image id="residIcon16" DefaultValue="https://app.filemy.email/images/icon-16.png" />
+        <bt:Image id="residIcon32" DefaultValue="https://app.filemy.email/images/icon-32.png" />
+        <bt:Image id="residIcon80" DefaultValue="https://app.filemy.email/images/icon-80.png" />
+      </bt:Images>
+      <bt:Urls>
+        <bt:Url id="residFunctionUrl" DefaultValue="https://app.filemy.email/" />
+        <bt:Url id="residTaskpaneUrl" DefaultValue="https://app.filemy.email/" />
+      </bt:Urls>
+      <bt:ShortStrings>
+        <bt:String id="residGroupLabel" DefaultValue="SharePoint" />
+        <bt:String id="residTaskpaneButtonLabel" DefaultValue="Save to SharePoint" />
+      </bt:ShortStrings>
+      <bt:LongStrings>
+        <bt:String id="residTaskpaneButtonDesc" DefaultValue="Save this email and its attachments to a SharePoint folder." />
+      </bt:LongStrings>
+    </Resources>
+
+    <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides/1.1" xsi:type="VersionOverridesV1_1">
+
+      <Requirements>
+        <bt:Sets DefaultMinVersion="1.5">
+          <bt:Set Name="Mailbox" />
+        </bt:Sets>
+      </Requirements>
+
+      <Hosts>
+        <Host xsi:type="MailHost">
+          <DesktopFormFactor>
+            <FunctionFile resid="residFunctionUrl" />
+            <ExtensionPoint xsi:type="MessageReadCommandSurface">
+              <OfficeTab id="TabDefault">
+                <Group id="msgReadGroup">
+                  <Label resid="residGroupLabel" />
+                  <Control xsi:type="Button" id="showTaskpaneBtn">
+                    <Label resid="residTaskpaneButtonLabel" />
+                    <Supertip>
+                      <Title resid="residTaskpaneButtonLabel" />
+                      <Description resid="residTaskpaneButtonDesc" />
+                    </Supertip>
+                    <Icon>
+                      <bt:Image size="16" resid="residIcon16" />
+                      <bt:Image size="32" resid="residIcon32" />
+                      <bt:Image size="80" resid="residIcon80" />
+                    </Icon>
+                    <Action xsi:type="ShowTaskpane">
+                      <SourceLocation resid="residTaskpaneUrl" />
+                    </Action>
+                  </Control>
+                </Group>
+              </OfficeTab>
+            </ExtensionPoint>
+          </DesktopFormFactor>
+        </Host>
+      </Hosts>
+
+      <Resources>
+        <bt:Images>
+          <bt:Image id="residIcon16" DefaultValue="https://app.filemy.email/images/icon-16.png" />
+          <bt:Image id="residIcon32" DefaultValue="https://app.filemy.email/images/icon-32.png" />
+          <bt:Image id="residIcon80" DefaultValue="https://app.filemy.email/images/icon-80.png" />
+        </bt:Images>
+        <bt:Urls>
+          <bt:Url id="residFunctionUrl" DefaultValue="https://app.filemy.email/" />
+          <bt:Url id="residTaskpaneUrl" DefaultValue="https://app.filemy.email/" />
+        </bt:Urls>
+        <bt:ShortStrings>
+          <bt:String id="residGroupLabel" DefaultValue="SharePoint" />
+          <bt:String id="residTaskpaneButtonLabel" DefaultValue="Save to SharePoint" />
+        </bt:ShortStrings>
+        <bt:LongStrings>
+          <bt:String id="residTaskpaneButtonDesc" DefaultValue="Save this email and its attachments to a SharePoint folder." />
+        </bt:LongStrings>
+      </Resources>
+
+      <WebApplicationInfo>
+        <Id>5fd42821-f8c8-47db-90c9-fea300290255</Id>
+        <Resource>api://app.filemy.email/5fd42821-f8c8-47db-90c9-fea300290255</Resource>
+        <Scopes>
+          <Scope>openid</Scope>
+          <Scope>profile</Scope>
+          <Scope>offline_access</Scope>
+          <Scope>Mail.Read</Scope>
+          <Scope>Mail.ReadWrite</Scope>
+          <Scope>MailboxSettings.Read</Scope>
+          <Scope>Sites.Read.All</Scope>
+          <Scope>Files.ReadWrite.All</Scope>
+          <Scope>User.Read</Scope>
+        </Scopes>
+      </WebApplicationInfo>
+
+    </VersionOverrides>
+
+  </VersionOverrides>
+</OfficeApp>
