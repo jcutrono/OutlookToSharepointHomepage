@@ -7,10 +7,10 @@
     xsi:type="MailApp">
 
   <Id>a1b2c3d4-e5f6-7890-abcd-ef1234567890</Id>
-  <Version>1.1.0.0</Version>
+  <Version>1.1.1.0</Version>
   <ProviderName>OutlookToSharePoint</ProviderName>
   <DefaultLocale>en-US</DefaultLocale>
-  <DisplayName DefaultValue="Save to SharePoint" />
+  <DisplayName DefaultValue="FileMy.Email" />
   <Description DefaultValue="Save emails and attachments to SharePoint folders with auto-mapping and optional auto-archive while Out of Office." />
 
   <IconUrl DefaultValue="https://app.filemy.email/images/icon-32.png" />
@@ -98,8 +98,8 @@
         <bt:Url id="residTaskpaneUrl" DefaultValue="https://app.filemy.email/" />
       </bt:Urls>
       <bt:ShortStrings>
-        <bt:String id="residGroupLabel" DefaultValue="SharePoint" />
-        <bt:String id="residTaskpaneButtonLabel" DefaultValue="Save to SharePoint" />
+        <bt:String id="residGroupLabel" DefaultValue="FileMy.Email" />
+        <bt:String id="residTaskpaneButtonLabel" DefaultValue="FileMy.Email" />
       </bt:ShortStrings>
       <bt:LongStrings>
         <bt:String id="residTaskpaneButtonDesc" DefaultValue="Save this email and its attachments to a SharePoint folder." />
