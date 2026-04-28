@@ -135,6 +135,7 @@
                     </Icon>
                     <Action xsi:type="ShowTaskpane">
                       <SourceLocation resid="residTaskpaneUrl" />
+                      <SupportsPinning>true</SupportsPinning>
                     </Action>
                   </Control>
                 </Group>
@@ -176,6 +177,7 @@
           <Scope>Sites.Read.All</Scope>
           <Scope>Files.ReadWrite.All</Scope>
           <Scope>User.Read</Scope>
+          <Scope>User.ReadBasic.All</Scope>
         </Scopes>
       </WebApplicationInfo>
 
