@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-WMH8P2QB');</script>
+    <!-- End Google Tag Manager -->
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8QC98XTWTR"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-8QC98XTWTR');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Save Outlook Attachments to SharePoint Automatically</title>
+    <meta name="description" content="Save Outlook email attachments to SharePoint without leaving your inbox. Smart folder routing, custom file naming, attachment-only or with-email modes, and Save on Send for outgoing files.">
+    <link rel="canonical" href="https://filemy.email/use-cases/outlook-attachments-to-sharepoint">
+    <link rel="icon" type="image/png" href="/assets/favicon.png">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://filemy.email/use-cases/outlook-attachments-to-sharepoint">
+    <meta property="og:title" content="Save Outlook Attachments to SharePoint Automatically">
+    <meta property="og:description" content="Save Outlook email attachments to SharePoint without leaving your inbox. Smart folder routing, custom file naming, and Save on Send.">
+    <meta property="og:image" content="https://filemy.email/assets/logo.svg">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Save Outlook Attachments to SharePoint Automatically">
+    <meta name="twitter:description" content="Save Outlook email attachments to SharePoint without leaving your inbox.">
+    <link rel="stylesheet" href="/assets/styles.css">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Save to SharePoint",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Windows, Web",
+        "url": "https://filemy.email/use-cases/outlook-attachments-to-sharepoint",
+        "description": "Outlook add-in that saves email attachments directly to SharePoint with custom file naming, folder routing, and Save on Send for outgoing attachments.",
+        "offers": {
+            "@type": "Offer",
+            "price": "10.00",
+            "priceCurrency": "USD",
+            "priceValidUntil": "2027-12-31",
+            "availability": "https://schema.org/InStock"
+        }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "How do I save Outlook attachments to SharePoint?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Open the email in Outlook, open the Save to SharePoint add-in panel, choose a SharePoint library and folder, and click Save. Attachments upload directly to SharePoint with the file names you've configured. You can save attachments alongside the email or in a dedicated subfolder."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Can attachments be renamed automatically when saved?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. The add-in uses a file-naming template you control. Available tokens include sender name, subject, date, attachment name, and any SharePoint column you've mapped. For example, '{MM-DD-YYYY} - {Subject} - {AttachmentName}' produces names like '05-02-2026 - Invoice Q1 2026 - report.pdf'."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Will it save attachments from sent mail too?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. Turn on Save on Send while composing. The attachments and email file themselves to your chosen SharePoint folder the moment you hit Send."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Can I save attachments without saving the email?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. In Save Format settings choose to save attachments only, save the email only, or save both. The setting is configurable per save and as a default."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Are duplicate attachments detected?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. The add-in detects duplicate uploads by file name and content and skips them, so you never accidentally save the same attachment twice."
+                }
+            }
+        ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://filemy.email/"},
+            {"@type": "ListItem", "position": 2, "name": "Save Outlook Attachments to SharePoint", "item": "https://filemy.email/use-cases/outlook-attachments-to-sharepoint"}
+        ]
+    }
+    </script>
+    <style>
+        body { line-height: 1.6; }
+        .container { padding: 0 24px; }
+        header { padding: 48px 0 0; text-align: center; }
+        h1 { font-size: 2rem; font-weight: 700; color: #1a1a1a; margin-bottom: 12px; }
+        .tagline { font-size: 1.15rem; color: #555; max-width: 620px; margin: 0 auto; }
+        .cta { text-align: center; padding: 32px 0; }
+        .cta-subtext { font-size: 0.85rem; color: #777; margin-top: 12px; }
+
+        .screenshot-slot { max-width: 720px; margin: 24px auto; text-align: center; }
+        .screenshot-slot img { max-width: 100%; height: auto; border: 1px solid #e6e6e6; border-radius: 8px; box-shadow: 0 4px 24px rgba(0,0,0,0.08); }
+
+        .lede { padding: 32px 0; border-top: 1px solid #eee; }
+        .lede h2 { font-size: 1.4rem; color: #1a1a1a; margin-bottom: 12px; border: 0; }
+        .lede p { font-size: 1rem; color: #444; margin-bottom: 12px; }
+
+        .naming-box { background: #f8fafb; border: 1px solid #e6e6e6; border-radius: 8px; padding: 20px 24px; margin: 24px 0; }
+        .naming-box h3 { font-size: 1rem; font-weight: 600; color: #1b6ec2; margin-bottom: 10px; }
+        .naming-box code { display: block; background: #fff; border: 1px solid #e0e0e0; border-radius: 4px; padding: 10px 14px; font-family: 'Consolas', 'Monaco', monospace; font-size: 0.92rem; color: #1a1a1a; margin: 8px 0; }
+        .naming-box .preview { font-size: 0.88rem; color: #666; margin-left: 4px; }
+
+        .why-section { padding: 40px 0; border-top: 1px solid #eee; }
+        .why-section h2 { font-size: 1.4rem; color: #1a1a1a; margin-bottom: 16px; border: 0; }
+        .why-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 16px; }
+        .why-item { background: #f8fafb; border-left: 4px solid #1b6ec2; padding: 16px 20px; border-radius: 0 8px 8px 0; }
+        .why-item h3 { font-size: 0.95rem; font-weight: 600; color: #1a1a1a; margin-bottom: 6px; }
+        .why-item p { font-size: 0.88rem; color: #555; }
+
+        .use-cases { padding: 40px 0; border-top: 1px solid #eee; }
+        .use-cases h2 { font-size: 1.4rem; color: #1a1a1a; margin-bottom: 16px; border: 0; }
+        .use-case { padding: 14px 0; border-bottom: 1px solid #eee; }
+        .use-case:last-child { border-bottom: 0; }
+        .use-case h3 { font-size: 1rem; font-weight: 600; color: #1a1a1a; margin-bottom: 4px; }
+        .use-case p { font-size: 0.92rem; color: #555; }
+
+        .faq-section { padding: 40px 0; border-top: 1px solid #eee; }
+        .faq-section h2 { font-size: 1.4rem; color: #1a1a1a; margin-bottom: 16px; border: 0; }
+        .faq-item { margin-bottom: 20px; }
+        .faq-item h3 { font-size: 0.98rem; font-weight: 600; color: #1a1a1a; margin-bottom: 6px; }
+        .faq-item p { font-size: 0.92rem; color: #555; }
+
+        @media (max-width: 600px) {
+            .why-grid { grid-template-columns: 1fr; }
+            h1 { font-size: 1.6rem; }
+            .tagline { font-size: 1rem; }
+        }
+    </style>
+</head>
+<body>
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WMH8P2QB" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <div class="top-nav">
+        <a href="/" class="brand"><img src="/assets/favicon.png" alt="Logo"> File My Email</a>
+        <nav>
+            <a href="/pricing">Pricing</a>
+            <a href="/setup">Setup</a>
+        </nav>
+    </div>
+
+    <div class="container">
+        <header>
+            <h1>Save Outlook Attachments to SharePoint</h1>
+            <p class="tagline">Get every PDF, invoice, contract, and spreadsheet out of your inbox and into the right SharePoint library — with consistent file names, automatic metadata, and zero drag-and-drop.</p>
+        </header>
+
+        <div class="cta">
+            <script async src="https://js.stripe.com/v3/buy-button.js"></script>
+            <stripe-buy-button
+                buy-button-id="buy_btn_1TJgSVRuSKZAORtNCc5XjvFF"
+                publishable-key="pk_live_51TJeBURuSKZAORtNDq1LHzVpoXTW8vintdAn0pGvA5uo488Pqo7yJBjYeLDwfUP9SOKTmkicPPeudSqEQhWIHvnu00nvsv8X0u"
+            ></stripe-buy-button>
+            <p class="cta-subtext">Starting at $10/mo for 3 users. <a href="/pricing">See pricing</a></p>
+        </div>
+
+        <div class="screenshot-slot">
+            <img src="/assets/screenshots/screenshot-attachments.png" alt="Save to SharePoint add-in showing attachment save options" onerror="this.style.display='none'">
+        </div>
+
+        <section class="lede">
+            <h2>Attachments are where filing falls apart</h2>
+            <p>It's not the email body that anyone needs three months later — it's the signed contract, the W-9, the invoice PDF, the floor plan attached to the email. And those are exactly the files that get lost. They live inside someone's Outlook, the file name is "scan_001.pdf," and nobody knows it exists until a deadline forces a search.</p>
+            <p>This add-in extracts attachments at the moment the email arrives or sends, names them according to a template you control, and uploads them straight to the SharePoint library where they actually belong. No browser uploads, no manual renaming, no "Final_v3_REAL.pdf" sitting on a desktop.</p>
+        </section>
+
+        <section>
+            <div class="naming-box">
+                <h3>File-naming templates you control</h3>
+                <p style="font-size: 0.92rem; color: #555; margin-bottom: 8px;">Use tokens for sender, subject, date, attachment name, and mapped SharePoint columns:</p>
+                <code>{MM-DD-YYYY} - {Subject} - {AttachmentName}</code>
+                <span class="preview">&rarr; <strong>05-02-2026 - Invoice Q1 2026 - report.pdf</strong></span>
+                <code style="margin-top: 14px;">{SenderName} - {YYYY}-{MM}-{DD} - {AttachmentName}</code>
+                <span class="preview">&rarr; <strong>Acme Corp - 2026-05-02 - statement.pdf</strong></span>
+            </div>
+        </section>
+
+        <section class="why-section">
+            <h2>Built for how attachments actually flow</h2>
+            <div class="why-grid">
+                <div class="why-item">
+                    <h3>Save attachments only, or with the email</h3>
+                    <p>Some teams want only the PDF. Some want the email thread for context. Toggle per save, or set a default in settings.</p>
+                </div>
+                <div class="why-item">
+                    <h3>Dedicated attachment subfolder</h3>
+                    <p>Optionally put attachments in a subfolder next to the email, so the document library stays clean and the message file doesn't crowd the view.</p>
+                </div>
+                <div class="why-item">
+                    <h3>Save on Send for outgoing</h3>
+                    <p>Sending a contract to a client? Pick the matter folder while composing. The attachment lands there the second you hit Send.</p>
+                </div>
+                <div class="why-item">
+                    <h3>Smart folder suggestions</h3>
+                    <p>The add-in learns which SharePoint folder you use for each contact. After a few saves it suggests the right destination automatically.</p>
+                </div>
+                <div class="why-item">
+                    <h3>SharePoint metadata filled in</h3>
+                    <p>Map attachment metadata to library columns once. From then on, every saved file has its sender, date, and subject populated.</p>
+                </div>
+                <div class="why-item">
+                    <h3>Duplicate detection</h3>
+                    <p>The same invoice forwarded twice won't end up in SharePoint twice. Duplicates are flagged and skipped on save.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="use-cases">
+            <h2>Common scenarios this solves</h2>
+            <div class="use-case">
+                <h3>Vendor invoices into an accounting library</h3>
+                <p>Every vendor email lands in a "{Year}/{Vendor}" folder, with the PDF renamed to include the invoice date. Bookkeeper opens SharePoint and sees the month's invoices already organized.</p>
+            </div>
+            <div class="use-case">
+                <h3>Signed contracts from clients</h3>
+                <p>Save on Send sends a copy to the client and the signed PDF to the matter folder simultaneously. No "did we file that?" two weeks later.</p>
+            </div>
+            <div class="use-case">
+                <h3>Inspection reports and photos</h3>
+                <p>Field staff email reports back to the office. The add-in routes attachments to the property folder automatically based on the sender.</p>
+            </div>
+            <div class="use-case">
+                <h3>Onboarding documents</h3>
+                <p>I-9s, W-4s, signed offer letters arrive by email. They land directly in the new hire's folder with metadata columns set, ready for HR review.</p>
+            </div>
+        </section>
+
+        <section class="faq-section">
+            <h2>Frequently asked questions</h2>
+            <div class="faq-item">
+                <h3>How do I save Outlook attachments to SharePoint?</h3>
+                <p>Open the email, open the add-in panel, pick a SharePoint folder, and click Save. Attachments upload directly with the file names from your template.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Can attachments be renamed automatically?</h3>
+                <p>Yes. Configure a naming template once with tokens like <code>{MM-DD-YYYY}</code>, <code>{Subject}</code>, <code>{SenderName}</code>, and <code>{AttachmentName}</code>. Every saved attachment uses it.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Does it work for sent mail?</h3>
+                <p>Yes. Turn on Save on Send and your outgoing attachments file themselves the moment you hit Send.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Can I save attachments without saving the email body?</h3>
+                <p>Yes. Save Format settings let you choose attachments only, email only, or both.</p>
+            </div>
+            <div class="faq-item">
+                <h3>What about duplicate attachments?</h3>
+                <p>The add-in detects duplicates by name and content and skips them on save.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Is there a size limit on attachments?</h3>
+                <p>Limits match SharePoint's own — the add-in passes files straight through, so anything SharePoint accepts uploads cleanly.</p>
+            </div>
+        </section>
+
+        <div class="cta">
+            <stripe-buy-button
+                buy-button-id="buy_btn_1TJgSVRuSKZAORtNCc5XjvFF"
+                publishable-key="pk_live_51TJeBURuSKZAORtNDq1LHzVpoXTW8vintdAn0pGvA5uo488Pqo7yJBjYeLDwfUP9SOKTmkicPPeudSqEQhWIHvnu00nvsv8X0u"
+            ></stripe-buy-button>
+            <p class="cta-subtext">Starting at $10/mo for 3 users. <a href="/pricing">See pricing</a> &middot; <a href="/setup">Setup guide</a></p>
+        </div>
+
+        <footer>
+            <a href="/pricing">Pricing</a> &middot; <a href="/setup">Setup Guide</a> &middot; <a href="/privacy">Privacy Policy</a> &middot; <a href="/terms">Terms of Service</a> &middot; <a href="#" onclick="revealEmail(event, this)">Contact Support</a><br><br>
+            &copy; 2026 Save to SharePoint
+        </footer>
+    </div>
+
+    <script>
+        function revealEmail(e, el) {
+            e.preventDefault();
+            var u = 'support', d = 'filemy.email';
+            var addr = u + '@' + d;
+            el.href = 'mail' + 'to:' + addr;
+            el.textContent = addr;
+            el.onclick = null;
+            window.location.href = el.href;
+        }
+    </script>
+</body>
+</html>

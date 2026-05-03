@@ -22,18 +22,18 @@
     <title>Save to SharePoint — Email Filing Made Simple</title>
     <meta name="description" content="An Outlook add-in that learns where your emails belong. Save on Send, smart folder suggestions, batch inbox cleanup, automatic metadata, and auto-archive while you're away. One-click filing to SharePoint or OneDrive for busy teams.">
     <link rel="canonical" href="https://filemy.email/">
-    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="icon" type="image/png" href="/assets/favicon.png">
     <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://filemy.email/">
     <meta property="og:title" content="Save to SharePoint — Email Filing Made Simple">
     <meta property="og:description" content="An Outlook add-in that learns where your emails belong. Save on Send, smart folder suggestions, batch inbox cleanup, automatic metadata, and auto-archive while you're away. One-click filing to SharePoint or OneDrive for busy teams.">
-    <meta property="og:image" content="https://filemy.email/logo.svg">
+    <meta property="og:image" content="https://filemy.email/assets/logo.svg">
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="Save to SharePoint — Email Filing Made Simple">
     <meta name="twitter:description" content="An Outlook add-in that learns where your emails belong. Save on Send, smart folder suggestions, batch inbox cleanup, automatic metadata, and auto-archive while you're away. One-click filing to SharePoint or OneDrive for busy teams.">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="/assets/styles.css">
     <!-- Structured Data -->
     <script type="application/ld+json">
     {
@@ -41,7 +41,7 @@
         "@type": "Organization",
         "name": "Save to SharePoint",
         "url": "https://filemy.email",
-        "logo": "https://filemy.email/logo.svg",
+        "logo": "https://filemy.email/assets/logo.svg",
         "description": "Save emails and attachments from Outlook to SharePoint or OneDrive with Save on Send, smart folder suggestions, batch inbox cleanup, and automatic metadata.",
         "contactPoint": {
             "@type": "ContactPoint",
@@ -158,11 +158,21 @@
         /* Footer override */
         footer { padding: 24px 0; margin-top: 0; }
 
+        /* Learn More */
+        .learn-more { padding: 48px 0; border-top: 1px solid #eee; }
+        .learn-more-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 16px; }
+        .learn-more-card { display: block; padding: 18px 20px; background: #f8fafb; border-radius: 8px; border: 1px solid #eee; text-decoration: none; transition: border-color 0.15s, transform 0.15s; }
+        .learn-more-card:hover { border-color: #1b6ec2; text-decoration: none; transform: translateY(-1px); }
+        .learn-more-card .lm-label { font-size: 0.75rem; font-weight: 600; color: #1b6ec2; letter-spacing: 0.04em; text-transform: uppercase; }
+        .learn-more-card .lm-title { font-size: 0.98rem; font-weight: 600; color: #1a1a1a; margin: 4px 0 6px; }
+        .learn-more-card .lm-desc { font-size: 0.86rem; color: #666; }
+
         /* Responsive */
         @media (max-width: 600px) {
             .features { grid-template-columns: 1fr; gap: 24px; }
             .steps { grid-template-columns: 1fr; gap: 24px; }
             .private-grid { grid-template-columns: 1fr; }
+            .learn-more-grid { grid-template-columns: 1fr; }
             h1 { font-size: 1.6rem; }
             .tagline { font-size: 1rem; }
             .section-heading { font-size: 1.3rem; }
@@ -176,7 +186,7 @@
     <!-- End Google Tag Manager (noscript) -->
     <div class="top-nav">
         <a href="/" class="brand">
-            <img src="favicon.png" alt="Logo">
+            <img src="/assets/favicon.png" alt="Logo">
             File My Email
         </a>
         <nav>
@@ -370,6 +380,60 @@
                     <div class="private-icon">&#128272;</div>
                     <p><strong>Encrypted in transit.</strong> All data travels over secure, encrypted connections.</p>
                 </div>
+            </div>
+        </section>
+
+        <section class="learn-more">
+            <h2 class="section-heading">Built for the way your team works</h2>
+            <p class="section-subheading">Common use cases and industry-specific workflows.</p>
+            <div class="learn-more-grid">
+                <a href="/use-cases/save-outlook-email-to-sharepoint" class="learn-more-card">
+                    <div class="lm-label">Use case</div>
+                    <div class="lm-title">Save Outlook email to SharePoint</div>
+                    <div class="lm-desc">One-click filing, smart folder suggestions, and Save on Send for outgoing mail.</div>
+                </a>
+                <a href="/use-cases/outlook-attachments-to-sharepoint" class="learn-more-card">
+                    <div class="lm-label">Use case</div>
+                    <div class="lm-title">Save Outlook attachments to SharePoint</div>
+                    <div class="lm-desc">Custom file naming, attachment-only mode, and duplicate detection.</div>
+                </a>
+                <a href="/industries/legal" class="learn-more-card">
+                    <div class="lm-label">For law firms</div>
+                    <div class="lm-title">Email filing for legal</div>
+                    <div class="lm-desc">File client mail to matter folders. EML preserves the record for litigation and audits.</div>
+                </a>
+                <a href="/industries/accounting" class="learn-more-card">
+                    <div class="lm-label">For accounting firms</div>
+                    <div class="lm-title">Email filing for accounting</div>
+                    <div class="lm-desc">Save client correspondence, W-9s, and tax documents to SharePoint client folders.</div>
+                </a>
+                <a href="/industries/property-management" class="learn-more-card">
+                    <div class="lm-label">For property management</div>
+                    <div class="lm-title">Email filing for property management</div>
+                    <div class="lm-desc">Tenant, vendor, and inspection email filed to the right property folder — including from mobile.</div>
+                </a>
+            </div>
+        </section>
+
+        <section class="learn-more">
+            <h2 class="section-heading">Evaluating other tools?</h2>
+            <p class="section-subheading">Honest, sourced comparisons against established players. Every claim cited to vendor docs.</p>
+            <div class="learn-more-grid">
+                <a href="/compare/harmonie" class="learn-more-card">
+                    <div class="lm-label">Comparison</div>
+                    <div class="lm-title">vs Harmon.ie</div>
+                    <div class="lm-desc">Pricing, 15-seat minimum, drag-and-drop sidebar, and which team size each fits.</div>
+                </a>
+                <a href="/compare/colligo" class="learn-more-card">
+                    <div class="lm-label">Comparison</div>
+                    <div class="lm-title">vs Colligo Email Manager</div>
+                    <div class="lm-desc">Closest feature overlap. Where retention labels and AI Summary justify Colligo's pricing — and where they don't.</div>
+                </a>
+                <a href="/compare/macroview" class="learn-more-card">
+                    <div class="lm-label">Comparison</div>
+                    <div class="lm-title">vs MacroView Mail</div>
+                    <div class="lm-desc">Lowest enterprise per-user price, native mobile, broader DMS suite. 10-seat minimum.</div>
+                </a>
             </div>
         </section>
 

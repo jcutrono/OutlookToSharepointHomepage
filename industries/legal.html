@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-WMH8P2QB');</script>
+    <!-- End Google Tag Manager -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8QC98XTWTR"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-8QC98XTWTR');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Filing for Law Firms — Save Outlook Email to Matter Folders</title>
+    <meta name="description" content="An Outlook add-in built for the way law firms file email. Save messages and attachments straight to matter folders in SharePoint, automate it on send, and stop losing client correspondence in the inbox.">
+    <link rel="canonical" href="https://filemy.email/industries/legal">
+    <link rel="icon" type="image/png" href="/assets/favicon.png">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://filemy.email/industries/legal">
+    <meta property="og:title" content="Email Filing for Law Firms — Save Outlook Email to Matter Folders">
+    <meta property="og:description" content="An Outlook add-in built for the way law firms file email. Save to SharePoint matter folders in one click.">
+    <meta property="og:image" content="https://filemy.email/assets/logo.svg">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Email Filing for Law Firms">
+    <meta name="twitter:description" content="An Outlook add-in built for the way law firms file email.">
+    <link rel="stylesheet" href="/assets/styles.css">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Save to SharePoint",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Windows, Web",
+        "url": "https://filemy.email/industries/legal",
+        "description": "Email filing add-in for law firms — save Outlook email and attachments to SharePoint matter folders with smart suggestions, Save on Send, and metadata mapping.",
+        "offers": {
+            "@type": "Offer",
+            "price": "10.00",
+            "priceCurrency": "USD",
+            "priceValidUntil": "2027-12-31",
+            "availability": "https://schema.org/InStock"
+        }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "How does this compare to iManage or NetDocuments?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "iManage and NetDocuments are full document management systems with their own storage, security model, and pricing — typically $40–80/user/month with implementation costs. This add-in keeps your existing SharePoint and Microsoft 365 setup, costs $10/month for 3 users, and focuses on one job: getting email and attachments into the right matter folder. For firms that already standardized on SharePoint or are not ready for a full DMS, it fills the email-filing gap without a migration."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Can I file to a matter folder structure?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. The add-in browses any SharePoint site and folder hierarchy you have access to, including nested matter folders organized by client, year, or practice area. Once you save an email to a matter folder once, the add-in suggests it the next time you receive or send mail involving the same contact."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Does it preserve the original email for the record?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. Save as EML preserves the full email including all headers, the Outlook standard for evidentiary record. PDF is also available for litigation holds, document productions, and easier review. You can save in either format per email or set a default."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Can paralegals file from a shared mailbox?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. The add-in works inside any mailbox the user has access to in Outlook, including shared and delegate mailboxes. Each user occupies one seat regardless of how many mailboxes they file from."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Are emails or attachments stored on your servers?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "No. Files transfer directly from Outlook to your SharePoint using your firm's Microsoft 365 credentials. We never read, store, or proxy email content — relevant for client confidentiality and data residency requirements."
+                }
+            }
+        ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://filemy.email/"},
+            {"@type": "ListItem", "position": 2, "name": "For Law Firms", "item": "https://filemy.email/industries/legal"}
+        ]
+    }
+    </script>
+    <style>
+        body { line-height: 1.6; }
+        .container { padding: 0 24px; }
+        header { padding: 48px 0 0; text-align: center; }
+        .vertical-tag { display: inline-block; background: #f0f6ff; color: #1b6ec2; padding: 4px 14px; border-radius: 20px; font-size: 0.78rem; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 16px; }
+        h1 { font-size: 2rem; font-weight: 700; color: #1a1a1a; margin-bottom: 12px; }
+        .tagline { font-size: 1.15rem; color: #555; max-width: 620px; margin: 0 auto; }
+        .cta { text-align: center; padding: 32px 0; }
+        .cta-subtext { font-size: 0.85rem; color: #777; margin-top: 12px; }
+
+        .screenshot-slot { max-width: 720px; margin: 24px auto; text-align: center; }
+        .screenshot-slot img { max-width: 100%; height: auto; border: 1px solid #e6e6e6; border-radius: 8px; box-shadow: 0 4px 24px rgba(0,0,0,0.08); }
+
+        .pain-section { padding: 32px 0; border-top: 1px solid #eee; }
+        .pain-section h2 { font-size: 1.4rem; color: #1a1a1a; margin-bottom: 12px; border: 0; }
+        .pain-section p { font-size: 1rem; color: #444; margin-bottom: 14px; }
+        .pain-list { background: #fff8f0; border-left: 4px solid #d97706; padding: 16px 20px; border-radius: 0 8px 8px 0; margin: 16px 0; }
+        .pain-list ul { margin: 0; padding-left: 20px; }
+        .pain-list li { font-size: 0.92rem; color: #555; margin-bottom: 6px; }
+
+        .why-section { padding: 40px 0; border-top: 1px solid #eee; }
+        .why-section h2 { font-size: 1.4rem; color: #1a1a1a; margin-bottom: 16px; border: 0; }
+        .why-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 16px; }
+        .why-item { background: #f8fafb; border-left: 4px solid #1b6ec2; padding: 16px 20px; border-radius: 0 8px 8px 0; }
+        .why-item h3 { font-size: 0.95rem; font-weight: 600; color: #1a1a1a; margin-bottom: 6px; }
+        .why-item p { font-size: 0.88rem; color: #555; }
+
+        .workflow-section { padding: 40px 0; border-top: 1px solid #eee; }
+        .workflow-section h2 { font-size: 1.4rem; color: #1a1a1a; margin-bottom: 16px; border: 0; }
+        .workflow-step { padding: 16px 0; border-bottom: 1px solid #eee; }
+        .workflow-step:last-child { border-bottom: 0; }
+        .workflow-step h3 { font-size: 1rem; font-weight: 600; color: #1a1a1a; margin-bottom: 4px; }
+        .workflow-step p { font-size: 0.92rem; color: #555; }
+
+        .faq-section { padding: 40px 0; border-top: 1px solid #eee; }
+        .faq-section h2 { font-size: 1.4rem; color: #1a1a1a; margin-bottom: 16px; border: 0; }
+        .faq-item { margin-bottom: 20px; }
+        .faq-item h3 { font-size: 0.98rem; font-weight: 600; color: #1a1a1a; margin-bottom: 6px; }
+        .faq-item p { font-size: 0.92rem; color: #555; }
+
+        @media (max-width: 600px) {
+            .why-grid { grid-template-columns: 1fr; }
+            h1 { font-size: 1.6rem; }
+            .tagline { font-size: 1rem; }
+        }
+    </style>
+</head>
+<body>
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WMH8P2QB" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <div class="top-nav">
+        <a href="/" class="brand"><img src="/assets/favicon.png" alt="Logo"> File My Email</a>
+        <nav>
+            <a href="/pricing">Pricing</a>
+            <a href="/setup">Setup</a>
+        </nav>
+    </div>
+
+    <div class="container">
+        <header>
+            <div class="vertical-tag">For Law Firms</div>
+            <h1>Email Filing That Matches Your Matter Folders</h1>
+            <p class="tagline">Every client email saved to the right matter folder in SharePoint — automatically, in EML or PDF, with the metadata columns your firm uses for retention and search. No DMS migration required.</p>
+        </header>
+
+        <div class="cta">
+            <script async src="https://js.stripe.com/v3/buy-button.js"></script>
+            <stripe-buy-button
+                buy-button-id="buy_btn_1TJgSVRuSKZAORtNCc5XjvFF"
+                publishable-key="pk_live_51TJeBURuSKZAORtNDq1LHzVpoXTW8vintdAn0pGvA5uo488Pqo7yJBjYeLDwfUP9SOKTmkicPPeudSqEQhWIHvnu00nvsv8X0u"
+            ></stripe-buy-button>
+            <p class="cta-subtext">Starting at $10/mo for 3 users. <a href="/pricing">See pricing</a></p>
+        </div>
+
+        <div class="screenshot-slot">
+            <img src="/assets/screenshots/screenshot-save-panel.png" alt="Save to SharePoint add-in showing matter folder selection inside Outlook" onerror="this.style.display='none'">
+        </div>
+
+        <section class="pain-section">
+            <h2>The email-to-matter problem every firm has</h2>
+            <p>The official rule is "every client email gets filed to the matter." The reality is messier:</p>
+            <div class="pain-list">
+                <ul>
+                    <li>Attorneys forward emails to a paralegal who manually drags them into SharePoint</li>
+                    <li>Sent mail rarely makes it into the matter folder — it stays in everyone's Sent Items</li>
+                    <li>Attachments get lost, or end up in the matter folder under names like "scan_001.pdf"</li>
+                    <li>When a matter goes to litigation or a new attorney picks it up, half the correspondence is missing</li>
+                    <li>A full DMS (iManage, NetDocuments) is overkill or out of budget for the firm size</li>
+                </ul>
+            </div>
+            <p>This add-in fixes the email half of the problem without replacing your SharePoint setup. It learns which matter folder each contact maps to, files mail in one click (or zero — see Save on Send), and preserves emails as EML or PDF so the record is intact for the file.</p>
+        </section>
+
+        <section class="why-section">
+            <h2>Why law firms use this</h2>
+            <div class="why-grid">
+                <div class="why-item">
+                    <h3>Filed by client and matter</h3>
+                    <p>Browse and search any SharePoint folder structure — typically Client &rsaquo; Matter &rsaquo; Correspondence. Star favorites for active matters.</p>
+                </div>
+                <div class="why-item">
+                    <h3>Save on Send for outgoing</h3>
+                    <p>Attorneys file replies and outgoing letters as they hit Send. No "save it later" — outgoing client mail is in the matter folder before the email leaves the building.</p>
+                </div>
+                <div class="why-item">
+                    <h3>EML preserves the record</h3>
+                    <p>EML keeps full headers, recipients, timestamps — defensible for litigation holds, document productions, and audits. PDF is one click away when you need it.</p>
+                </div>
+                <div class="why-item">
+                    <h3>Metadata for matter and client</h3>
+                    <p>Map SharePoint columns to email fields — Client, Matter ID, Attorney, Date — and they're populated on every save without hand-typing.</p>
+                </div>
+                <div class="why-item">
+                    <h3>Inbox cleanup for the backlog</h3>
+                    <p>Onboarding a new attorney's inbox or a shared mailbox? Run cleanup rules to file the backlog in one pass instead of one email at a time.</p>
+                </div>
+                <div class="why-item">
+                    <h3>Confidentiality preserved</h3>
+                    <p>Files go straight from Outlook to your SharePoint using your firm's Microsoft 365 credentials. Nothing routes through our servers — important for privilege and data-residency questions.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="workflow-section">
+            <h2>What this looks like in practice</h2>
+            <div class="workflow-step">
+                <h3>Opening client mail</h3>
+                <p>Attorney opens an email from a client. The add-in panel shows a smart suggestion: the matter folder where past mail from this client has been filed. One click to save — email and attachments go in together, with metadata columns set.</p>
+            </div>
+            <div class="workflow-step">
+                <h3>Sending an outgoing letter</h3>
+                <p>Drafting a reply or a new outgoing letter? Pick the matter folder while composing. Save on Send files the outgoing email automatically the second you hit Send. The matter file stays current in real time.</p>
+            </div>
+            <div class="workflow-step">
+                <h3>Paralegal filing the backlog</h3>
+                <p>Paralegal opens the attorney's shared mailbox or a delegate mailbox, runs Inbox Cleanup against the unfiled backlog, previews suggested destinations, and files everything in one pass.</p>
+            </div>
+            <div class="workflow-step">
+                <h3>Out-of-office attorney</h3>
+                <p>Attorney is in trial or on vacation. Auto-Archive is on for known senders. Mail from existing clients files itself to the right matter folder while they're away — only senders the attorney has previously mapped, never new ones.</p>
+            </div>
+        </section>
+
+        <section class="faq-section">
+            <h2>Frequently asked questions</h2>
+            <div class="faq-item">
+                <h3>How does this compare to iManage or NetDocuments?</h3>
+                <p>Those are full document management systems with their own storage, security model, and pricing — typically $40–80/user/month plus implementation. This add-in keeps your existing SharePoint setup, costs $10/month for 3 users, and focuses on one job: getting email into the right matter folder. For firms that already standardized on SharePoint or are not ready for a full DMS, it fills the email-filing gap without a migration.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Can I file to a deep matter folder structure?</h3>
+                <p>Yes. The add-in browses any SharePoint site and folder hierarchy you have access to, including nested folders organized by client, year, or practice area. After you save once, it suggests the same folder for future mail with that contact.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Does it preserve the email for the record?</h3>
+                <p>Yes. EML preserves all headers and is the Outlook native format — defensible for evidence. PDF is available for productions and reviews. Choose per save or set a default.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Can paralegals file from a shared or delegate mailbox?</h3>
+                <p>Yes. The add-in works in any mailbox the user has access to in Outlook. Each user occupies one seat regardless of how many mailboxes they file from.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Are emails or attachments stored on your servers?</h3>
+                <p>No. Files transfer directly from Outlook to your SharePoint using your firm's Microsoft 365 credentials. We never read, store, or proxy email content.</p>
+            </div>
+            <div class="faq-item">
+                <h3>What does pricing look like for a small firm?</h3>
+                <p>$10/month covers 3 users (e.g., one attorney, one paralegal, one assistant). Additional users are $3/month each. No annual contract, no minimum-seat commitment, monthly billing.</p>
+            </div>
+        </section>
+
+        <div class="cta">
+            <stripe-buy-button
+                buy-button-id="buy_btn_1TJgSVRuSKZAORtNCc5XjvFF"
+                publishable-key="pk_live_51TJeBURuSKZAORtNDq1LHzVpoXTW8vintdAn0pGvA5uo488Pqo7yJBjYeLDwfUP9SOKTmkicPPeudSqEQhWIHvnu00nvsv8X0u"
+            ></stripe-buy-button>
+            <p class="cta-subtext">Starting at $10/mo for 3 users. <a href="/pricing">See pricing</a> &middot; <a href="/setup">Setup guide</a></p>
+        </div>
+
+        <footer>
+            <a href="/pricing">Pricing</a> &middot; <a href="/setup">Setup Guide</a> &middot; <a href="/privacy">Privacy Policy</a> &middot; <a href="/terms">Terms of Service</a> &middot; <a href="#" onclick="revealEmail(event, this)">Contact Support</a><br><br>
+            &copy; 2026 Save to SharePoint
+        </footer>
+    </div>
+
+    <script>
+        function revealEmail(e, el) {
+            e.preventDefault();
+            var u = 'support', d = 'filemy.email';
+            var addr = u + '@' + d;
+            el.href = 'mail' + 'to:' + addr;
+            el.textContent = addr;
+            el.onclick = null;
+            window.location.href = el.href;
+        }
+    </script>
+</body>
+</html>

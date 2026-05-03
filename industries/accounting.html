@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-WMH8P2QB');</script>
+    <!-- End Google Tag Manager -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8QC98XTWTR"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-8QC98XTWTR');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Filing for Accounting Firms — Save Client Email to SharePoint</title>
+    <meta name="description" content="An Outlook add-in built for CPAs and accounting firms. Save client emails, invoices, W-9s, and tax documents directly to SharePoint client folders — automatically, with metadata and consistent file naming.">
+    <link rel="canonical" href="https://filemy.email/industries/accounting">
+    <link rel="icon" type="image/png" href="/assets/favicon.png">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://filemy.email/industries/accounting">
+    <meta property="og:title" content="Email Filing for Accounting Firms — Save Client Email to SharePoint">
+    <meta property="og:description" content="Save client emails, invoices, and tax documents directly to SharePoint client folders.">
+    <meta property="og:image" content="https://filemy.email/assets/logo.svg">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Email Filing for Accounting Firms">
+    <meta name="twitter:description" content="An Outlook add-in built for CPAs and accounting firms.">
+    <link rel="stylesheet" href="/assets/styles.css">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Save to SharePoint",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Windows, Web",
+        "url": "https://filemy.email/industries/accounting",
+        "description": "Email filing add-in for accounting firms — save client correspondence, invoices, and tax documents to SharePoint client folders with smart suggestions and metadata.",
+        "offers": {
+            "@type": "Offer",
+            "price": "10.00",
+            "priceCurrency": "USD",
+            "priceValidUntil": "2027-12-31",
+            "availability": "https://schema.org/InStock"
+        }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "Does this work alongside our document portal?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. Document portals (SmartVault, Canopy, ShareFile) handle client-facing document exchange — what they don't solve is filing the everyday email that piles up in Outlook. This add-in routes client correspondence, invoices, and one-off PDFs into SharePoint without retraining clients to use a portal for ad-hoc sends."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Can I file by client and engagement year?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. The add-in browses any SharePoint folder structure — Client / Year / Engagement is a common pattern. Save once and the add-in suggests the same folder for future mail with that client. Star active engagements for one-click filing during busy season."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How does it handle confidential client data?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Files transfer directly from Outlook to your SharePoint using your firm's Microsoft 365 credentials. Email content is never read, stored, or proxied through our servers. Important for confidentiality obligations under AICPA standards and IRS Section 7216."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Can the whole tax team use it during busy season?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. Pricing is $10/month for 3 users plus $3 per additional user, billed monthly with no annual commitment. Add seasonal staff for the four months of busy season and remove them after — you only pay for what you use."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Will it save attachments with consistent file names?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. Configure a naming template once — for example {YYYY} - {SenderName} - {AttachmentName} produces names like '2026 - Acme Corp - W-9.pdf'. Every saved attachment follows the template."
+                }
+            }
+        ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://filemy.email/"},
+            {"@type": "ListItem", "position": 2, "name": "For Accounting Firms", "item": "https://filemy.email/industries/accounting"}
+        ]
+    }
+    </script>
+    <style>
+        body { line-height: 1.6; }
+        .container { padding: 0 24px; }
+        header { padding: 48px 0 0; text-align: center; }
+        .vertical-tag { display: inline-block; background: #f0f6ff; color: #1b6ec2; padding: 4px 14px; border-radius: 20px; font-size: 0.78rem; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 16px; }
+        h1 { font-size: 2rem; font-weight: 700; color: #1a1a1a; margin-bottom: 12px; }
+        .tagline { font-size: 1.15rem; color: #555; max-width: 620px; margin: 0 auto; }
+        .cta { text-align: center; padding: 32px 0; }
+        .cta-subtext { font-size: 0.85rem; color: #777; margin-top: 12px; }
+
+        .screenshot-slot { max-width: 720px; margin: 24px auto; text-align: center; }
+        .screenshot-slot img { max-width: 100%; height: auto; border: 1px solid #e6e6e6; border-radius: 8px; box-shadow: 0 4px 24px rgba(0,0,0,0.08); }
+
+        .pain-section { padding: 32px 0; border-top: 1px solid #eee; }
+        .pain-section h2 { font-size: 1.4rem; color: #1a1a1a; margin-bottom: 12px; border: 0; }
+        .pain-section p { font-size: 1rem; color: #444; margin-bottom: 14px; }
+        .pain-list { background: #fff8f0; border-left: 4px solid #d97706; padding: 16px 20px; border-radius: 0 8px 8px 0; margin: 16px 0; }
+        .pain-list ul { margin: 0; padding-left: 20px; }
+        .pain-list li { font-size: 0.92rem; color: #555; margin-bottom: 6px; }
+
+        .why-section { padding: 40px 0; border-top: 1px solid #eee; }
+        .why-section h2 { font-size: 1.4rem; color: #1a1a1a; margin-bottom: 16px; border: 0; }
+        .why-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 16px; }
+        .why-item { background: #f8fafb; border-left: 4px solid #1b6ec2; padding: 16px 20px; border-radius: 0 8px 8px 0; }
+        .why-item h3 { font-size: 0.95rem; font-weight: 600; color: #1a1a1a; margin-bottom: 6px; }
+        .why-item p { font-size: 0.88rem; color: #555; }
+
+        .workflow-section { padding: 40px 0; border-top: 1px solid #eee; }
+        .workflow-section h2 { font-size: 1.4rem; color: #1a1a1a; margin-bottom: 16px; border: 0; }
+        .workflow-step { padding: 16px 0; border-bottom: 1px solid #eee; }
+        .workflow-step:last-child { border-bottom: 0; }
+        .workflow-step h3 { font-size: 1rem; font-weight: 600; color: #1a1a1a; margin-bottom: 4px; }
+        .workflow-step p { font-size: 0.92rem; color: #555; }
+
+        .faq-section { padding: 40px 0; border-top: 1px solid #eee; }
+        .faq-section h2 { font-size: 1.4rem; color: #1a1a1a; margin-bottom: 16px; border: 0; }
+        .faq-item { margin-bottom: 20px; }
+        .faq-item h3 { font-size: 0.98rem; font-weight: 600; color: #1a1a1a; margin-bottom: 6px; }
+        .faq-item p { font-size: 0.92rem; color: #555; }
+
+        @media (max-width: 600px) {
+            .why-grid { grid-template-columns: 1fr; }
+            h1 { font-size: 1.6rem; }
+            .tagline { font-size: 1rem; }
+        }
+    </style>
+</head>
+<body>
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WMH8P2QB" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <div class="top-nav">
+        <a href="/" class="brand"><img src="/assets/favicon.png" alt="Logo"> File My Email</a>
+        <nav>
+            <a href="/pricing">Pricing</a>
+            <a href="/setup">Setup</a>
+        </nav>
+    </div>
+
+    <div class="container">
+        <header>
+            <div class="vertical-tag">For Accounting Firms</div>
+            <h1>Get Client Email Out of Inboxes and into Client Folders</h1>
+            <p class="tagline">An Outlook add-in for CPA and accounting firms that files client correspondence, invoices, W-9s, and tax documents directly to SharePoint — automatically, with consistent naming and metadata. Built for the volume of busy season.</p>
+        </header>
+
+        <div class="cta">
+            <script async src="https://js.stripe.com/v3/buy-button.js"></script>
+            <stripe-buy-button
+                buy-button-id="buy_btn_1TJgSVRuSKZAORtNCc5XjvFF"
+                publishable-key="pk_live_51TJeBURuSKZAORtNDq1LHzVpoXTW8vintdAn0pGvA5uo488Pqo7yJBjYeLDwfUP9SOKTmkicPPeudSqEQhWIHvnu00nvsv8X0u"
+            ></stripe-buy-button>
+            <p class="cta-subtext">Starting at $10/mo for 3 users. <a href="/pricing">See pricing</a></p>
+        </div>
+
+        <div class="screenshot-slot">
+            <img src="/assets/screenshots/screenshot-accounting.png" alt="Save to SharePoint add-in showing client folder selection inside Outlook" onerror="this.style.display='none'">
+        </div>
+
+        <section class="pain-section">
+            <h2>Busy season makes the email problem worse</h2>
+            <p>Tax season alone produces a year's worth of email volume in four months. Every client sends W-2s, 1099s, K-1s, brokerage statements, "one quick question" replies, and corrections. The official process is to file all of it to the client folder. The actual process:</p>
+            <div class="pain-list">
+                <ul>
+                    <li>Staff download attachments to the desktop, rename them, then upload to SharePoint</li>
+                    <li>Sent emails — confirmations, tax return PDFs, e-file acknowledgments — never make it to the client folder</li>
+                    <li>Document portal isn't used for ad-hoc client sends, so half the docs never enter the system</li>
+                    <li>By April 16, the partner can't find the email where the client confirmed the home office deduction</li>
+                    <li>Next year's preparer starts from scratch because last year's correspondence is buried</li>
+                </ul>
+            </div>
+            <p>This add-in turns email filing into a one-click step inside Outlook. Smart suggestions learn each client's folder. Save on Send catches outgoing mail automatically. Attachment names follow your firm's convention every time.</p>
+        </section>
+
+        <section class="why-section">
+            <h2>Why accounting firms use this</h2>
+            <div class="why-grid">
+                <div class="why-item">
+                    <h3>Filed by client and year</h3>
+                    <p>Browse any SharePoint structure — Client &rsaquo; Year &rsaquo; Tax Return is the typical layout. After one save, the add-in suggests the same folder for that client's future mail.</p>
+                </div>
+                <div class="why-item">
+                    <h3>Save on Send for outgoing</h3>
+                    <p>The completed return sent to the client, the e-file confirmation, the engagement letter — all file themselves to the client folder the second you hit Send.</p>
+                </div>
+                <div class="why-item">
+                    <h3>Consistent file names</h3>
+                    <p>Naming templates produce predictable file names firm-wide. "2026 - Acme Corp - W-9.pdf" instead of "scan_001.pdf" — searchable in SharePoint years later.</p>
+                </div>
+                <div class="why-item">
+                    <h3>Metadata for retention</h3>
+                    <p>Map SharePoint columns to email fields — Client ID, Engagement Year, Document Type — and they're populated automatically. Useful for retention policies and SOC reviews.</p>
+                </div>
+                <div class="why-item">
+                    <h3>Seasonal staff scaling</h3>
+                    <p>$10/month for 3 users, $3 per additional user, monthly billing, no annual commitment. Add busy-season staff in January and remove them in May without contract gymnastics.</p>
+                </div>
+                <div class="why-item">
+                    <h3>Confidentiality preserved</h3>
+                    <p>Files go directly from Outlook to your SharePoint. We never read, store, or proxy email content — relevant for AICPA confidentiality and IRS Section 7216 obligations.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="workflow-section">
+            <h2>What this looks like during busy season</h2>
+            <div class="workflow-step">
+                <h3>Client sends W-2s</h3>
+                <p>Email arrives with attachments. Add-in suggests the client's tax-year folder. One click — email and attachments file with names like "2026 - John Smith - W-2 Acme Corp.pdf". Preparer never leaves Outlook.</p>
+            </div>
+            <div class="workflow-step">
+                <h3>Tax return delivery</h3>
+                <p>Partner sends the completed return PDF to the client. Save on Send is on. The outgoing email and attachment land in the client's tax-year folder automatically — the firm has a record of what was delivered, when, and to whom.</p>
+            </div>
+            <div class="workflow-step">
+                <h3>Backlog filing</h3>
+                <p>Admin runs Inbox Cleanup against a shared mailbox or a partner's inbox. Suggested destinations preview side-by-side. Hundreds of emails file in one pass instead of one drag at a time.</p>
+            </div>
+            <div class="workflow-step">
+                <h3>Auto-archive over weekends</h3>
+                <p>Partner is offline Saturday. Auto-Archive is on for known clients. Documents that arrive over the weekend file themselves to the right folders by Monday morning — only senders the partner already mapped, never new ones.</p>
+            </div>
+        </section>
+
+        <section class="faq-section">
+            <h2>Frequently asked questions</h2>
+            <div class="faq-item">
+                <h3>Does this work alongside our document portal?</h3>
+                <p>Yes. Document portals (SmartVault, Canopy, ShareFile) handle client-facing document exchange. They don't solve the everyday email that piles up in Outlook. This add-in routes that email and the one-off PDFs into SharePoint without retraining clients to use the portal for every send.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Can I file by client and engagement year?</h3>
+                <p>Yes. The add-in browses any SharePoint folder structure. Client / Year / Engagement is a common layout. Save once, and the add-in suggests it for that client's future mail.</p>
+            </div>
+            <div class="faq-item">
+                <h3>How is confidential client data handled?</h3>
+                <p>Files transfer directly from Outlook to your SharePoint using your firm's Microsoft 365 credentials. Email content is never read, stored, or proxied through our servers.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Can the whole tax team use it during busy season?</h3>
+                <p>Yes. $10/month for 3 users plus $3 per additional user, billed monthly with no annual commitment. Add seasonal staff for busy season and remove after.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Will it save attachments with consistent file names?</h3>
+                <p>Yes. Configure a naming template once. Every saved attachment follows it firm-wide.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Does it work with shared and delegate mailboxes?</h3>
+                <p>Yes. Works in any mailbox the user has access to in Outlook, including admin@ shared mailboxes that intake client documents.</p>
+            </div>
+        </section>
+
+        <div class="cta">
+            <stripe-buy-button
+                buy-button-id="buy_btn_1TJgSVRuSKZAORtNCc5XjvFF"
+                publishable-key="pk_live_51TJeBURuSKZAORtNDq1LHzVpoXTW8vintdAn0pGvA5uo488Pqo7yJBjYeLDwfUP9SOKTmkicPPeudSqEQhWIHvnu00nvsv8X0u"
+            ></stripe-buy-button>
+            <p class="cta-subtext">Starting at $10/mo for 3 users. <a href="/pricing">See pricing</a> &middot; <a href="/setup">Setup guide</a></p>
+        </div>
+
+        <footer>
+            <a href="/pricing">Pricing</a> &middot; <a href="/setup">Setup Guide</a> &middot; <a href="/privacy">Privacy Policy</a> &middot; <a href="/terms">Terms of Service</a> &middot; <a href="#" onclick="revealEmail(event, this)">Contact Support</a><br><br>
+            &copy; 2026 Save to SharePoint
+        </footer>
+    </div>
+
+    <script>
+        function revealEmail(e, el) {
+            e.preventDefault();
+            var u = 'support', d = 'filemy.email';
+            var addr = u + '@' + d;
+            el.href = 'mail' + 'to:' + addr;
+            el.textContent = addr;
+            el.onclick = null;
+            window.location.href = el.href;
+        }
+    </script>
+</body>
+</html>

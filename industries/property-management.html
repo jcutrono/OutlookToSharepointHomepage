@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-WMH8P2QB');</script>
+    <!-- End Google Tag Manager -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8QC98XTWTR"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-8QC98XTWTR');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Filing for Property Management — Save Tenant &amp; Vendor Email to SharePoint</title>
+    <meta name="description" content="An Outlook add-in for property management companies. File tenant correspondence, vendor invoices, inspection reports, and lease documents into SharePoint property folders automatically.">
+    <link rel="canonical" href="https://filemy.email/industries/property-management">
+    <link rel="icon" type="image/png" href="/assets/favicon.png">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://filemy.email/industries/property-management">
+    <meta property="og:title" content="Email Filing for Property Management">
+    <meta property="og:description" content="File tenant correspondence, vendor invoices, and lease documents into SharePoint property folders automatically.">
+    <meta property="og:image" content="https://filemy.email/assets/logo.svg">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Email Filing for Property Management">
+    <meta name="twitter:description" content="An Outlook add-in for property management companies.">
+    <link rel="stylesheet" href="/assets/styles.css">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Save to SharePoint",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Windows, Web",
+        "url": "https://filemy.email/industries/property-management",
+        "description": "Email filing add-in for property management firms — save tenant, vendor, and inspection correspondence to SharePoint property folders with smart suggestions and metadata.",
+        "offers": {
+            "@type": "Offer",
+            "price": "10.00",
+            "priceCurrency": "USD",
+            "priceValidUntil": "2027-12-31",
+            "availability": "https://schema.org/InStock"
+        }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "Can I file by property address?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. Set up your SharePoint folders by property — typically Property / Unit / Tenant or Property / Vendor — and the add-in browses any structure you have. After saving once, it suggests the same folder for future mail with that tenant or vendor."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How does this compare to AppFolio or Buildium?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "AppFolio and Buildium are full property management platforms — they handle leasing, accounting, maintenance tickets. They are not built to file the everyday email between staff, tenants, and vendors that lives in Outlook. This add-in fills that gap by routing email and attachments to the property folder in SharePoint, alongside whatever PMS you already use."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Can field staff file from a phone?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. The add-in works in Outlook on the web and the Outlook mobile app, so leasing agents and inspectors can file inspection reports and tenant photos to the right property folder while still on site."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What about shared inboxes like leasing@ or maintenance@?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "The add-in works inside any mailbox the user has access to, including shared and delegate mailboxes. Each user occupies one seat regardless of how many shared mailboxes they file from."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Can I save vendor invoices with metadata for accounting?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. Map SharePoint columns to email metadata once — Vendor, Property, Invoice Date — and every saved invoice has those columns populated. Accounting can filter and total without opening individual files."
+                }
+            }
+        ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://filemy.email/"},
+            {"@type": "ListItem", "position": 2, "name": "For Property Management", "item": "https://filemy.email/industries/property-management"}
+        ]
+    }
+    </script>
+    <style>
+        body { line-height: 1.6; }
+        .container { padding: 0 24px; }
+        header { padding: 48px 0 0; text-align: center; }
+        .vertical-tag { display: inline-block; background: #f0f6ff; color: #1b6ec2; padding: 4px 14px; border-radius: 20px; font-size: 0.78rem; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 16px; }
+        h1 { font-size: 2rem; font-weight: 700; color: #1a1a1a; margin-bottom: 12px; }
+        .tagline { font-size: 1.15rem; color: #555; max-width: 620px; margin: 0 auto; }
+        .cta { text-align: center; padding: 32px 0; }
+        .cta-subtext { font-size: 0.85rem; color: #777; margin-top: 12px; }
+
+        .screenshot-slot { max-width: 720px; margin: 24px auto; text-align: center; }
+        .screenshot-slot img { max-width: 100%; height: auto; border: 1px solid #e6e6e6; border-radius: 8px; box-shadow: 0 4px 24px rgba(0,0,0,0.08); }
+
+        .pain-section { padding: 32px 0; border-top: 1px solid #eee; }
+        .pain-section h2 { font-size: 1.4rem; color: #1a1a1a; margin-bottom: 12px; border: 0; }
+        .pain-section p { font-size: 1rem; color: #444; margin-bottom: 14px; }
+        .pain-list { background: #fff8f0; border-left: 4px solid #d97706; padding: 16px 20px; border-radius: 0 8px 8px 0; margin: 16px 0; }
+        .pain-list ul { margin: 0; padding-left: 20px; }
+        .pain-list li { font-size: 0.92rem; color: #555; margin-bottom: 6px; }
+
+        .why-section { padding: 40px 0; border-top: 1px solid #eee; }
+        .why-section h2 { font-size: 1.4rem; color: #1a1a1a; margin-bottom: 16px; border: 0; }
+        .why-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 16px; }
+        .why-item { background: #f8fafb; border-left: 4px solid #1b6ec2; padding: 16px 20px; border-radius: 0 8px 8px 0; }
+        .why-item h3 { font-size: 0.95rem; font-weight: 600; color: #1a1a1a; margin-bottom: 6px; }
+        .why-item p { font-size: 0.88rem; color: #555; }
+
+        .workflow-section { padding: 40px 0; border-top: 1px solid #eee; }
+        .workflow-section h2 { font-size: 1.4rem; color: #1a1a1a; margin-bottom: 16px; border: 0; }
+        .workflow-step { padding: 16px 0; border-bottom: 1px solid #eee; }
+        .workflow-step:last-child { border-bottom: 0; }
+        .workflow-step h3 { font-size: 1rem; font-weight: 600; color: #1a1a1a; margin-bottom: 4px; }
+        .workflow-step p { font-size: 0.92rem; color: #555; }
+
+        .faq-section { padding: 40px 0; border-top: 1px solid #eee; }
+        .faq-section h2 { font-size: 1.4rem; color: #1a1a1a; margin-bottom: 16px; border: 0; }
+        .faq-item { margin-bottom: 20px; }
+        .faq-item h3 { font-size: 0.98rem; font-weight: 600; color: #1a1a1a; margin-bottom: 6px; }
+        .faq-item p { font-size: 0.92rem; color: #555; }
+
+        @media (max-width: 600px) {
+            .why-grid { grid-template-columns: 1fr; }
+            h1 { font-size: 1.6rem; }
+            .tagline { font-size: 1rem; }
+        }
+    </style>
+</head>
+<body>
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WMH8P2QB" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <div class="top-nav">
+        <a href="/" class="brand"><img src="/assets/favicon.png" alt="Logo"> File My Email</a>
+        <nav>
+            <a href="/pricing">Pricing</a>
+            <a href="/setup">Setup</a>
+        </nav>
+    </div>
+
+    <div class="container">
+        <header>
+            <div class="vertical-tag">For Property Management</div>
+            <h1>Every Email Filed to the Right Property Folder</h1>
+            <p class="tagline">An Outlook add-in for property managers, leasing teams, and HOA administrators. File tenant correspondence, vendor invoices, inspection reports, and lease documents directly to SharePoint property folders — automatically.</p>
+        </header>
+
+        <div class="cta">
+            <script async src="https://js.stripe.com/v3/buy-button.js"></script>
+            <stripe-buy-button
+                buy-button-id="buy_btn_1TJgSVRuSKZAORtNCc5XjvFF"
+                publishable-key="pk_live_51TJeBURuSKZAORtNDq1LHzVpoXTW8vintdAn0pGvA5uo488Pqo7yJBjYeLDwfUP9SOKTmkicPPeudSqEQhWIHvnu00nvsv8X0u"
+            ></stripe-buy-button>
+            <p class="cta-subtext">Starting at $10/mo for 3 users. <a href="/pricing">See pricing</a></p>
+        </div>
+
+        <div class="screenshot-slot">
+            <img src="/assets/screenshots/screenshot-property.png" alt="Save to SharePoint add-in showing property folder selection inside Outlook" onerror="this.style.display='none'">
+        </div>
+
+        <section class="pain-section">
+            <h2>The paper trail every property manager wishes they had</h2>
+            <p>Properties accumulate email like nothing else. Every unit produces tenant complaints, vendor invoices, inspection photos, lease addenda, insurance certificates, board approvals, and contractor quotes. The official rule is "every email gets filed to the property folder." The reality is that nobody has time, so:</p>
+            <div class="pain-list">
+                <ul>
+                    <li>Tenant complaints live in someone's inbox until they escalate</li>
+                    <li>Vendor invoices get forwarded to accounting with no attachment to the property record</li>
+                    <li>Inspection reports stay on a property manager's phone in their email</li>
+                    <li>Lease addenda are signed and emailed back, but never make it to the property file</li>
+                    <li>When ownership transfers or a property is sold, the file is wildly incomplete</li>
+                </ul>
+            </div>
+            <p>This add-in routes email and attachments to the right property folder in SharePoint without changing how anyone works in Outlook. It learns which folder maps to which tenant or vendor. Save on Send catches the outgoing replies. Mobile staff can file from the field.</p>
+        </section>
+
+        <section class="why-section">
+            <h2>Why property management firms use this</h2>
+            <div class="why-grid">
+                <div class="why-item">
+                    <h3>Filed by property and unit</h3>
+                    <p>Browse any SharePoint structure — Property &rsaquo; Unit &rsaquo; Tenant or Property &rsaquo; Vendors. Star active properties for one-click filing during turnover.</p>
+                </div>
+                <div class="why-item">
+                    <h3>Vendor invoices land in accounting</h3>
+                    <p>Map metadata columns once — Vendor, Property, Invoice Date — and every saved invoice has those filled in. Accounting filters and totals without opening files.</p>
+                </div>
+                <div class="why-item">
+                    <h3>Save on Send for outgoing</h3>
+                    <p>Replying to a tenant complaint or sending a notice? Pick the property folder while composing. Save on Send files the outgoing email automatically.</p>
+                </div>
+                <div class="why-item">
+                    <h3>Mobile filing from the field</h3>
+                    <p>Works in Outlook on the web and the Outlook mobile app. Inspectors and leasing agents can file reports to the property folder while still on site.</p>
+                </div>
+                <div class="why-item">
+                    <h3>Shared mailboxes covered</h3>
+                    <p>leasing@, maintenance@, info@ — the add-in works in any mailbox the user has access to. Each user occupies one seat regardless of mailboxes.</p>
+                </div>
+                <div class="why-item">
+                    <h3>Inspection photos stay together</h3>
+                    <p>Email and attachments save together with consistent file names. No more "scan_001.jpg" — every photo is named by date, property, and inspection type.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="workflow-section">
+            <h2>Common scenarios this solves</h2>
+            <div class="workflow-step">
+                <h3>Tenant maintenance request</h3>
+                <p>Tenant emails maintenance@. Add-in suggests the property's tenant folder. One click — request and any photos file to SharePoint. Maintenance team replies and Save on Send files the outgoing message in the same folder. Full thread is in the property file.</p>
+            </div>
+            <div class="workflow-step">
+                <h3>Vendor invoice intake</h3>
+                <p>Plumber emails an invoice PDF. Add-in suggests the property's vendor folder. Saves with name "{YYYY-MM-DD} - {Vendor} - {Subject}.pdf" and metadata columns set so accounting can pull a property's invoices in seconds.</p>
+            </div>
+            <div class="workflow-step">
+                <h3>Inspection from the field</h3>
+                <p>Property manager finishes a unit inspection on their phone, emails the report to themselves with photos attached, opens the add-in in Outlook mobile, and files everything to the unit's folder before leaving the parking lot.</p>
+            </div>
+            <div class="workflow-step">
+                <h3>Lease documents</h3>
+                <p>New lease arrives signed via email. One click files the email and the signed PDF to the unit folder. Save on Send catches the welcome email going back to the tenant.</p>
+            </div>
+            <div class="workflow-step">
+                <h3>Property turnover or sale</h3>
+                <p>When a property changes hands, the entire correspondence record exists in the property's SharePoint folder — searchable, exportable, and complete. No reconstructing from scattered inboxes.</p>
+            </div>
+        </section>
+
+        <section class="faq-section">
+            <h2>Frequently asked questions</h2>
+            <div class="faq-item">
+                <h3>Can I file by property address?</h3>
+                <p>Yes. Set SharePoint folders up by property — Property / Unit / Tenant is a common structure. After saving once, the add-in suggests the same folder for future mail with that contact.</p>
+            </div>
+            <div class="faq-item">
+                <h3>How does this compare to AppFolio or Buildium?</h3>
+                <p>AppFolio and Buildium handle leasing, accounting, and maintenance tickets — they're not built for filing everyday email. This add-in fills the email-filing gap by routing mail to your SharePoint property folder, alongside whatever PMS you already use.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Can field staff file from a phone?</h3>
+                <p>Yes. The add-in works in Outlook on the web and the Outlook mobile app — agents and inspectors file from the field.</p>
+            </div>
+            <div class="faq-item">
+                <h3>What about leasing@ or maintenance@ shared inboxes?</h3>
+                <p>The add-in works inside any mailbox the user has access to in Outlook. Each user occupies one seat regardless of mailboxes.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Can I save vendor invoices with metadata for accounting?</h3>
+                <p>Yes. Map SharePoint columns to email metadata once. Every saved invoice has Vendor, Property, and Invoice Date populated for filtering and reports.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Does it work across multiple property entities?</h3>
+                <p>Yes. The add-in handles multiple SharePoint sites, so a management company with several ownership entities can file each property's mail to the entity's own SharePoint without switching accounts.</p>
+            </div>
+        </section>
+
+        <div class="cta">
+            <stripe-buy-button
+                buy-button-id="buy_btn_1TJgSVRuSKZAORtNCc5XjvFF"
+                publishable-key="pk_live_51TJeBURuSKZAORtNDq1LHzVpoXTW8vintdAn0pGvA5uo488Pqo7yJBjYeLDwfUP9SOKTmkicPPeudSqEQhWIHvnu00nvsv8X0u"
+            ></stripe-buy-button>
+            <p class="cta-subtext">Starting at $10/mo for 3 users. <a href="/pricing">See pricing</a> &middot; <a href="/setup">Setup guide</a></p>
+        </div>
+
+        <footer>
+            <a href="/pricing">Pricing</a> &middot; <a href="/setup">Setup Guide</a> &middot; <a href="/privacy">Privacy Policy</a> &middot; <a href="/terms">Terms of Service</a> &middot; <a href="#" onclick="revealEmail(event, this)">Contact Support</a><br><br>
+            &copy; 2026 Save to SharePoint
+        </footer>
+    </div>
+
+    <script>
+        function revealEmail(e, el) {
+            e.preventDefault();
+            var u = 'support', d = 'filemy.email';
+            var addr = u + '@' + d;
+            el.href = 'mail' + 'to:' + addr;
+            el.textContent = addr;
+            el.onclick = null;
+            window.location.href = el.href;
+        }
+    </script>
+</body>
+</html>

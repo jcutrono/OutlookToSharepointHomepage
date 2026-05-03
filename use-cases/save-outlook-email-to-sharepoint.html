@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-WMH8P2QB');</script>
+    <!-- End Google Tag Manager -->
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8QC98XTWTR"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-8QC98XTWTR');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Save Outlook Email to SharePoint — One-Click Filing Add-in</title>
+    <meta name="description" content="Save any Outlook email to SharePoint in one click — or automatically the moment you hit Send. Smart folder suggestions, attachment handling, and metadata columns filled in for you.">
+    <link rel="canonical" href="https://filemy.email/use-cases/save-outlook-email-to-sharepoint">
+    <link rel="icon" type="image/png" href="/assets/favicon.png">
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://filemy.email/use-cases/save-outlook-email-to-sharepoint">
+    <meta property="og:title" content="Save Outlook Email to SharePoint — One-Click Filing Add-in">
+    <meta property="og:description" content="Save any Outlook email to SharePoint in one click — or automatically the moment you hit Send. Smart folder suggestions, attachment handling, and metadata columns filled in for you.">
+    <meta property="og:image" content="https://filemy.email/assets/logo.svg">
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Save Outlook Email to SharePoint — One-Click Filing Add-in">
+    <meta name="twitter:description" content="Save any Outlook email to SharePoint in one click — or automatically the moment you hit Send.">
+    <link rel="stylesheet" href="/assets/styles.css">
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Save to SharePoint",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Windows, Web",
+        "url": "https://filemy.email/use-cases/save-outlook-email-to-sharepoint",
+        "description": "Outlook add-in that saves emails to SharePoint with one click, with smart folder suggestions, automatic metadata, and Save on Send.",
+        "offers": {
+            "@type": "Offer",
+            "price": "10.00",
+            "priceCurrency": "USD",
+            "priceValidUntil": "2027-12-31",
+            "availability": "https://schema.org/InStock"
+        }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "How do I save an Outlook email to SharePoint?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Install the Save to SharePoint add-in from the Microsoft Office store, open any email, click the add-in icon, choose a SharePoint site and folder (or accept the smart suggestion), and click Save. The email and its attachments are uploaded directly to your SharePoint library with metadata columns filled in automatically."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Can I save sent email to SharePoint automatically?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. Turn on Save on Send while composing and pick a destination folder. The email files itself the moment you hit Send — no extra step required."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What format are emails saved in?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "You can choose EML (preserves the full email including headers and is the Outlook standard) or PDF (universally readable, ideal for archives and audits). The choice is per-save, with a default in settings."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Does it work in Outlook on the web and desktop?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. The add-in runs in Outlook desktop (Windows and Mac), Outlook on the web, and the new Outlook for Windows. Your folder rules and learned suggestions sync across all of them."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Do my emails or attachments pass through your servers?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "No. Files transfer directly from Outlook to your SharePoint or OneDrive using your Microsoft 365 credentials. We never read, store, or proxy email content."
+                }
+            }
+        ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://filemy.email/"},
+            {"@type": "ListItem", "position": 2, "name": "Save Outlook Email to SharePoint", "item": "https://filemy.email/use-cases/save-outlook-email-to-sharepoint"}
+        ]
+    }
+    </script>
+    <style>
+        body { line-height: 1.6; }
+        .container { padding: 0 24px; }
+        header { padding: 48px 0 0; text-align: center; }
+        h1 { font-size: 2rem; font-weight: 700; color: #1a1a1a; margin-bottom: 12px; }
+        .tagline { font-size: 1.15rem; color: #555; max-width: 620px; margin: 0 auto; }
+        .cta { text-align: center; padding: 32px 0; }
+        .cta-button { display: inline-block; background: linear-gradient(135deg, #1b6ec2, #0d7377); color: #fff; text-decoration: none; font-size: 1.05rem; font-weight: 600; padding: 14px 32px; border-radius: 8px; }
+        .cta-subtext { font-size: 0.85rem; color: #777; margin-top: 12px; }
+
+        .screenshot-slot { max-width: 720px; margin: 24px auto; text-align: center; }
+        .screenshot-slot img { max-width: 100%; height: auto; border: 1px solid #e6e6e6; border-radius: 8px; box-shadow: 0 4px 24px rgba(0,0,0,0.08); }
+        .screenshot-caption { font-size: 0.85rem; color: #888; margin-top: 8px; }
+
+        .lede { padding: 32px 0; border-top: 1px solid #eee; }
+        .lede h2 { font-size: 1.4rem; color: #1a1a1a; margin-bottom: 12px; border: 0; }
+        .lede p { font-size: 1rem; color: #444; margin-bottom: 12px; }
+
+        .steps { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 32px; margin: 24px 0; }
+        .step { text-align: center; }
+        .step-number { display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 50%; background: linear-gradient(135deg, #1b6ec2, #0d7377); color: #fff; font-size: 1.2rem; font-weight: 700; margin-bottom: 12px; }
+        .step h3 { font-size: 0.95rem; font-weight: 600; margin-bottom: 6px; color: #1a1a1a; }
+        .step p { font-size: 0.88rem; color: #666; }
+
+        .why-section { padding: 40px 0; border-top: 1px solid #eee; }
+        .why-section h2 { font-size: 1.4rem; color: #1a1a1a; margin-bottom: 16px; border: 0; }
+        .why-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 16px; }
+        .why-item { background: #f8fafb; border-left: 4px solid #1b6ec2; padding: 16px 20px; border-radius: 0 8px 8px 0; }
+        .why-item h3 { font-size: 0.95rem; font-weight: 600; color: #1a1a1a; margin-bottom: 6px; }
+        .why-item p { font-size: 0.88rem; color: #555; }
+
+        .compare-section { padding: 40px 0; border-top: 1px solid #eee; }
+        .compare-table { width: 100%; border-collapse: collapse; margin-top: 16px; font-size: 0.92rem; }
+        .compare-table th, .compare-table td { padding: 10px 12px; border-bottom: 1px solid #eee; text-align: left; vertical-align: top; }
+        .compare-table th { background: #f8fafb; font-weight: 600; color: #1b6ec2; }
+        .compare-table td:first-child { font-weight: 600; color: #1a1a1a; }
+
+        .faq-section { padding: 40px 0; border-top: 1px solid #eee; }
+        .faq-section h2 { font-size: 1.4rem; color: #1a1a1a; margin-bottom: 16px; border: 0; }
+        .faq-item { margin-bottom: 20px; }
+        .faq-item h3 { font-size: 0.98rem; font-weight: 600; color: #1a1a1a; margin-bottom: 6px; }
+        .faq-item p { font-size: 0.92rem; color: #555; }
+
+        @media (max-width: 600px) {
+            .steps { grid-template-columns: 1fr; gap: 24px; }
+            .why-grid { grid-template-columns: 1fr; }
+            h1 { font-size: 1.6rem; }
+            .tagline { font-size: 1rem; }
+        }
+    </style>
+</head>
+<body>
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WMH8P2QB" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <div class="top-nav">
+        <a href="/" class="brand"><img src="/assets/favicon.png" alt="Logo"> File My Email</a>
+        <nav>
+            <a href="/pricing">Pricing</a>
+            <a href="/setup">Setup</a>
+        </nav>
+    </div>
+
+    <div class="container">
+        <header>
+            <h1>Save Outlook Email to SharePoint — in One Click</h1>
+            <p class="tagline">An Outlook add-in that files messages and attachments directly into the right SharePoint library. Smart folder suggestions learn your habits, Save on Send catches outgoing mail automatically, and metadata columns fill themselves in.</p>
+        </header>
+
+        <div class="cta">
+            <script async src="https://js.stripe.com/v3/buy-button.js"></script>
+            <stripe-buy-button
+                buy-button-id="buy_btn_1TJgSVRuSKZAORtNCc5XjvFF"
+                publishable-key="pk_live_51TJeBURuSKZAORtNDq1LHzVpoXTW8vintdAn0pGvA5uo488Pqo7yJBjYeLDwfUP9SOKTmkicPPeudSqEQhWIHvnu00nvsv8X0u"
+            ></stripe-buy-button>
+            <p class="cta-subtext">Starting at $10/mo for 3 users. <a href="/pricing">See pricing</a></p>
+        </div>
+
+        <div class="screenshot-slot">
+            <img src="/assets/screenshots/screenshot-save-panel.png" alt="Save to SharePoint add-in panel showing folder selection inside Outlook" onerror="this.style.display='none'">
+        </div>
+
+        <section class="lede">
+            <h2>Stop dragging emails into folders by hand</h2>
+            <p>If your team's process for saving Outlook email to SharePoint is "drag the message to a desktop, rename the file, upload it through the browser, then go back and tag the metadata columns" — you're losing minutes per email and people quietly stop doing it. Saved emails end up scattered between someone's PST, a OneDrive, and a SharePoint library that's missing half the thread.</p>
+            <p>This add-in turns the whole flow into one click, inside the message you're already reading. It learns the folder you use for each contact, fills SharePoint metadata columns from the email headers, and handles attachments without a second upload step. Outgoing mail is covered by Save on Send — pick a destination while composing, then forget about it.</p>
+        </section>
+
+        <section class="how-it-works">
+            <h2 class="section-heading">How it works</h2>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Open the email</h3>
+                    <p>The add-in opens in the side panel. It reads the sender and subject, then surfaces a smart folder suggestion based on past saves.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Pick a SharePoint folder</h3>
+                    <p>Accept the suggestion, click a starred favorite, or browse and search any SharePoint site you can access.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Click Save</h3>
+                    <p>The email and its attachments upload directly to SharePoint. Metadata columns are populated. The add-in remembers the choice for next time.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="why-section">
+            <h2>Why this beats the manual approach</h2>
+            <div class="why-grid">
+                <div class="why-item">
+                    <h3>Save on Send</h3>
+                    <p>Outgoing mail files itself the second you hit Send. No more "I'll save it later," because later never happens.</p>
+                </div>
+                <div class="why-item">
+                    <h3>Learns from how you file</h3>
+                    <p>Once you save a few emails from a contact, the add-in suggests the same folder automatically — for both replies you write and new mail you receive.</p>
+                </div>
+                <div class="why-item">
+                    <h3>Metadata fills itself in</h3>
+                    <p>Map SharePoint columns to email fields once. From then on, sender, subject, date, and any custom property are populated on save.</p>
+                </div>
+                <div class="why-item">
+                    <h3>Attachment handling</h3>
+                    <p>Save attachments alongside the email or in a dedicated subfolder. Filenames follow a template you control.</p>
+                </div>
+                <div class="why-item">
+                    <h3>Batch inbox cleanup</h3>
+                    <p>Run rules across an entire inbox to file the backlog in one pass — useful when onboarding a shared mailbox.</p>
+                </div>
+                <div class="why-item">
+                    <h3>Auto-archive while away</h3>
+                    <p>Flip on Auto-Archive before vacation. Mail from senders you've already mapped files itself while you're out — never anything else.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="compare-section">
+            <h2 class="section-heading">Compared with the built-in options</h2>
+            <table class="compare-table">
+                <thead>
+                    <tr>
+                        <th>Approach</th>
+                        <th>What you give up</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Drag and drop into a SharePoint browser tab</td>
+                        <td>No metadata. No naming convention. Outgoing mail forgotten. Breaks for shared mailboxes.</td>
+                    </tr>
+                    <tr>
+                        <td>Outlook's native "Save as" to OneDrive</td>
+                        <td>Personal storage only — not shared SharePoint sites. No folder learning. Manual every time.</td>
+                    </tr>
+                    <tr>
+                        <td>Power Automate flow on a watched folder</td>
+                        <td>Requires an admin to build and maintain. Per-user customization is painful. No interactive folder choice on save.</td>
+                    </tr>
+                    <tr>
+                        <td>Save to SharePoint add-in</td>
+                        <td>$10/month for 3 users. That's it.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section class="faq-section">
+            <h2>Frequently asked questions</h2>
+            <div class="faq-item">
+                <h3>How do I save an Outlook email to SharePoint?</h3>
+                <p>Install the add-in from the Microsoft Office store, open any email, pick a folder in the side panel (or accept the smart suggestion), and click Save. The email and its attachments upload directly to SharePoint with metadata columns filled in.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Can I save sent email to SharePoint automatically?</h3>
+                <p>Yes — turn on Save on Send while composing and pick a destination folder. The email files itself the moment you hit Send.</p>
+            </div>
+            <div class="faq-item">
+                <h3>What format are emails saved in?</h3>
+                <p>EML (preserves the full email including headers — Outlook's native format) or PDF (universally readable, good for archives and audits). Set a default in settings, override per save.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Does it work in Outlook on the web and desktop?</h3>
+                <p>Yes. The add-in runs in Outlook desktop, Outlook on the web, and the new Outlook for Windows. Folder rules and learned suggestions sync across all of them.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Do my emails or attachments pass through your servers?</h3>
+                <p>No. Files transfer directly from Outlook to your SharePoint or OneDrive using your Microsoft 365 credentials. We never read, store, or proxy email content.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Can I use it with shared mailboxes?</h3>
+                <p>Yes. The add-in works inside any mailbox you have access to in Outlook, including shared and delegate mailboxes. Each user's saves count against their own seat.</p>
+            </div>
+        </section>
+
+        <div class="cta">
+            <stripe-buy-button
+                buy-button-id="buy_btn_1TJgSVRuSKZAORtNCc5XjvFF"
+                publishable-key="pk_live_51TJeBURuSKZAORtNDq1LHzVpoXTW8vintdAn0pGvA5uo488Pqo7yJBjYeLDwfUP9SOKTmkicPPeudSqEQhWIHvnu00nvsv8X0u"
+            ></stripe-buy-button>
+            <p class="cta-subtext">Starting at $10/mo for 3 users. <a href="/pricing">See pricing</a> &middot; <a href="/setup">Setup guide</a></p>
+        </div>
+
+        <footer>
+            <a href="/pricing">Pricing</a> &middot; <a href="/setup">Setup Guide</a> &middot; <a href="/privacy">Privacy Policy</a> &middot; <a href="/terms">Terms of Service</a> &middot; <a href="#" onclick="revealEmail(event, this)">Contact Support</a><br><br>
+            &copy; 2026 Save to SharePoint
+        </footer>
+    </div>
+
+    <script>
+        function revealEmail(e, el) {
+            e.preventDefault();
+            var u = 'support', d = 'filemy.email';
+            var addr = u + '@' + d;
+            el.href = 'mail' + 'to:' + addr;
+            el.textContent = addr;
+            el.onclick = null;
+            window.location.href = el.href;
+        }
+    </script>
+</body>
+</html>
