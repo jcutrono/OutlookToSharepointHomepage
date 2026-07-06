@@ -130,6 +130,25 @@
         <h1>Entra ID Setup</h1>
         <p class="subtitle">Configure Microsoft Entra ID roles to control who can use FileMy.Email and who can manage your organization's seats and subscription.</p>
 
+        <h2 id="tenant-id">Finding your Microsoft 365 Tenant ID</h2>
+        <p>When you subscribe on the <a href="/pricing">pricing page</a>, Stripe checkout asks for your <strong>Microsoft 365 Tenant ID</strong>. This is what links your payment to your organization, so it has to be entered exactly.</p>
+        <ol>
+            <li>
+                Go to the <a href="https://entra.microsoft.com" target="_blank" rel="noopener">Microsoft Entra admin center</a> and sign in with a work account.
+            </li>
+            <li>
+                On the <strong>Overview</strong> page, find <strong>Tenant ID</strong> under <strong>Basic information</strong>.
+                <p class="step-detail">It's a 36-character value that looks like <code>77a5b88f-a3d1-4957-9b08-73d172054a46</code>.</p>
+            </li>
+            <li>
+                Click the copy icon next to it, then paste it into the <strong>Microsoft 365 Tenant ID</strong> field at checkout.
+                <p class="step-detail">Copy and paste rather than typing it out &mdash; a single wrong character means your payment can't be matched to your organization and access won't turn on.</p>
+            </li>
+        </ol>
+        <div class="info-box">
+            <strong>Not an admin?</strong> Ask whoever manages your Microsoft 365 tenant for the Tenant ID, or have them complete the purchase.
+        </div>
+
         <h2>How access works</h2>
         <p>FileMy.Email uses two app roles in Microsoft Entra ID to control access:</p>
 
