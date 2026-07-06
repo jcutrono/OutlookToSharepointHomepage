@@ -20,19 +20,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Privacy Policy — FileMy.Email</title>
-    <meta name="description" content="Privacy policy for the FileMy.Email Outlook add-in. Learn what data we access, store, and how we protect your information.">
+    <meta name="description" content="Privacy policy for FileMy.Email — what the website and the Outlook add-in collect, the cookies we use, how we protect your data, and your privacy rights (GDPR, UK GDPR, and CCPA).">
     <link rel="canonical" href="https://filemy.email/privacy">
     <link rel="icon" type="image/png" href="/assets/favicon.png">
     <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://filemy.email/privacy">
     <meta property="og:title" content="Privacy Policy — FileMy.Email">
-    <meta property="og:description" content="Privacy policy for the FileMy.Email Outlook add-in. Learn what data we access, store, and how we protect your information.">
+    <meta property="og:description" content="Privacy policy for FileMy.Email — what the website and the Outlook add-in collect, the cookies we use, and your privacy rights.">
     <meta property="og:image" content="https://filemy.email/assets/logo.svg">
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="Privacy Policy — FileMy.Email">
-    <meta name="twitter:description" content="Privacy policy for the FileMy.Email Outlook add-in. Learn what data we access, store, and how we protect your information.">
+    <meta name="twitter:description" content="Privacy policy for FileMy.Email — what the website and the Outlook add-in collect, the cookies we use, and your privacy rights.">
     <link rel="stylesheet" href="/assets/styles.css">
     <!-- Structured Data -->
     <script type="application/ld+json">
@@ -55,6 +55,15 @@
         ]
     }
     </script>
+    <style>
+        .table-wrap { overflow-x: auto; margin: 8px 0 20px; }
+        table.cookies { border-collapse: collapse; width: 100%; font-size: 0.86rem; }
+        table.cookies th, table.cookies td { border: 1px solid #e2e6ea; padding: 8px 10px; text-align: left; vertical-align: top; }
+        table.cookies th { background: #f8fafb; color: #1a1a1a; font-weight: 600; }
+        table.cookies td { color: #555; }
+        table.cookies code { font-size: 0.82rem; background: #f2f4f6; padding: 1px 5px; border-radius: 4px; }
+        .lead { color: #444; }
+    </style>
 </head>
 <body>
     <!-- Google Tag Manager (noscript) -->
@@ -74,50 +83,109 @@
 
     <div class="container">
         <h1>Privacy Policy</h1>
-        <p class="updated">Last updated: April 7, 2026</p>
+        <p class="updated">Last updated: July 6, 2026</p>
 
-        <p><strong>FileMy.Email</strong> ("the Add-in") is an Outlook add-in that helps you save emails and attachments to SharePoint. Your privacy is important to us. This policy explains what data the Add-in accesses, how it is used, and what is stored.</p>
+        <p class="lead">This policy explains how <strong>FileMy.Email</strong> handles personal data across two things: our <strong>website</strong> at filemy.email, and the <strong>Outlook add-in</strong> ("the Add-in") that saves your emails and attachments to SharePoint or OneDrive. The two are very different in what they touch, so we describe them separately below.</p>
 
-        <h2>What We Access</h2>
-        <p>When you choose to save an email, the Add-in reads the following metadata from the currently selected message:</p>
+        <h2>Who We Are</h2>
+        <p>FileMy.Email is operated by <strong>Practical Software Solutions LLC</strong> ("we", "us", "our"), a company based in the United States. For any privacy question, or to exercise your rights, contact us at <a href="#" onclick="revealEmail(event, this)">support@filemy.email</a>.</p>
+        <p>For visitors and customers in the UK or European Economic Area (EEA), we act as the <em>data controller</em> for personal data collected through our website, and as a <em>data processor</em> acting on your organization's instructions for the limited data the Add-in handles on your behalf.</p>
+
+        <h2>Part A — The Website (filemy.email)</h2>
+
+        <h3>Analytics</h3>
+        <p>When you visit our website, we use <strong>Google Analytics 4</strong> and <strong>Google Tag Manager</strong> to understand how the site is used (which pages are visited, how visitors arrive, and general usage trends). This involves data such as your IP address, device and browser type, approximate location (derived from IP), pages viewed, and referring website. This data is collected through cookies (see the table below) and is processed by Google on our behalf.</p>
+
+        <h3>Payments</h3>
+        <p>When you purchase a subscription, checkout is handled by <strong>Stripe</strong>. You enter your payment details directly with Stripe — we never see or store your full card number. Stripe processes your name, email, billing details, and payment information to complete the transaction and to prevent fraud. See Stripe's privacy policy at <a href="https://stripe.com/privacy" rel="noopener" target="_blank">stripe.com/privacy</a>.</p>
+
+        <h3>Support</h3>
+        <p>If you email us, we receive your email address and whatever you include in your message, and we keep that correspondence so we can help you and maintain a support record.</p>
+
+        <h3>Cookies We Use</h3>
+        <p>A cookie is a small file stored on your device. We show a notice about cookies when you first visit. The cookies and similar technologies on our website are:</p>
+        <div class="table-wrap">
+        <table class="cookies">
+            <thead>
+                <tr><th>Cookie / storage</th><th>Set by</th><th>Purpose</th><th>Type</th><th>Retention</th></tr>
+            </thead>
+            <tbody>
+                <tr><td><code>_ga</code>, <code>_ga_&lt;id&gt;</code></td><td>Google Analytics</td><td>Distinguish visitors and measure site usage</td><td>Analytics</td><td>Up to 2 years</td></tr>
+                <tr><td>Google Tag Manager container</td><td>Google Tag Manager</td><td>Loads and manages our analytics tags</td><td>Analytics / tag management</td><td>Session / per tag</td></tr>
+                <tr><td><code>__stripe_mid</code>, <code>__stripe_sid</code></td><td>Stripe</td><td>Secure checkout and fraud prevention on pages with the buy button</td><td>Strictly necessary</td><td>Session to 1 year</td></tr>
+                <tr><td><code>fme_cookie_notice_v1</code></td><td>FileMy.Email</td><td>Remembers that you dismissed our cookie notice (stored in your browser only)</td><td>Strictly necessary</td><td>Until cleared</td></tr>
+            </tbody>
+        </table>
+        </div>
+        <p>You can block or delete cookies through your browser settings, and you can opt out of Google Analytics using Google's <a href="https://tools.google.com/dlpage/gaoptout" rel="noopener" target="_blank">opt-out browser add-on</a>. Blocking strictly necessary cookies may affect checkout.</p>
+
+        <h3>Legal Basis (UK / EEA visitors)</h3>
+        <p>Where UK GDPR or EU GDPR applies, we rely on: your <strong>consent</strong> and our <strong>legitimate interest</strong> in understanding and improving our website for analytics; the <strong>performance of a contract</strong> with you to process your purchase; and our <strong>legitimate interest</strong> in security and fraud prevention for Stripe's necessary cookies.</p>
+
+        <h2>Part B — The Outlook Add-in</h2>
+        <p>The Add-in is designed to keep your email data private. It reads only what it needs to file a message, and it does not route your email content through our servers.</p>
+
+        <h3>What the Add-in Accesses</h3>
+        <p>When you choose to save an email, the Add-in reads the following metadata from the selected message:</p>
         <ul>
             <li>Sender name and email address</li>
             <li>Subject line</li>
             <li>Date sent</li>
             <li>Attachment file names</li>
         </ul>
-        <p>This information is used solely to suggest a destination folder and to name the saved file according to your preferences.</p>
+        <p>This is used solely to suggest a destination folder and to name the saved file according to your preferences.</p>
 
-        <h2>What We Store</h2>
-        <p>The Add-in stores only:</p>
+        <h3>What the Add-in Stores</h3>
         <ul>
-            <li><strong>Folder mapping preferences</strong> — rules you create to route emails to specific SharePoint folders</li>
+            <li><strong>Folder mapping preferences</strong> — rules you create to route emails to specific SharePoint or OneDrive folders</li>
             <li><strong>File naming settings</strong> — your chosen templates for naming saved files</li>
         </ul>
         <p>This data is stored within your Microsoft 365 environment and is associated with your account.</p>
 
-        <h2>What We Do NOT Store</h2>
+        <h3>What the Add-in Does NOT Store</h3>
         <ul>
             <li>Email content or message bodies</li>
             <li>Attachment file contents</li>
             <li>Passwords or authentication tokens</li>
-            <li>Copies of any files saved to SharePoint</li>
+            <li>Copies of any files saved to SharePoint or OneDrive</li>
         </ul>
 
-        <h2>Data Transfer</h2>
-        <p>When you save an email or attachment, the file is transferred directly to your SharePoint site over encrypted connections. No data is sent to or stored on any third-party servers outside of Microsoft 365.</p>
+        <h3>How the Add-in Transfers Your Email Data</h3>
+        <p>When you save an email or attachment, the file is transferred <strong>directly</strong> from Outlook to your SharePoint site or OneDrive over encrypted connections. Your email content and files are not sent to, routed through, or stored on FileMy.Email servers. The Add-in does not share your email content with any analytics provider or advertising network.</p>
 
-        <h2>Authentication</h2>
+        <h3>Authentication</h3>
         <p>The Add-in uses your organization's existing Microsoft 365 authentication (OAuth 2.0). We do not handle, see, or store your password.</p>
 
-        <h2>Third-Party Services</h2>
-        <p>The Add-in does not share data with any third-party services, analytics providers, or advertising networks.</p>
+        <h2>How We Share Information</h2>
+        <p>We do not sell your personal information. We share data only with the service providers needed to run FileMy.Email:</p>
+        <ul>
+            <li><strong>Google</strong> — website analytics (<a href="https://policies.google.com/privacy" rel="noopener" target="_blank">privacy policy</a>)</li>
+            <li><strong>Stripe</strong> — payment processing (<a href="https://stripe.com/privacy" rel="noopener" target="_blank">privacy policy</a>)</li>
+            <li><strong>Microsoft</strong> — you connect your own Microsoft 365 tenant; your email and files stay within your Microsoft environment</li>
+        </ul>
+        <p>We may also disclose information if required by law or to protect our rights.</p>
+
+        <h2>International Data Transfers</h2>
+        <p>We are based in the United States, and our service providers (including Google and Stripe) process data in the United States and other countries. If you are in the UK or EEA, your personal data will be transferred to the United States. Where required, these transfers rely on appropriate safeguards such as the <strong>EU–US and UK Data Privacy Framework</strong> and/or <strong>Standard Contractual Clauses</strong> (with the UK Addendum / IDTA) put in place by these providers.</p>
+
+        <h2>Data Retention</h2>
+        <p>We keep website analytics data for up to 26 months, payment records for as long as required for tax and accounting law, and support correspondence for as long as needed to assist you. Add-in preferences are kept in your Microsoft 365 environment until you remove them or uninstall the Add-in.</p>
+
+        <h2>Your Privacy Rights</h2>
+        <p><strong>UK / EEA residents (GDPR / UK GDPR).</strong> You have the right to access, correct, delete, restrict, or object to our processing of your personal data, to data portability, and to withdraw consent at any time. To exercise these rights, contact us at <a href="#" onclick="revealEmail(event, this)">support@filemy.email</a>. You also have the right to lodge a complaint with your local data protection authority — in the UK, the Information Commissioner's Office (<a href="https://ico.org.uk" rel="noopener" target="_blank">ico.org.uk</a>).</p>
+        <p><strong>California residents (CCPA/CPRA).</strong> You have the right to know what personal information we collect, to request deletion, to correct it, and to opt out of the "sale" or "sharing" of personal information. We do not sell your personal information. To exercise these rights, contact us at the address above.</p>
+
+        <h2>Security</h2>
+        <p>All data travels over secure, encrypted (HTTPS/TLS) connections. The Add-in relies on Microsoft 365 OAuth and never stores your password. No method of transmission or storage is 100% secure, but we take reasonable measures to protect your information.</p>
+
+        <h2>Children's Privacy</h2>
+        <p>FileMy.Email is a business tool and is not directed to children. We do not knowingly collect personal information from anyone under 16.</p>
 
         <h2>Changes to This Policy</h2>
-        <p>If we update this policy, we will revise the "Last updated" date above. Continued use of the Add-in after changes constitutes acceptance of the updated policy.</p>
+        <p>If we update this policy, we will revise the "Last updated" date above and, where appropriate, notify you. Continued use of the website or the Add-in after changes constitutes acceptance of the updated policy.</p>
 
         <h2>Contact</h2>
-        <p>If you have questions about this privacy policy, please visit <a href="https://filemy.email">filemy.email</a> or <a href="#" onclick="revealEmail(event, this)">contact support</a>.</p>
+        <p>Questions about this policy? Visit <a href="https://filemy.email">filemy.email</a> or <a href="#" onclick="revealEmail(event, this)">contact support</a>.</p>
 
         <footer>
             <a href="/">Home</a> &middot; <a href="/pricing">Pricing</a> &middot; <a href="/terms">Terms of Service</a> &middot; <a href="#" onclick="revealEmail(event, this)">Contact Support</a><br><br>
@@ -136,5 +204,6 @@
             window.location.href = el.href;
         }
     </script>
+    <script src="/assets/cookie-banner.js" defer></script>
 </body>
 </html>
