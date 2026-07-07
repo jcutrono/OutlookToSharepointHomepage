@@ -113,7 +113,8 @@
         /* Features */
         .features { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 32px; padding: 24px 0 56px; }
         .feature { text-align: center; }
-        .feature-icon { font-size: 2rem; margin-bottom: 10px; }
+        .feature-icon { color: #1b6ec2; margin-bottom: 12px; line-height: 0; }
+        .feature-icon svg { width: 34px; height: 34px; }
         .feature h3 { font-size: 0.95rem; font-weight: 600; margin-bottom: 6px; color: #1b6ec2; }
         .feature p { font-size: 0.88rem; color: #666; }
 
@@ -151,7 +152,8 @@
         .private-section { padding: 48px 0; border-top: 1px solid #eee; }
         .private-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 8px; }
         .private-item { display: flex; align-items: flex-start; gap: 12px; }
-        .private-icon { font-size: 1.4rem; flex-shrink: 0; margin-top: 2px; }
+        .private-icon { color: #1b6ec2; flex-shrink: 0; margin-top: 2px; line-height: 0; }
+        .private-icon svg { width: 24px; height: 24px; }
         .private-item p { font-size: 0.9rem; color: #555; }
         .private-item strong { color: #1a1a1a; }
 
@@ -237,62 +239,62 @@
 
         <section class="features">
             <div class="feature">
-                <div class="feature-icon" role="img" aria-label="Rocket">&#128640;</div>
+                <div class="feature-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 9 5 12 1.8-5.2L21 14Z"/><path d="M7.2 2.2 8 5.1"/><path d="m5.1 8-2.9-.8"/><path d="M14 4.1 12 6"/><path d="m6 12-1.9 2"/></svg></div>
                 <h3>One-Click Save</h3>
                 <p>File emails and attachments to SharePoint or OneDrive without leaving Outlook.</p>
             </div>
             <div class="feature">
-                <div class="feature-icon" role="img" aria-label="Outbox">&#128235;</div>
+                <div class="feature-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 2 11 13"/><path d="m22 2-7 20-4-9-9-4Z"/></svg></div>
                 <h3>Save on Send</h3>
                 <p>Pick a destination while composing. The email files itself the moment you hit Send.</p>
             </div>
             <div class="feature">
-                <div class="feature-icon" role="img" aria-label="Cloud">&#9729;</div>
+                <div class="feature-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/></svg></div>
                 <h3>SharePoint or OneDrive</h3>
                 <p>Save to shared SharePoint libraries for team work, or your personal OneDrive for individual reference.</p>
             </div>
             <div class="feature">
-                <div class="feature-icon" role="img" aria-label="Brain">&#129504;</div>
+                <div class="feature-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/></svg></div>
                 <h3>Smart Suggestions</h3>
                 <p>Learns which folders you use for which contacts — incoming and outgoing — and suggests them automatically.</p>
             </div>
             <div class="feature">
-                <div class="feature-icon" role="img" aria-label="Broom">&#129529;</div>
+                <div class="feature-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="22 12 16 12 14 15 10 15 8 12 2 12"/><path d="M5.45 5.11 2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"/></svg></div>
                 <h3>Inbox Cleanup</h3>
                 <p>Scan unfiled emails, preview matches, and batch-save them all at once.</p>
             </div>
             <div class="feature">
-                <div class="feature-icon" role="img" aria-label="Chart">&#128202;</div>
+                <div class="feature-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M9 3v18"/><path d="M15 3v18"/></svg></div>
                 <h3>Column Mapping</h3>
                 <p>Map email metadata to SharePoint library columns automatically.</p>
             </div>
             <div class="feature">
-                <div class="feature-icon" role="img" aria-label="Document">&#128196;</div>
+                <div class="feature-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v5h5"/><path d="M16 13H8"/><path d="M16 17H8"/><path d="M10 9H8"/></svg></div>
                 <h3>Save as EML or PDF</h3>
                 <p>Choose the format that works best for your team.</p>
             </div>
             <div class="feature">
-                <div class="feature-icon" role="img" aria-label="Star">&#11088;</div>
+                <div class="feature-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
                 <h3>Favorite Folders</h3>
                 <p>Star your most-used folders for instant access.</p>
             </div>
             <div class="feature">
-                <div class="feature-icon" role="img" aria-label="Lock">&#128274;</div>
+                <div class="feature-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg></div>
                 <h3>Duplicate Detection</h3>
                 <p>Never accidentally save the same email twice.</p>
             </div>
             <div class="feature">
-                <div class="feature-icon" role="img" aria-label="Paperclip">&#128206;</div>
+                <div class="feature-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21.44 11.05 12.25 20.24a6 6 0 0 1-8.49-8.49l8.57-8.57A4 4 0 1 1 18 8.84l-8.59 8.57a2 2 0 0 1-2.83-2.83l8.49-8.48"/></svg></div>
                 <h3>Attachment Subfolder</h3>
                 <p>Save attachments in a separate subfolder alongside the email.</p>
             </div>
             <div class="feature">
-                <div class="feature-icon" role="img" aria-label="Globe">&#127760;</div>
+                <div class="feature-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg></div>
                 <h3>Works Everywhere</h3>
                 <p>Outlook desktop and web, across Microsoft 365 tenants.</p>
             </div>
             <div class="feature">
-                <div class="feature-icon" role="img" aria-label="Airplane">&#9992;</div>
+                <div class="feature-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="5" x="2" y="3" rx="1"/><path d="M4 8v11a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8"/><path d="M10 12h4"/></svg></div>
                 <h3>Auto-Archive While Away</h3>
                 <p>Out of office? Matching emails file themselves the moment they arrive. Toggle it on for vacation, or always-on for hands-off filing.</p>
             </div>
@@ -365,19 +367,19 @@
             <p class="section-subheading">Your data stays yours.</p>
             <div class="private-grid">
                 <div class="private-item">
-                    <div class="private-icon">&#128274;</div>
+                    <div class="private-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.88 9.88a3 3 0 1 0 4.24 4.24"/><path d="M10.73 5.08A10.43 10.43 0 0 1 12 5c7 0 10 7 10 7a13.16 13.16 0 0 1-1.67 2.68"/><path d="M6.61 6.61A13.526 13.526 0 0 0 2 12s3 7 10 7a9.74 9.74 0 0 0 5.39-1.61"/><line x1="2" x2="22" y1="2" y2="22"/></svg></div>
                     <p><strong>Never reads or stores email content.</strong> Only metadata is used for suggestions and file naming.</p>
                 </div>
                 <div class="private-item">
-                    <div class="private-icon">&#9889;</div>
+                    <div class="private-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
                     <p><strong>Direct to SharePoint or OneDrive.</strong> Files transfer straight to your environment — nothing stored in between.</p>
                 </div>
                 <div class="private-item">
-                    <div class="private-icon">&#128100;</div>
+                    <div class="private-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
                     <p><strong>Your existing Microsoft 365 login.</strong> No new accounts, no new passwords.</p>
                 </div>
                 <div class="private-item">
-                    <div class="private-icon">&#128272;</div>
+                    <div class="private-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg></div>
                     <p><strong>Encrypted in transit.</strong> All data travels over secure, encrypted connections.</p>
                 </div>
             </div>

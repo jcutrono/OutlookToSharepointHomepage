@@ -6,12 +6,12 @@
     xmlns:mailappor="http://schemas.microsoft.com/office/mailappversionoverrides/1.0"
     xsi:type="MailApp">
 
-  <Id>a1b2c3d4-e5f6-7890-abcd-ef1234567890</Id>
-  <Version>1.2.0.0</Version>
-  <ProviderName>OutlookToSharePoint</ProviderName>
+  <Id>a0915be9-3d7b-473f-9cb1-3b7baf3a55cb</Id>
+  <Version>1.3.0.0</Version>
+  <ProviderName>Practical Software Solutions LLC</ProviderName>
   <DefaultLocale>en-US</DefaultLocale>
   <DisplayName DefaultValue="FileMy.Email" />
-  <Description DefaultValue="Save emails and attachments to SharePoint folders with auto-mapping and optional auto-archive while Out of Office." />
+  <Description DefaultValue="Save emails and attachments to SharePoint folders with auto-mapping, optional auto-archive while Out of Office, and Save on Send for outgoing mail." />
 
   <IconUrl DefaultValue="https://app.filemy.email/images/icon-32.png" />
   <HighResolutionIconUrl DefaultValue="https://app.filemy.email/images/icon-64.png" />
@@ -27,7 +27,7 @@
 
   <Requirements>
     <Sets>
-      <Set Name="Mailbox" MinVersion="1.5" />
+      <Set Name="Mailbox" MinVersion="1.10" />
     </Sets>
   </Requirements>
 
@@ -38,17 +38,23 @@
         <RequestedHeight>450</RequestedHeight>
       </DesktopSettings>
     </Form>
+    <Form xsi:type="ItemEdit">
+      <DesktopSettings>
+        <SourceLocation DefaultValue="https://app.filemy.email/compose" />
+      </DesktopSettings>
+    </Form>
   </FormSettings>
 
-  <Permissions>ReadItem</Permissions>
+  <Permissions>ReadWriteItem</Permissions>
   <Rule xsi:type="RuleCollection" Mode="Or">
     <Rule xsi:type="ItemIs" ItemType="Message" FormType="Read" />
+    <Rule xsi:type="ItemIs" ItemType="Message" FormType="Edit" />
   </Rule>
 
   <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides" xsi:type="VersionOverridesV1_0">
 
     <Requirements>
-      <bt:Sets DefaultMinVersion="1.5">
+      <bt:Sets DefaultMinVersion="1.10">
         <bt:Set Name="Mailbox" />
       </bt:Sets>
     </Requirements>
@@ -109,15 +115,20 @@
     <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides/1.1" xsi:type="VersionOverridesV1_1">
 
       <Requirements>
-        <bt:Sets DefaultMinVersion="1.5">
+        <bt:Sets DefaultMinVersion="1.10">
           <bt:Set Name="Mailbox" />
         </bt:Sets>
       </Requirements>
 
       <Hosts>
         <Host xsi:type="MailHost">
+          <Runtimes>
+            <Runtime resid="residRuntimeUrl" lifetime="short" />
+          </Runtimes>
           <DesktopFormFactor>
             <FunctionFile resid="residFunctionUrl" />
+
+            <!-- Message Read surface -->
             <ExtensionPoint xsi:type="MessageReadCommandSurface">
               <OfficeTab id="TabDefault">
                 <Group id="msgReadGroup">
@@ -141,6 +152,40 @@
                 </Group>
               </OfficeTab>
             </ExtensionPoint>
+
+            <!-- Message Compose surface -->
+            <ExtensionPoint xsi:type="MessageComposeCommandSurface">
+              <OfficeTab id="TabDefault">
+                <Group id="msgComposeGroup">
+                  <Label resid="residGroupLabel" />
+                  <Control xsi:type="Button" id="showComposeTaskpaneBtn">
+                    <Label resid="residComposeButtonLabel" />
+                    <Supertip>
+                      <Title resid="residComposeButtonLabel" />
+                      <Description resid="residComposeButtonDesc" />
+                    </Supertip>
+                    <Icon>
+                      <bt:Image size="16" resid="residIcon16" />
+                      <bt:Image size="32" resid="residIcon32" />
+                      <bt:Image size="80" resid="residIcon80" />
+                    </Icon>
+                    <Action xsi:type="ShowTaskpane">
+                      <SourceLocation resid="residComposeTaskpaneUrl" />
+                      <SupportsPinning>true</SupportsPinning>
+                    </Action>
+                  </Control>
+                </Group>
+              </OfficeTab>
+            </ExtensionPoint>
+
+            <!-- OnMessageSend event -->
+            <ExtensionPoint xsi:type="LaunchEvent">
+              <LaunchEvents>
+                <LaunchEvent Type="OnMessageSend" FunctionName="onMessageSendHandler" SendMode="PromptUser" />
+              </LaunchEvents>
+              <SourceLocation resid="residRuntimeUrl" />
+            </ExtensionPoint>
+
           </DesktopFormFactor>
         </Host>
       </Hosts>
@@ -154,13 +199,17 @@
         <bt:Urls>
           <bt:Url id="residFunctionUrl" DefaultValue="https://app.filemy.email/" />
           <bt:Url id="residTaskpaneUrl" DefaultValue="https://app.filemy.email/" />
+          <bt:Url id="residComposeTaskpaneUrl" DefaultValue="https://app.filemy.email/compose" />
+          <bt:Url id="residRuntimeUrl" DefaultValue="https://app.filemy.email/send-event.html" />
         </bt:Urls>
         <bt:ShortStrings>
           <bt:String id="residGroupLabel" DefaultValue="FileMy.Email" />
           <bt:String id="residTaskpaneButtonLabel" DefaultValue="FileMy.Email" />
+          <bt:String id="residComposeButtonLabel" DefaultValue="Save on Send" />
         </bt:ShortStrings>
         <bt:LongStrings>
           <bt:String id="residTaskpaneButtonDesc" DefaultValue="Save this email and its attachments to a SharePoint folder." />
+          <bt:String id="residComposeButtonDesc" DefaultValue="Choose a SharePoint folder to save this email to when you send it." />
         </bt:LongStrings>
       </Resources>
 
