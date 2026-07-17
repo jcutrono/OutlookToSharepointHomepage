@@ -13,8 +13,8 @@
   <DisplayName DefaultValue="FileMy.Email" />
   <Description DefaultValue="Save emails and attachments to SharePoint folders with auto-mapping, optional auto-archive while Out of Office, and Save on Send for outgoing mail." />
 
-  <IconUrl DefaultValue="https://app.filemy.email/images/icon-32.png" />
-  <HighResolutionIconUrl DefaultValue="https://app.filemy.email/images/icon-64.png" />
+  <IconUrl DefaultValue="https://app.filemy.email/images/icon-64.png" />
+  <HighResolutionIconUrl DefaultValue="https://app.filemy.email/images/icon-128.png" />
   <SupportUrl DefaultValue="https://filemy.email" />
 
   <AppDomains>
