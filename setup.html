@@ -20,19 +20,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Installation — FileMy.Email</title>
-    <meta name="description" content="Deploy the FileMy.Email Outlook add-in to your organization or install it individually. Step-by-step installation guide.">
+    <meta name="description" content="Install the FileMy.Email Outlook add-in from Microsoft Marketplace, or deploy it to your organization. Step-by-step installation guide.">
     <link rel="canonical" href="https://filemy.email/setup">
     <link rel="icon" type="image/png" href="/assets/favicon.png">
     <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://filemy.email/setup">
     <meta property="og:title" content="Installation — FileMy.Email">
-    <meta property="og:description" content="Deploy the FileMy.Email Outlook add-in to your organization or install it individually. Step-by-step installation guide.">
+    <meta property="og:description" content="Install the FileMy.Email Outlook add-in from Microsoft Marketplace, or deploy it to your organization. Step-by-step installation guide.">
     <meta property="og:image" content="https://filemy.email/assets/logo.svg">
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="Installation — FileMy.Email">
-    <meta name="twitter:description" content="Deploy the FileMy.Email Outlook add-in to your organization or install it individually. Step-by-step installation guide.">
+    <meta name="twitter:description" content="Install the FileMy.Email Outlook add-in from Microsoft Marketplace, or deploy it to your organization. Step-by-step installation guide.">
     <link rel="stylesheet" href="/assets/styles.css">
     <!-- Structured Data -->
     <script type="application/ld+json">
@@ -100,6 +100,40 @@
             margin-top: 24px;
         }
         .next-section h2 { margin-top: 0; color: #2a7a2a; }
+        /* Marketplace (recommended) install path */
+        .store-box {
+            background: linear-gradient(180deg, #f5f9fd, #eef4fb);
+            border: 1px solid #cfe0f2;
+            border-radius: 10px;
+            padding: 24px;
+            margin: 24px 0 32px;
+        }
+        .store-box h2 { margin-top: 8px; }
+        .store-badge {
+            display: inline-block;
+            background: #1b6ec2;
+            color: #fff;
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            padding: 4px 10px;
+            border-radius: 999px;
+        }
+        .store-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #1b6ec2, #0d7377);
+            color: #fff;
+            font-size: 0.95rem;
+            font-weight: 600;
+            padding: 12px 22px;
+            border-radius: 6px;
+            margin: 8px 0 4px;
+            transition: opacity 0.2s;
+        }
+        .store-btn:hover { opacity: 0.9; text-decoration: none; color: #fff; }
+        .store-note { font-size: 0.88rem; color: #555; margin-bottom: 0; }
+        .alt-heading { color: #555; font-size: 0.95rem; margin-top: 32px; }
     </style>
 </head>
 <body>
@@ -120,13 +154,49 @@
 
     <div class="container">
         <h1>Installation</h1>
-        <p class="subtitle">Follow the steps below to deploy the add-in, then head to <a href="/entra-setup">Entra ID Setup</a> to configure user access and admin roles.</p>
+        <p class="subtitle">Install from Microsoft Marketplace in a couple of clicks, then head to <a href="/entra-setup">Entra ID Setup</a> to configure user access and admin roles.</p>
+
+        <div class="store-box">
+            <span class="store-badge">Recommended</span>
+            <h2>Get it from Microsoft Marketplace</h2>
+            <p>FileMy.Email is published on Microsoft Marketplace by Practical Software Solutions LLC. Installing from the store is the quickest route and keeps the add-in up to date automatically — there are no manifest files to copy, host, or re-upload when a new version ships.</p>
+            <a class="store-btn" href="https://marketplace.microsoft.com/en-us/product/WA200011735" target="_blank" rel="noopener">Get it now on Microsoft Marketplace &rarr;</a>
+            <p class="store-note"><strong>Individual users:</strong> click <strong>Get it now</strong>, sign in with your Microsoft 365 account, and the add-in shows up in Outlook. <strong>IT admins:</strong> use Option A below to roll it out to everyone at once.</p>
+        </div>
 
         <h2>Choose your installation method</h2>
         <p>How you install depends on your role. Pick the option that applies to you:</p>
 
-        <h2>Option A: IT Admin — Deploy to your entire organization</h2>
-        <p>If you are a <strong>Microsoft 365 admin</strong> and want to roll out the add-in to multiple users at once, use centralized deployment.</p>
+        <h2>Option A: IT Admin — Deploy to your organization from the store</h2>
+        <p>If you are a <strong>Microsoft 365 admin</strong> and want to roll out the add-in to multiple users at once, deploy it straight from the store listing. Because the add-in updates itself from the store, this is the option we recommend.</p>
+
+        <ol>
+            <li>
+                Go to the <a href="https://admin.microsoft.com" target="_blank" rel="noopener">Microsoft 365 admin center</a>.
+                <p class="step-detail">Sign in with your admin account.</p>
+            </li>
+            <li>
+                Navigate to <strong>Settings</strong> &rarr; <strong>Integrated apps</strong>, then click <strong>Get apps</strong>.
+            </li>
+            <li>
+                Search for <strong>FileMy.Email</strong> and select the listing by <strong>Practical Software Solutions LLC</strong>.
+                <p class="step-detail">You can also open the <a href="https://marketplace.microsoft.com/en-us/product/WA200011735" target="_blank" rel="noopener">listing</a> directly and choose <strong>Get it now</strong>.</p>
+            </li>
+            <li>
+                Choose which <strong>users or groups</strong> should have access to the add-in.
+                <p class="step-detail">Your subscription includes seats for the users in your plan.</p>
+            </li>
+            <li>
+                Click <strong>Deploy</strong> and wait for deployment to complete.
+                <p class="step-detail">It may take up to 24 hours for the add-in to appear in users' Outlook.</p>
+            </li>
+        </ol>
+
+        <h2 class="alt-heading">Manual alternatives</h2>
+        <p class="step-detail">Use these only if your organization blocks store acquisitions or you need to pin a specific build. Add-ins installed this way do not update themselves — you will need to repeat the steps when a new version ships.</p>
+
+        <h2>Option B: IT Admin — Deploy using the manifest URL</h2>
+        <p>Centralized deployment using a manifest link instead of the store listing.</p>
 
         <p>Copy the manifest URL below — you'll paste it into the admin center.</p>
         <div class="manifest-box">
@@ -159,8 +229,8 @@
             </li>
         </ol>
 
-        <h2>Option B: Individual User — Install for yourself</h2>
-        <p>If you are installing the add-in <strong>just for your own Outlook account</strong>, follow these steps.</p>
+        <h2>Option C: Individual User — Sideload the manifest file</h2>
+        <p>If you are installing the add-in <strong>just for your own Outlook account</strong> and cannot use the store, follow these steps.</p>
 
         <p>First, download the manifest file:</p>
         <div class="manifest-box">
@@ -206,6 +276,7 @@
 
         <h2>Need help?</h2>
         <p>Visit <a href="https://filemy.email">filemy.email</a>, <a href="#" onclick="revealEmail(event, this)">contact support</a>, or <a href="https://billing.stripe.com/p/login/28E6oJ78vcW0bY29dQak000">manage your subscription</a>.</p>
+        <p class="step-detail">Already using FileMy.Email? <a href="https://marketplace.microsoft.com/en-us/product/WA200011735" target="_blank" rel="noopener">Leave a review on Microsoft Marketplace</a> — it helps other teams find the add-in.</p>
 
         <footer>
             <a href="/">Home</a> &middot; <a href="/pricing">Pricing</a> &middot; <a href="/setup">Setup</a> &middot; <a href="/entra-setup">Entra ID Setup</a> &middot; <a href="/privacy">Privacy Policy</a> &middot; <a href="/terms">Terms of Service</a> &middot; <a href="#" onclick="revealEmail(event, this)">Contact Support</a><br><br>
