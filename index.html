@@ -19,20 +19,25 @@
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FileMy.Email — Email Filing Made Simple</title>
-    <meta name="description" content="An Outlook add-in that learns where your emails belong. Save on Send, smart folder suggestions, batch inbox cleanup, automatic metadata, and auto-archive while you're away. One-click filing to SharePoint or OneDrive for busy teams.">
+    <title>Save Outlook Email &amp; Attachments to SharePoint | FileMy.Email</title>
+    <meta name="description" content="Save Outlook emails and attachments to SharePoint or OneDrive in one click. Smart folder suggestions, Save on Send, and automatic metadata. From $10/mo.">
     <link rel="canonical" href="https://filemy.email/">
     <link rel="icon" type="image/png" href="/assets/favicon.png">
     <!-- Open Graph -->
     <meta property="og:type" content="website">
+    <meta property="og:site_name" content="FileMy.Email">
     <meta property="og:url" content="https://filemy.email/">
-    <meta property="og:title" content="FileMy.Email — Email Filing Made Simple">
-    <meta property="og:description" content="An Outlook add-in that learns where your emails belong. Save on Send, smart folder suggestions, batch inbox cleanup, automatic metadata, and auto-archive while you're away. One-click filing to SharePoint or OneDrive for busy teams.">
-    <meta property="og:image" content="https://filemy.email/assets/logo.svg">
+    <meta property="og:title" content="Save Outlook Email &amp; Attachments to SharePoint | FileMy.Email">
+    <meta property="og:description" content="Save Outlook emails and attachments to SharePoint or OneDrive in one click. Smart folder suggestions, Save on Send, and automatic metadata. From $10/mo.">
+    <meta property="og:image" content="https://filemy.email/assets/screenshots/screenshot-save-panel.png">
+    <meta property="og:image:width" content="3049">
+    <meta property="og:image:height" content="1552">
+    <meta property="og:image:alt" content="The FileMy.Email add-in panel open beside an Outlook message, showing SharePoint folder suggestions.">
     <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="FileMy.Email — Email Filing Made Simple">
-    <meta name="twitter:description" content="An Outlook add-in that learns where your emails belong. Save on Send, smart folder suggestions, batch inbox cleanup, automatic metadata, and auto-archive while you're away. One-click filing to SharePoint or OneDrive for busy teams.">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Save Outlook Email &amp; Attachments to SharePoint | FileMy.Email">
+    <meta name="twitter:description" content="Save Outlook emails and attachments to SharePoint or OneDrive in one click. Smart folder suggestions, Save on Send, and automatic metadata. From $10/mo.">
+    <meta name="twitter:image" content="https://filemy.email/assets/screenshots/screenshot-save-panel.png">
     <link rel="stylesheet" href="/assets/styles.css">
     <!-- Structured Data -->
     <script type="application/ld+json">
@@ -40,7 +45,10 @@
         "@context": "https://schema.org",
         "@type": "Organization",
         "name": "FileMy.Email",
+        "alternateName": ["FileMy", "File My Email", "FileMyEmail"],
+        "legalName": "Practical Software Solutions LLC",
         "url": "https://filemy.email",
+        "sameAs": ["https://marketplace.microsoft.com/en-us/product/WA200011735"],
         "logo": "https://filemy.email/assets/logo.svg",
         "description": "Save emails and attachments from Outlook to SharePoint or OneDrive with Save on Send, smart folder suggestions, batch inbox cleanup, and automatic metadata.",
         "contactPoint": {
@@ -56,16 +64,102 @@
         "@type": "SoftwareApplication",
         "name": "FileMy.Email",
         "applicationCategory": "BusinessApplication",
-        "operatingSystem": "Windows, Web",
+        "applicationSubCategory": "Outlook Add-in",
+        "operatingSystem": "Microsoft Outlook (Windows, Mac, Outlook on the web)",
         "url": "https://filemy.email",
+        "installUrl": "https://marketplace.microsoft.com/en-us/product/WA200011735",
+        "downloadUrl": "https://marketplace.microsoft.com/en-us/product/WA200011735",
+        "softwareVersion": "1.3.3",
+        "image": "https://filemy.email/assets/screenshots/screenshot-save-panel.png",
+        "screenshot": "https://filemy.email/assets/screenshots/screenshot-save-panel.png",
         "description": "Outlook add-in that saves emails and attachments to SharePoint or OneDrive with Save on Send, smart folder suggestions, batch inbox cleanup, and automatic metadata.",
+        "featureList": [
+            "Save Outlook email to SharePoint in one click",
+            "Save Outlook attachments to SharePoint or OneDrive",
+            "Save on Send for outgoing mail",
+            "Smart folder suggestions that learn from past saves",
+            "Batch inbox cleanup",
+            "Automatic SharePoint metadata column mapping",
+            "Save as EML or PDF",
+            "Duplicate detection",
+            "Auto-archive while out of office"
+        ],
+        "publisher": {
+            "@type": "Organization",
+            "name": "Practical Software Solutions LLC"
+        },
         "offers": {
             "@type": "Offer",
+            "url": "https://filemy.email/pricing",
             "price": "10.00",
             "priceCurrency": "USD",
             "priceValidUntil": "2027-12-31",
             "availability": "https://schema.org/InStock"
         }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "How do I save attachments from Outlook to SharePoint?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Install the FileMy.Email add-in in Outlook, open the message, and click the add-in icon in the ribbon. Pick a SharePoint site and folder — or accept the suggested one — and choose whether to save the attachments on their own or alongside the email. Files upload straight into the document library, with optional custom file naming and a dedicated attachment subfolder. No drag-and-drop, no browser upload step."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Can Outlook file emails to a SharePoint document library automatically?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. Save on Send files an outgoing message the moment you hit Send, and Auto-Archive files incoming mail from senders you have already mapped without you opening it. Neither needs an Outlook rule, a Power Automate flow, or a forwarding address — the add-in writes directly to your SharePoint library."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Does it save the email itself, or just the attachments?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Either, or both. Save the message as an .eml or .pdf file, save only its attachments, or save both — the email in the folder with its attachments in a subfolder alongside it. Duplicate detection stops the same message being filed twice."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Can I save Outlook email to OneDrive instead of SharePoint?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. Any SharePoint site you have access to and your personal OneDrive both appear in the folder picker, so you can file team correspondence to a shared library and personal reference mail to your own OneDrive."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Do my emails pass through your servers?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "No. Email and attachments transfer directly from Outlook into your own Microsoft 365 tenant using your existing login. We never read, store, or route email content — only metadata such as sender and subject is used to suggest folders and name files."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What does it cost, and is there a seat minimum?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "$10 per month for 3 users, then $3 per additional user, billed monthly. There is no 10-seat minimum and no annual contract — most enterprise email-filing tools require both."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Which versions of Outlook does it work in?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Outlook on Windows and Mac, the new Outlook for Windows, and Outlook on the web. Your favorites, column mappings, and learned folder suggestions follow your account across all of them."
+                }
+            }
+        ]
     }
     </script>
     <script type="application/ld+json">
@@ -89,7 +183,7 @@
         /* Header */
         header { padding: 48px 0 0; text-align: center; }
         .logo { width: 80px; height: 80px; border-radius: 18px; margin-bottom: 20px; }
-        h1 { font-size: 2rem; font-weight: 700; color: #1a1a1a; }
+        h1 { font-size: 2rem; font-weight: 700; color: #1a1a1a; line-height: 1.25; max-width: 620px; margin: 0 auto 12px; }
         .tagline { font-size: 1.15rem; color: #555; max-width: 560px; margin: 0 auto; }
 
         /* CTA */
@@ -169,6 +263,25 @@
         .learn-more-card .lm-title { font-size: 0.98rem; font-weight: 600; color: #1a1a1a; margin: 4px 0 6px; }
         .learn-more-card .lm-desc { font-size: 0.86rem; color: #666; }
 
+        /* Brand eyebrow above the H1 */
+        .brand-eyebrow { font-size: 0.8rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #1b6ec2; margin-bottom: 6px; }
+
+        /* Secondary store CTA */
+        .cta-store { margin-top: 14px; }
+        .cta-store a { font-size: 0.92rem; font-weight: 600; color: #1b6ec2; text-decoration: none; }
+        .cta-store a:hover { text-decoration: underline; }
+
+        /* Product screenshot */
+        .screenshot-slot { margin: 8px auto 40px; text-align: center; }
+        .screenshot-slot img { max-width: 100%; height: auto; border: 1px solid #e6e6e6; border-radius: 8px; box-shadow: 0 4px 24px rgba(0,0,0,0.08); }
+        .screenshot-caption { font-size: 0.85rem; color: #888; margin-top: 8px; }
+
+        /* FAQ */
+        .faq-section { padding: 48px 0; border-top: 1px solid #eee; }
+        .faq-item { margin-bottom: 20px; }
+        .faq-item h3 { font-size: 0.98rem; font-weight: 600; color: #1a1a1a; margin-bottom: 6px; }
+        .faq-item p { font-size: 0.9rem; color: #666; }
+
         /* Responsive */
         @media (max-width: 600px) {
             .features { grid-template-columns: 1fr; gap: 24px; }
@@ -188,7 +301,7 @@
     <!-- End Google Tag Manager (noscript) -->
     <div class="top-nav">
         <a href="/" class="brand">
-            <img src="/assets/favicon.png" alt="Logo">
+            <img src="/assets/favicon.png" width="28" height="28" alt="FileMy.Email">
             FileMy.Email
         </a>
         <nav>
@@ -224,8 +337,9 @@
                 </g>
             </svg>
 
-            <h1>FileMy.Email</h1>
-            <p class="tagline">An Outlook add-in that learns where your emails belong — for both incoming and outgoing mail. Smart suggestions get smarter the more you use it, Save on Send files messages the moment you hit Send, batch inbox cleanup clears the backlog, metadata fills itself in, and auto-archive keeps filing while you're out of office. Save to SharePoint or your personal OneDrive.</p>
+            <p class="brand-eyebrow">FileMy.Email</p>
+            <h1>Save Outlook Email and Attachments to SharePoint</h1>
+            <p class="tagline">An Outlook add-in that files messages and attachments straight into SharePoint or OneDrive — and learns where each one belongs. Smart folder suggestions get better the more you use them, Save on Send files outgoing mail the moment you hit Send, batch inbox cleanup clears the backlog, SharePoint metadata columns fill themselves in, and auto-archive keeps filing while you're out of office.</p>
         </header>
 
         <div class="cta">
@@ -234,7 +348,13 @@
                 buy-button-id="buy_btn_1TJgSVRuSKZAORtNCc5XjvFF"
                 publishable-key="pk_live_51TJeBURuSKZAORtNDq1LHzVpoXTW8vintdAn0pGvA5uo488Pqo7yJBjYeLDwfUP9SOKTmkicPPeudSqEQhWIHvnu00nvsv8X0u"
             ></stripe-buy-button>
+            <p class="cta-store"><a href="https://marketplace.microsoft.com/en-us/product/WA200011735" target="_blank" rel="noopener">Get it on Microsoft Marketplace &rarr;</a></p>
             <p class="cta-subtext">Starting at $10/mo for 3 users. <a href="/pricing">See pricing</a> &middot; <a href="https://billing.stripe.com/p/login/28E6oJ78vcW0bY29dQak000">Manage subscription</a></p>
+        </div>
+
+        <div class="screenshot-slot">
+            <img src="/assets/screenshots/screenshot-save-panel.png" width="3049" height="1552" alt="The FileMy.Email add-in panel open beside an Outlook message, showing SharePoint folder suggestions for saving the email and its attachments." loading="lazy" decoding="async" onerror="this.parentNode.style.display='none'">
+            <p class="screenshot-caption">Saving an Outlook email to SharePoint from the add-in panel, without leaving the message.</p>
         </div>
 
         <section class="features">
@@ -412,7 +532,7 @@
                 <a href="/industries/property-management" class="learn-more-card">
                     <div class="lm-label">For property management</div>
                     <div class="lm-title">Email filing for property management</div>
-                    <div class="lm-desc">Tenant, vendor, and inspection email filed to the right property folder — including from mobile.</div>
+                    <div class="lm-desc">Tenant, vendor, and inspection email filed to the right property folder, automatically.</div>
                 </a>
             </div>
         </section>
@@ -436,6 +556,39 @@
                     <div class="lm-title">vs MacroView Mail</div>
                     <div class="lm-desc">Lowest enterprise per-user price, native mobile, broader DMS suite. 10-seat minimum.</div>
                 </a>
+            </div>
+        </section>
+
+        <section class="faq-section">
+            <h2 class="section-heading">Frequently asked questions</h2>
+            <p class="section-subheading">Saving Outlook email and attachments to SharePoint, answered.</p>
+            <div class="faq-item">
+                <h3>How do I save attachments from Outlook to SharePoint?</h3>
+                <p>Install the FileMy.Email add-in in Outlook, open the message, and click the add-in icon in the ribbon. Pick a SharePoint site and folder — or accept the suggested one — and choose whether to save the attachments on their own or alongside the email. Files upload straight into the document library, with optional custom file naming and a dedicated attachment subfolder. No drag-and-drop, no browser upload step.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Can Outlook file emails to a SharePoint document library automatically?</h3>
+                <p>Yes. Save on Send files an outgoing message the moment you hit Send, and Auto-Archive files incoming mail from senders you have already mapped without you opening it. Neither needs an Outlook rule, a Power Automate flow, or a forwarding address — the add-in writes directly to your SharePoint library.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Does it save the email itself, or just the attachments?</h3>
+                <p>Either, or both. Save the message as an .eml or .pdf file, save only its attachments, or save both — the email in the folder with its attachments in a subfolder alongside it. Duplicate detection stops the same message being filed twice.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Can I save Outlook email to OneDrive instead of SharePoint?</h3>
+                <p>Yes. Any SharePoint site you have access to and your personal OneDrive both appear in the folder picker, so you can file team correspondence to a shared library and personal reference mail to your own OneDrive.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Do my emails pass through your servers?</h3>
+                <p>No. Email and attachments transfer directly from Outlook into your own Microsoft 365 tenant using your existing login. We never read, store, or route email content — only metadata such as sender and subject is used to suggest folders and name files.</p>
+            </div>
+            <div class="faq-item">
+                <h3>What does it cost, and is there a seat minimum?</h3>
+                <p>$10 per month for 3 users, then $3 per additional user, billed monthly. There is no 10-seat minimum and no annual contract — most enterprise email-filing tools require both.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Which versions of Outlook does it work in?</h3>
+                <p>Outlook on Windows and Mac, the new Outlook for Windows, and Outlook on the web. Your favorites, column mappings, and learned folder suggestions follow your account across all of them.</p>
             </div>
         </section>
 
