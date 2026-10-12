@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg version="1.2" baseProfile="tiny-ps" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 192">
+  <title>FileMy.Email</title>
+  <!--
+    BIMI logo: the default._bimi.filemy.email DNS record points at
+    https://filemy.email/logo.svg. Mail clients crop it to a circle.
+    It is assets/logo.svg reworked to pass the SVG Tiny PS schema:
+    - the background is a full square (no rounded corners);
+    - the @ is Segoe UI Bold converted to a path, so it doesn't depend on fonts;
+    - SVG Tiny PS has no group opacity, so each trail is painted with the
+      background gradient pre-blended with white at that trail's old opacity
+      (85%, 65%, 45%). The trails are drawn before the @ so it covers their ends.
+  -->
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#1b6ec2"/>
+      <stop offset="40%" stop-color="#127d9e"/>
+      <stop offset="100%" stop-color="#0d7377"/>
+    </linearGradient>
+    <linearGradient id="trail85" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="192" y2="0">
+      <stop offset="0%" stop-color="#dde9f6"/>
+      <stop offset="40%" stop-color="#dbecf0"/>
+      <stop offset="100%" stop-color="#dbeaeb"/>
+    </linearGradient>
+    <linearGradient id="trail65" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="192" y2="0">
+      <stop offset="0%" stop-color="#afccea"/>
+      <stop offset="40%" stop-color="#acd2dd"/>
+      <stop offset="100%" stop-color="#aacecf"/>
+    </linearGradient>
+    <linearGradient id="trail45" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="192" y2="0">
+      <stop offset="0%" stop-color="#82afdd"/>
+      <stop offset="40%" stop-color="#7db8ca"/>
+      <stop offset="100%" stop-color="#7ab2b4"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="192" height="192" fill="url(#bg)"/>
+
+  <!-- Top trail: curves up-right -->
+  <path d="M 106 76 C 116 72 128 66 137 61" fill="none" stroke="url(#trail85)" stroke-width="5" stroke-linecap="round"/>
+  <path d="M 134 56 L 149 54 L 140 66 Z" fill="url(#trail85)"/>
+  <!-- Middle trail: straight -->
+  <path d="M 114 94 L 142 94" fill="none" stroke="url(#trail65)" stroke-width="4.5" stroke-linecap="round"/>
+  <path d="M 142 88 L 156 94 L 142 100 Z" fill="url(#trail65)"/>
+  <!-- Bottom trail: curves down-right -->
+  <path d="M 108 114 C 118 118 129 124 137 128" fill="none" stroke="url(#trail45)" stroke-width="4" stroke-linecap="round"/>
+  <path d="M 139 122 L 150 133 L 135 133 Z" fill="url(#trail45)"/>
+
+  <path fill="#ffffff" d="M81.43 116.98L81.43 116.98L81.13 116.98Q77.54 126.77 68.10 126.77L68.10 126.77Q61.03 126.77 56.70 121.64Q52.36 116.52 52.36 107.44L52.36 107.44Q52.36 95.70 58.36 88.34Q64.36 80.99 72.82 80.99L72.82 80.99Q80.46 80.99 82.41 86.99L82.41 86.99L82.61 86.99L83.13 81.91L94.66 81.91Q92.35 103.75 92.35 110.47L92.35 110.47Q92.35 117.65 96.25 117.65L96.25 117.65Q100.35 117.65 103.02 112.21Q105.68 106.78 105.68 98.01L105.68 98.01Q105.68 86.01 98.05 78.35Q90.41 70.68 76.72 70.68L76.72 70.68Q62.05 70.68 52.34 80.91Q42.62 91.14 42.62 105.85L42.62 105.85Q42.62 120.11 51.21 128.31Q59.80 136.51 74.92 136.51L74.92 136.51Q86.46 136.51 96.05 132.10L96.05 132.10L96.05 141.90Q87.28 145.64 73.49 145.64L73.49 145.64Q54.57 145.64 42.70 134.80Q30.83 123.95 30.83 105.65L30.83 105.65Q30.83 86.99 43.49 74.27Q56.16 61.56 76.10 61.56L76.10 61.56Q94.56 61.56 105.97 71.43Q117.37 81.30 117.37 97.45L117.37 97.45Q117.37 110.72 110.40 118.75Q103.43 126.77 93.12 126.77L93.12 126.77Q88.05 126.77 84.87 124.05Q81.69 121.34 81.43 116.98ZM74.62 89.91L74.62 89.91Q70.00 89.91 67.10 95.16Q64.21 100.42 64.21 107.34L64.21 107.34Q64.21 112.26 66.18 115.01Q68.16 117.75 71.28 117.75L71.28 117.75Q76.10 117.75 78.87 112.57Q81.64 107.39 81.64 98.73L81.64 98.73Q81.64 94.63 79.72 92.27Q77.79 89.91 74.62 89.91Z"/>
+</svg>
