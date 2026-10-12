@@ -149,11 +149,49 @@
             <strong>Not an admin?</strong> Ask whoever manages your Microsoft 365 tenant for the Tenant ID, or have them complete the purchase.
         </div>
 
+        <h2 id="consent">Grant admin consent (required, one-time)</h2>
+        <p>FileMy.Email can't read or file anyone's mail until a Microsoft 365 admin grants it permission on behalf of your organization. The add-in never asks users for these permissions itself, so this step is needed whatever your tenant's user consent settings are. Until it's done, everyone who opens the add-in sees a message that FileMy.Email can't continue until a Microsoft 365 admin in your organization grants it permission.</p>
+
+        <ol>
+            <li>
+                Go to the <a href="https://entra.microsoft.com" target="_blank" rel="noopener">Microsoft Entra admin center</a>.
+                <p class="step-detail">Sign in as a <strong>Global Administrator</strong> or <strong>Privileged Role Administrator</strong>. An Application Administrator or Cloud Application Administrator can't complete this step: one of the permissions is a Microsoft Graph application permission, and only those two roles can grant one.</p>
+            </li>
+            <li>
+                Navigate to <strong>Entra ID</strong> &rarr; <strong>Enterprise apps</strong>.
+                <p class="step-detail">In older versions of the admin center this is <strong>Identity</strong> &rarr; <strong>Applications</strong> &rarr; <strong>Enterprise applications</strong>. FileMy.Email is a multi-tenant app, so it appears in your directory under Enterprise applications. There is no App registration for it on your side, and nothing for you to register.</p>
+            </li>
+            <li>
+                Search for <strong>"FileMy.Email"</strong> and click on the application.
+                <p class="step-detail">If it doesn't come up by name, search for its Application ID instead: <code>5fd42821-f8c8-47db-90c9-fea300290255</code>.</p>
+            </li>
+            <li>
+                In the left sidebar, click <strong>Security</strong> &rarr; <strong>Permissions</strong>.
+            </li>
+            <li>
+                Click <strong>Grant admin consent for [your organization]</strong>, review the list, and click <strong>Accept</strong>.
+                <p class="step-detail">This grants every permission listed below in one go. You don't add permissions yourself: the list comes from FileMy.Email, which is why an enterprise app has no <strong>Add a permission</strong> button.</p>
+            </li>
+            <li>
+                Check the <strong>Admin consent</strong> tab on the same page. It should list 9 Microsoft Graph permissions: the eight below as <strong>Delegated</strong>, plus <strong>Sites.Read.All</strong> a second time as <strong>Application</strong>.
+                <p class="step-detail">Consent given any other way, such as from a sign-in prompt, can cover only signing in. If the tab lists fewer than 9, click <strong>Grant admin consent for [your organization]</strong> again. Then ask anyone who already had the add-in open to close it and open it again.</p>
+            </li>
+        </ol>
+
+        <p>What the add-in asks for, and why:</p>
+        <ul>
+            <li><strong>Mail.Read</strong>, <strong>Mail.ReadWrite</strong> &mdash; read the message being filed, and tag it once it has been saved.</li>
+            <li><strong>Sites.Read.All</strong>, <strong>Files.ReadWrite.All</strong> &mdash; find your SharePoint sites and document libraries, and write the saved file.</li>
+            <li><strong>User.Read</strong>, <strong>User.ReadBasic.All</strong> &mdash; identify the signed-in user, and show display names on the admin seat list.</li>
+            <li><strong>MailboxSettings.ReadWrite</strong>, <strong>offline_access</strong> &mdash; required for Auto-Archive: read Out-of-Office state, and keep filing matching mail while a user is away.</li>
+        </ul>
+        <p class="step-detail">These are delegated permissions &mdash; the add-in acts as the signed-in user and can only reach what that person can already reach. <strong>Sites.Read.All</strong> is additionally requested as an application permission, used only to list the sites in your tenant so the site picker shows all of them rather than just the ones a user happens to follow.</p>
+
         <h2>How access works</h2>
-        <p>Access to FileMy.Email is your subscription and its seats &mdash; not an Entra role. Once your subscription is active, anyone in your organization can open the add-in and start filing mail. They take one of your seats the first time they do, and seats are claimed first come, first served.</p>
+        <p>Access to FileMy.Email is your subscription and its seats &mdash; not an Entra role. Once your subscription is active and an admin has <a href="#consent">granted consent</a>, anyone in your organization can open the add-in and start filing mail. They take one of your seats the first time they do, and seats are claimed first come, first served.</p>
 
         <div class="info-box">
-            <strong>You do not have to assign anyone a role to get started.</strong> Subscribe, and your people can work straight away. The roles below exist only if you want to <a href="#restrict">control who gets access</a> or designate an admin.
+            <strong>You do not have to assign anyone a role to get started.</strong> Subscribe, have an admin <a href="#consent">grant consent</a>, and your people can work straight away. The roles below exist only if you want to <a href="#restrict">control who gets access</a> or designate an admin.
         </div>
 
         <p>When every seat is taken, the next person to open the add-in is told so. An admin can free a seat at any time from the <strong>Admin</strong> tab inside the add-in, or add seats to the plan.</p>
@@ -172,45 +210,12 @@
             <p>Allows the user to view subscription details, manage seated users, and remove users who have left the organization. Admins do not consume a seat unless they also have the User role.</p>
         </div>
 
-        <h2 id="consent">Step 1: Grant admin consent (one-time)</h2>
-        <p>The add-in asks each user for the Microsoft Graph permissions it needs the first time they sign in. Consenting once on behalf of the organization means nobody sees those prompts. This step is optional but recommended.</p>
-
-        <ol>
-            <li>
-                Go to the <a href="https://entra.microsoft.com" target="_blank" rel="noopener">Microsoft Entra admin center</a>.
-                <p class="step-detail">Sign in with a Global Administrator account.</p>
-            </li>
-            <li>
-                Navigate to <strong>Identity</strong> &rarr; <strong>Applications</strong> &rarr; <strong>Enterprise applications</strong>.
-                <p class="step-detail">FileMy.Email is a multi-tenant app, so it appears in your directory under Enterprise applications. There is no App registration for it on your side and nothing for you to register.</p>
-            </li>
-            <li>
-                Search for <strong>"FileMy.Email"</strong> and click on the application.
-            </li>
-            <li>
-                In the left sidebar, click <strong>Security</strong> &rarr; <strong>Permissions</strong>.
-            </li>
-            <li>
-                Click <strong>Grant admin consent for [your organization]</strong> and review the list.
-                <p class="step-detail">Skipping this is fine &mdash; each user is simply prompted to consent for themselves the first time they sign in, and again the first time they turn on Auto-Archive.</p>
-            </li>
-        </ol>
-
-        <p>What the add-in asks for, and why:</p>
-        <ul>
-            <li><strong>Mail.Read</strong>, <strong>Mail.ReadWrite</strong> &mdash; read the message being filed, and tag it once it has been saved.</li>
-            <li><strong>Sites.Read.All</strong>, <strong>Files.ReadWrite.All</strong> &mdash; find your SharePoint sites and document libraries, and write the saved file.</li>
-            <li><strong>User.Read</strong>, <strong>User.ReadBasic.All</strong> &mdash; identify the signed-in user, and show display names on the admin seat list.</li>
-            <li><strong>MailboxSettings.ReadWrite</strong>, <strong>offline_access</strong> &mdash; required for Auto-Archive: read Out-of-Office state, and keep filing matching mail while a user is away.</li>
-        </ul>
-        <p class="step-detail">These are delegated permissions &mdash; the add-in acts as the signed-in user and can only reach what that person can already reach. <strong>Sites.Read.All</strong> is additionally requested as an application permission, used only to list the sites in your tenant so the site picker shows all of them rather than just the ones a user happens to follow.</p>
-
         <h2 id="restrict">Restricting who can use FileMy.Email (optional)</h2>
         <p>By default anyone in your organization can open the add-in and take a seat. If you would rather decide who gets access, use Microsoft's own assignment requirement &mdash; Entra enforces it at sign-in, before a request ever reaches FileMy.Email.</p>
 
         <ol>
             <li>
-                In the <a href="https://entra.microsoft.com" target="_blank" rel="noopener">Entra admin center</a>, go to <strong>Identity</strong> &rarr; <strong>Applications</strong> &rarr; <strong>Enterprise applications</strong>.
+                In the <a href="https://entra.microsoft.com" target="_blank" rel="noopener">Entra admin center</a>, go to <strong>Entra ID</strong> &rarr; <strong>Enterprise apps</strong>.
             </li>
             <li>
                 Search for <strong>"FileMy.Email"</strong> and click on the application.
@@ -240,7 +245,7 @@
 
         <h2>Common scenarios</h2>
 
-        <p><strong>Give everyone in my company access:</strong> Nothing to do. Once your subscription is active, everyone can use the add-in &mdash; just make sure you have bought at least as many seats as you have people who need it.</p>
+        <p><strong>Give everyone in my company access:</strong> <a href="#consent">Grant admin consent</a> once; nothing else to do. Once your subscription is active, everyone can use the add-in &mdash; just make sure you have bought at least as many seats as you have people who need it.</p>
 
         <p><strong>Make sure the right people get the seats:</strong> If you have fewer seats than staff, seats go to whoever opens the add-in first. To choose instead, follow <a href="#restrict">Restricting who can use FileMy.Email</a> and assign only the people who should have one.</p>
 
@@ -252,7 +257,7 @@
 
         <div class="next-section">
             <h2>You're all set</h2>
-            <p>Once your subscription is active, users will see the FileMy.Email button in their Outlook ribbon and can start filing straight away. Admins will see an additional "Admin" tab for managing seats and subscriptions.</p>
+            <p>Once your subscription is active and admin consent is granted, users will see the FileMy.Email button in their Outlook ribbon and can start filing straight away. Admins will see an additional "Admin" tab for managing seats and subscriptions.</p>
             <p>If you change role assignments, the add-in can take a few minutes to notice. Ask the user to close and reopen Outlook so it picks up a fresh sign-in.</p>
         </div>
 
