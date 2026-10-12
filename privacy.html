@@ -83,7 +83,7 @@
 
     <div class="container">
         <h1>Privacy Policy</h1>
-        <p class="updated">Last updated: July 6, 2026</p>
+        <p class="updated">Last updated: October 12, 2026</p>
 
         <p class="lead">This policy explains how <strong>FileMy.Email</strong> handles personal data across two things: our <strong>website</strong> at filemy.email, and the <strong>Outlook add-in</strong> ("the Add-in") that saves your emails and attachments to SharePoint or OneDrive. The two are very different in what they touch, so we describe them separately below.</p>
 
@@ -95,6 +95,9 @@
 
         <h3>Analytics</h3>
         <p>When you visit our website, we use <strong>Google Analytics 4</strong> and <strong>Google Tag Manager</strong> to understand how the site is used (which pages are visited, how visitors arrive, and general usage trends). This involves data such as your IP address, device and browser type, approximate location (derived from IP), pages viewed, and referring website. This data is collected through cookies (see the table below) and is processed by Google on our behalf.</p>
+
+        <h3>Hosting</h3>
+        <p>Our website is hosted on <strong>GitHub Pages</strong> and delivered through <strong>Cloudflare</strong>, which also provides DNS for our domains. Both process your IP address and request details to serve the site and protect it from abuse.</p>
 
         <h3>Payments</h3>
         <p>When you purchase a subscription, checkout is handled by <strong>Stripe</strong>. You enter your payment details directly with Stripe — we never see or store your full card number. Stripe processes your name, email, billing details, and payment information to complete the transaction and to prevent fraud. See Stripe's privacy policy at <a href="https://stripe.com/privacy" rel="noopener" target="_blank">stripe.com/privacy</a>.</p>
@@ -123,60 +126,68 @@
         <p>Where UK GDPR or EU GDPR applies, we rely on: your <strong>consent</strong> and our <strong>legitimate interest</strong> in understanding and improving our website for analytics; the <strong>performance of a contract</strong> with you to process your purchase; and our <strong>legitimate interest</strong> in security and fraud prevention for Stripe's necessary cookies.</p>
 
         <h2>Part B — The Outlook Add-in</h2>
-        <p>The Add-in is designed to keep your email data private. It reads only what it needs to file a message, and it does not route your email content through our servers.</p>
+        <p>The Add-in files emails and attachments into your organization's own SharePoint or OneDrive. To do that, our service, hosted on Microsoft Azure in the United States, reads each message from Microsoft 365 and writes it to the folder you chose. This section explains exactly what the service reads, what it keeps, and for how long.</p>
 
         <h3>What the Add-in Accesses</h3>
-        <p>When you choose to save an email, the Add-in reads the following metadata from the selected message:</p>
+        <p>The Add-in acts as the signed-in user through Microsoft Graph, with the permissions your organization approves, so it can reach only what that user can already reach. When a message is filed, the service reads:</p>
         <ul>
-            <li>Sender name and email address</li>
-            <li>Subject line</li>
-            <li>Date sent</li>
+            <li>Sender and recipient names and email addresses</li>
+            <li>Subject line and date</li>
             <li>Attachment file names</li>
+            <li>Message identifiers</li>
+            <li>The message body and attachments, so they can be copied to your SharePoint or OneDrive</li>
         </ul>
-        <p>This is used solely to suggest a destination folder and to name the saved file according to your preferences.</p>
+        <p>The metadata is also used to suggest a destination folder, name the saved file and fill in any SharePoint columns you map. If you turn on <strong>Auto-Archive</strong>, the service also reads the sender and other metadata of each new message in your Inbox to check it against your filing rules. Messages that match no rule are not copied or stored. To help you find folders, the service can also list the names and web addresses of SharePoint sites in your organization, and it offers you only the sites you can open.</p>
+
+        <h3>How Your Email Is Filed</h3>
+        <p>When a message is filed, our service downloads it and its attachments from Microsoft 365 and uploads them to the SharePoint or OneDrive folder you chose, over encrypted connections. The content is held in memory only for that transfer. It is never written to our database and is not kept afterwards. If you save emails as PDF, the conversion runs on our service, which loads any remote images the email refers to, as an email client would. The Add-in does not share your email content with any analytics provider or advertising network, and it adds nothing to the emails you send.</p>
 
         <h3>What the Add-in Stores</h3>
+        <p>Our database, in Microsoft Azure's East US region, holds:</p>
         <ul>
-            <li><strong>Folder mapping preferences</strong> — rules you create to route emails to specific SharePoint or OneDrive folders</li>
-            <li><strong>File naming settings</strong> — your chosen templates for naming saved files</li>
+            <li><strong>Filing rules</strong>: sender or recipient addresses or domains, and the SharePoint or OneDrive folder each one maps to. Folder names are yours and may include client or project names.</li>
+            <li><strong>Filing history</strong>, used to prevent duplicate saves: message identifiers, the saved file name (by default the date, sender name and subject), the folder, a link to the file, and attachment file names.</li>
+            <li><strong>Save on Send requests</strong>: the subject, recipient addresses and chosen folder, from when you click Send until the message is filed.</li>
+            <li><strong>Settings</strong>: file-naming templates, SharePoint column mappings and other preferences.</li>
+            <li><strong>Encrypted Microsoft sign-in tokens</strong>, so Save on Send and Auto-Archive can work when the Add-in is closed. The encryption keys are held separately in Azure Key Vault.</li>
+            <li><strong>Subscription record</strong>: your organization's Microsoft 365 tenant ID, which users hold licenses, and the billing contact's email address.</li>
         </ul>
-        <p>This data is stored within your Microsoft 365 environment and is associated with your account.</p>
+        <p>Our service also keeps <strong>logs</strong> for 30 days. Diagnostic logs contain user and tenant identifiers, message identifiers and error details, and for each filed message its subject, sender address and destination folder. Access logs record each database request and each read of a stored secret, with the identity that made it.</p>
 
         <h3>What the Add-in Does NOT Store</h3>
         <ul>
-            <li>Email content or message bodies</li>
-            <li>Attachment file contents</li>
-            <li>Passwords or authentication tokens</li>
+            <li>Message bodies or attachment contents</li>
+            <li>Your password</li>
             <li>Copies of any files saved to SharePoint or OneDrive</li>
         </ul>
 
-        <h3>How the Add-in Transfers Your Email Data</h3>
-        <p>When you save an email or attachment, the file is transferred <strong>directly</strong> from Outlook to your SharePoint site or OneDrive over encrypted connections. Your email content and files are not sent to, routed through, or stored on FileMy.Email servers. The Add-in does not share your email content with any analytics provider or advertising network.</p>
-
         <h3>Authentication</h3>
-        <p>The Add-in uses your organization's existing Microsoft 365 authentication (OAuth 2.0). We do not handle, see, or store your password.</p>
+        <p>The Add-in uses your organization's existing Microsoft 365 sign-in (OAuth 2.0). We never see or store your password. Your administrator can revoke the Add-in's access at any time in Microsoft Entra, which also stops Save on Send and Auto-Archive.</p>
 
         <h2>How We Share Information</h2>
         <p>We do not sell your personal information. We share data only with the service providers needed to run FileMy.Email:</p>
         <ul>
+            <li><strong>Microsoft</strong> — Microsoft Azure hosts the Add-in's service, its database, logs and encryption keys in the East US region, and sends our internal alert emails. The Add-in reads from and files into your own Microsoft 365 tenant. (<a href="https://privacy.microsoft.com/privacystatement" rel="noopener" target="_blank">privacy statement</a>)</li>
             <li><strong>Google</strong> — website analytics (<a href="https://policies.google.com/privacy" rel="noopener" target="_blank">privacy policy</a>)</li>
             <li><strong>Stripe</strong> — payment processing (<a href="https://stripe.com/privacy" rel="noopener" target="_blank">privacy policy</a>)</li>
-            <li><strong>Microsoft</strong> — you connect your own Microsoft 365 tenant; your email and files stay within your Microsoft environment</li>
+            <li><strong>Cloudflare</strong> — DNS for our domains and delivery of our website. Add-in traffic does not pass through Cloudflare. (<a href="https://www.cloudflare.com/privacypolicy/" rel="noopener" target="_blank">privacy policy</a>)</li>
+            <li><strong>GitHub</strong> — hosting for our website (<a href="https://docs.github.com/site-policy/privacy-policies/github-general-privacy-statement" rel="noopener" target="_blank">privacy statement</a>)</li>
         </ul>
         <p>We may also disclose information if required by law or to protect our rights.</p>
 
         <h2>International Data Transfers</h2>
-        <p>We are based in the United States, and our service providers (including Google and Stripe) process data in the United States and other countries. If you are in the UK or EEA, your personal data will be transferred to the United States. Where required, these transfers rely on appropriate safeguards such as the <strong>EU–US and UK Data Privacy Framework</strong> and/or <strong>Standard Contractual Clauses</strong> (with the UK Addendum / IDTA) put in place by these providers.</p>
+        <p>We are based in the United States, and the Add-in's service and data are hosted in Microsoft Azure's East US region. Our service providers (including Microsoft, Google, Stripe, Cloudflare and GitHub) process data in the United States and other countries. If you are outside the United States, including in the UK, the EEA or Canada, your personal data will be transferred to the United States. Where required, these transfers rely on appropriate safeguards such as the <strong>EU–US and UK Data Privacy Framework</strong> and/or <strong>Standard Contractual Clauses</strong> (with the UK Addendum / IDTA) put in place by these providers.</p>
 
         <h2>Data Retention</h2>
-        <p>We keep website analytics data for up to 26 months, payment records for as long as required for tax and accounting law, and support correspondence for as long as needed to assist you. Add-in preferences are kept in your Microsoft 365 environment until you remove them or uninstall the Add-in.</p>
+        <p>We keep website analytics data for up to 26 months, payment records for as long as required for tax and accounting law, and support correspondence for as long as needed to assist you.</p>
+        <p>Add-in data is kept while your organization's subscription is active. We delete it within 30 days after the subscription is cancelled or we receive a verified deletion request, apart from the payment records above. When an administrator removes a user's seat, they can choose to delete that user's data at the same time. The service's logs are deleted automatically after 30 days, and database backups after 8 hours. Files you have saved stay in your SharePoint or OneDrive and are not affected.</p>
 
         <h2>Your Privacy Rights</h2>
         <p><strong>UK / EEA residents (GDPR / UK GDPR).</strong> You have the right to access, correct, delete, restrict, or object to our processing of your personal data, to data portability, and to withdraw consent at any time. To exercise these rights, contact us at <a href="#" onclick="revealEmail(event, this)">support@filemy.email</a>. You also have the right to lodge a complaint with your local data protection authority — in the UK, the Information Commissioner's Office (<a href="https://ico.org.uk" rel="noopener" target="_blank">ico.org.uk</a>).</p>
         <p><strong>California residents (CCPA/CPRA).</strong> You have the right to know what personal information we collect, to request deletion, to correct it, and to opt out of the "sale" or "sharing" of personal information. We do not sell your personal information. To exercise these rights, contact us at the address above.</p>
 
         <h2>Security</h2>
-        <p>All data travels over secure, encrypted (HTTPS/TLS) connections. The Add-in relies on Microsoft 365 OAuth and never stores your password. No method of transmission or storage is 100% secure, but we take reasonable measures to protect your information.</p>
+        <p>All data travels over encrypted connections (TLS 1.2 or later) and is encrypted at rest. The Add-in's database accepts only named Microsoft Entra identities, with key-based access switched off. Our service and our deployment pipeline each have their own identity with only the permissions they need, and every database request and every read of a stored secret is logged with the identity that made it. The Add-in relies on Microsoft 365 OAuth and never stores your password. No method of transmission or storage is 100% secure, but we take reasonable measures to protect your information.</p>
 
         <h2>Children's Privacy</h2>
         <p>FileMy.Email is a business tool and is not directed to children. We do not knowingly collect personal information from anyone under 16.</p>
