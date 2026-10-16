@@ -116,7 +116,7 @@
                 "name": "Can Outlook file emails to a SharePoint document library automatically?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Yes. Save on Send files an outgoing message the moment you hit Send, and Auto-Archive files incoming mail from senders you have already mapped without you opening it. Neither needs an Outlook rule, a Power Automate flow, or a forwarding address — the add-in writes directly to your SharePoint library."
+                    "text": "Yes. Save on Send files an outgoing message a few seconds after it sends, and Auto-Archive files incoming mail that matches your filing rules without you opening it. Neither needs an Outlook rule, a Power Automate flow, or a forwarding address — the add-in writes directly to your SharePoint library."
                 }
             },
             {
@@ -124,7 +124,7 @@
                 "name": "Does it save the email itself, or just the attachments?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Either, or both. Save the message as an .eml or .pdf file, save only its attachments, or save both — the email in the folder with its attachments in a subfolder alongside it. Duplicate detection stops the same message being filed twice."
+                    "text": "Either, or both. Save the message as an .eml or .pdf file, save only its attachments, or save both — the email in the folder with its attachments in a subfolder alongside it. Duplicate detection warns you before the same message is filed to the same folder twice."
                 }
             },
             {
@@ -156,7 +156,7 @@
                 "name": "Which versions of Outlook does it work in?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Outlook on Windows and Mac, the new Outlook for Windows, and Outlook on the web. Your favorites, column mappings, and learned folder suggestions follow your account across all of them."
+                    "text": "Outlook on Windows and Mac, the new Outlook for Windows, and Outlook on the web. On Outlook for iOS and Android you can save the email you're reading; Save on Send and the other features need desktop or web. Your filing rules, column mappings, and learned folder suggestions follow your account across all of them."
                 }
             }
         ]
@@ -339,7 +339,7 @@
 
             <p class="brand-eyebrow">FileMy.Email</p>
             <h1>Save Outlook Email and Attachments to SharePoint</h1>
-            <p class="tagline">An Outlook add-in that files messages and attachments straight into SharePoint or OneDrive — and learns where each one belongs. Smart folder suggestions get better the more you use them, Save on Send files outgoing mail the moment you hit Send, batch inbox cleanup clears the backlog, SharePoint metadata columns fill themselves in, and auto-archive keeps filing while you're out of office.</p>
+            <p class="tagline">An Outlook add-in that files messages and attachments straight into SharePoint or OneDrive — and learns where each one belongs. Smart folder suggestions get better the more you use them, Save on Send files outgoing mail seconds after you hit Send, batch inbox cleanup clears the backlog, SharePoint metadata columns fill themselves in, and auto-archive keeps filing while you're out of office.</p>
         </header>
 
         <div class="cta">
@@ -366,7 +366,7 @@
             <div class="feature">
                 <div class="feature-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 2 11 13"/><path d="m22 2-7 20-4-9-9-4Z"/></svg></div>
                 <h3>Save on Send</h3>
-                <p>Pick a destination while composing. The email files itself the moment you hit Send.</p>
+                <p>Pick a destination while composing. The email files itself seconds after it sends.</p>
             </div>
             <div class="feature">
                 <div class="feature-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/></svg></div>
@@ -394,14 +394,14 @@
                 <p>Choose the format that works best for your team.</p>
             </div>
             <div class="feature">
-                <div class="feature-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
-                <h3>Favorite Folders</h3>
-                <p>Star your most-used folders for instant access.</p>
+                <div class="feature-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
+                <h3>Quick Access</h3>
+                <p>Your five most-used folders sit at the top of the picker, one click away.</p>
             </div>
             <div class="feature">
                 <div class="feature-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg></div>
                 <h3>Duplicate Detection</h3>
-                <p>Never accidentally save the same email twice.</p>
+                <p>Warns you before you save the same email to the same folder twice.</p>
             </div>
             <div class="feature">
                 <div class="feature-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21.44 11.05 12.25 20.24a6 6 0 0 1-8.49-8.49l8.57-8.57A4 4 0 1 1 18 8.84l-8.59 8.57a2 2 0 0 1-2.83-2.83l8.49-8.48"/></svg></div>
@@ -447,7 +447,7 @@
                 <div class="step">
                     <div class="step-number">3</div>
                     <h3>Save or Send</h3>
-                    <p>Click Save, or just hit Send with Save on Send turned on. The email and attachments are filed instantly with metadata columns filled in.</p>
+                    <p>Click Save, or just hit Send with Save on Send turned on. The email and attachments are filed within seconds, with metadata columns filled in.</p>
                 </div>
             </div>
         </section>
@@ -462,7 +462,7 @@
                 </div>
                 <div class="differentiator">
                     <h3>Files your sent mail too</h3>
-                    <p>Turn on Save on Send while composing and the email files itself the second you hit Send. No "remember to save it later," no double-handling — outgoing mail lands in the right folder automatically.</p>
+                    <p>Turn on Save on Send while composing and the email files itself seconds after it sends. No "remember to save it later," no double-handling — outgoing mail lands in the right folder automatically.</p>
                 </div>
                 <div class="differentiator">
                     <h3>Batch-process your entire inbox</h3>
@@ -474,7 +474,7 @@
                 </div>
                 <div class="differentiator">
                     <h3>Keeps working when you're not</h3>
-                    <p>Flip on Auto-Archive before you head out. Matching mail files itself while you're away — only the senders you've already mapped, never anything else.</p>
+                    <p>Flip on Auto-Archive before you head out. Mail that matches your filing rules files itself while you're away, and mail no rule matches stays in your Inbox.</p>
                 </div>
                 <div class="differentiator">
                     <h3>Private by design</h3>
@@ -487,7 +487,7 @@
             <h2 class="section-heading">Built for Teams</h2>
             <p>Seat-based subscriptions starting at $10/month for 3 users. Add more seats anytime.</p>
             <p><strong>No 10-seat minimum, no annual contract.</strong> Most enterprise email-filing tools start at 10 users and require a yearly commitment — start with 3 and pay monthly.</p>
-            <p>Tenant admins manage users directly — add or remove seats without contacting support.</p>
+            <p>Seats go to the people who open the add-in. Tenant admins remove users and add seats themselves, without contacting support.</p>
             <p>Works across Microsoft 365 tenants, so multi-tenant firms are covered.</p>
             <p><a href="/pricing">See pricing &rarr;</a></p>
         </section>
@@ -502,7 +502,7 @@
                 </div>
                 <div class="private-item">
                     <div class="private-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
-                    <p><strong>Direct to SharePoint or OneDrive.</strong> Files transfer straight to your environment — nothing stored in between.</p>
+                    <p><strong>Straight to SharePoint or OneDrive.</strong> Our service writes each file directly into your environment and keeps nothing in between.</p>
                 </div>
                 <div class="private-item">
                     <div class="private-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
@@ -578,11 +578,11 @@
             </div>
             <div class="faq-item">
                 <h3>Can Outlook file emails to a SharePoint document library automatically?</h3>
-                <p>Yes. Save on Send files an outgoing message the moment you hit Send, and Auto-Archive files incoming mail from senders you have already mapped without you opening it. Neither needs an Outlook rule, a Power Automate flow, or a forwarding address — the add-in writes directly to your SharePoint library.</p>
+                <p>Yes. Save on Send files an outgoing message a few seconds after it sends, and Auto-Archive files incoming mail that matches your filing rules without you opening it. Neither needs an Outlook rule, a Power Automate flow, or a forwarding address — the add-in writes directly to your SharePoint library.</p>
             </div>
             <div class="faq-item">
                 <h3>Does it save the email itself, or just the attachments?</h3>
-                <p>Either, or both. Save the message as an .eml or .pdf file, save only its attachments, or save both — the email in the folder with its attachments in a subfolder alongside it. Duplicate detection stops the same message being filed twice.</p>
+                <p>Either, or both. Save the message as an .eml or .pdf file, save only its attachments, or save both — the email in the folder with its attachments in a subfolder alongside it. Duplicate detection warns you before the same message is filed to the same folder twice.</p>
             </div>
             <div class="faq-item">
                 <h3>Can I save Outlook email to OneDrive instead of SharePoint?</h3>
@@ -598,7 +598,7 @@
             </div>
             <div class="faq-item">
                 <h3>Which versions of Outlook does it work in?</h3>
-                <p>Outlook on Windows and Mac, the new Outlook for Windows, and Outlook on the web. Your favorites, column mappings, and learned folder suggestions follow your account across all of them.</p>
+                <p>Outlook on Windows and Mac, the new Outlook for Windows, and Outlook on the web. On Outlook for iOS and Android you can save the email you're reading; Save on Send and the other features need desktop or web. Your filing rules, column mappings, and learned folder suggestions follow your account across all of them.</p>
             </div>
         </section>
 
