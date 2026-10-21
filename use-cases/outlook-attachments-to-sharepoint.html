@@ -75,7 +75,7 @@
                 "name": "Will it save attachments from sent mail too?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Yes. Turn on Save on Send while composing. The attachments and email file themselves to your chosen SharePoint folder the moment you hit Send."
+                    "text": "Yes. Turn on Save on Send while composing. The attachments and email file themselves to your chosen SharePoint folder seconds after it sends."
                 }
             },
             {
@@ -92,6 +92,14 @@
                 "acceptedAnswer": {
                     "@type": "Answer",
                     "text": "Yes. The add-in detects duplicate uploads by file name and content and skips them, so you never accidentally save the same attachment twice."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Can I save attachments from a shared mailbox?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. Open the email in a shared mailbox, such as an ap@ invoices mailbox, or in a mailbox you have delegate access to, and save its attachments from the FileMy.Email pane. Inbox Cleanup and Auto-Archive cover only your own mailbox. It works in Outlook on the web, the new Outlook for Windows, classic Outlook for Windows (version 2304 or later) and Outlook for Mac, but not in Outlook for iOS or Android. A Microsoft 365 admin approves one extra permission the first time anyone files from a shared or delegate mailbox."
                 }
             }
         ]
@@ -214,7 +222,7 @@
                 </div>
                 <div class="why-item">
                     <h3>Save on Send for outgoing</h3>
-                    <p>Sending a contract to a client? Pick the matter folder while composing. The attachment lands there the second you hit Send.</p>
+                    <p>Sending a contract to a client? Pick the matter folder while composing. The attachment lands there seconds after you hit Send.</p>
                 </div>
                 <div class="why-item">
                     <h3>Smart folder suggestions</h3>
@@ -263,7 +271,7 @@
             </div>
             <div class="faq-item">
                 <h3>Does it work for sent mail?</h3>
-                <p>Yes. Turn on Save on Send and your outgoing attachments file themselves the moment you hit Send.</p>
+                <p>Yes. Turn on Save on Send and your outgoing attachments file themselves seconds after you hit Send.</p>
             </div>
             <div class="faq-item">
                 <h3>Can I save attachments without saving the email body?</h3>
@@ -276,6 +284,10 @@
             <div class="faq-item">
                 <h3>Is there a size limit on attachments?</h3>
                 <p>Limits match SharePoint's own — the add-in passes files straight through, so anything SharePoint accepts uploads cleanly.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Can I save attachments from a shared mailbox?</h3>
+                <p>Yes. Open the email in a shared mailbox, such as an ap@ invoices mailbox, or in a mailbox you have delegate access to, and save its attachments from the FileMy.Email pane. Inbox Cleanup and Auto-Archive cover only your own mailbox. It works in Outlook on the web, the new Outlook for Windows, classic Outlook for Windows (version 2304 or later) and Outlook for Mac, but not in Outlook for iOS or Android. A Microsoft 365 admin approves one extra permission the first time anyone files from a shared or delegate mailbox.</p>
             </div>
         </section>
 

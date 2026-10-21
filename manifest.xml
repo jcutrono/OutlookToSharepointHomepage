@@ -7,7 +7,7 @@
     xsi:type="MailApp">
 
   <Id>a0915be9-3d7b-473f-9cb1-3b7baf3a55cb</Id>
-  <Version>1.4.0.0</Version>
+  <Version>1.6.0.0</Version>
   <ProviderName>Practical Software Solutions LLC</ProviderName>
   <DefaultLocale>en-US</DefaultLocale>
   <DisplayName DefaultValue="FileMy.Email" />
@@ -123,9 +123,17 @@
       <Hosts>
         <Host xsi:type="MailHost">
           <Runtimes>
-            <Runtime resid="residRuntimeUrl" lifetime="short" />
+            <!-- Outlook on the web, the new Outlook and Mac load send-event.html. Classic
+                 Outlook for Windows runs only the Override script, which must also be
+                 listed at /.well-known/microsoft-officeaddins-allowed.json. -->
+            <Runtime resid="residRuntimeUrl" lifetime="short">
+              <Override type="javascript" resid="residRuntimeJsUrl" />
+            </Runtime>
           </Runtimes>
           <DesktopFormFactor>
+            <!-- Shows the add-in on mail in shared and delegate mailboxes. It goes only in this
+                 1.1 block: Exchange refuses the element in the 1.0 block's DesktopFormFactor. -->
+            <SupportsSharedFolders>true</SupportsSharedFolders>
             <FunctionFile resid="residFunctionUrl" />
 
             <!-- Message Read surface -->
@@ -187,36 +195,6 @@
             </ExtensionPoint>
 
           </DesktopFormFactor>
-
-          <!-- Outlook mobile: read-only. Compose surfaces and LaunchEvent are not
-               activated on iOS/Android, so Save on Send stays desktop/web only. -->
-          <MobileFormFactor>
-            <FunctionFile resid="residFunctionUrl" />
-            <ExtensionPoint xsi:type="MobileMessageReadCommandSurface">
-              <Group id="mobileMsgReadGroup">
-                <Label resid="residGroupLabel" />
-                <Control xsi:type="MobileButton" id="mobileShowTaskpaneBtn">
-                  <Label resid="residTaskpaneButtonLabel" />
-                  <Icon xsi:type="bt:MobileIconList">
-                    <bt:Image size="25" scale="1" resid="residIcon25" />
-                    <bt:Image size="25" scale="2" resid="residIcon50" />
-                    <bt:Image size="25" scale="3" resid="residIcon75" />
-
-                    <bt:Image size="32" scale="1" resid="residIcon32" />
-                    <bt:Image size="32" scale="2" resid="residIcon64" />
-                    <bt:Image size="32" scale="3" resid="residIcon96" />
-
-                    <bt:Image size="48" scale="1" resid="residIcon48" />
-                    <bt:Image size="48" scale="2" resid="residIcon96" />
-                    <bt:Image size="48" scale="3" resid="residIcon144" />
-                  </Icon>
-                  <Action xsi:type="ShowTaskpane">
-                    <SourceLocation resid="residTaskpaneUrl" />
-                  </Action>
-                </Control>
-              </Group>
-            </ExtensionPoint>
-          </MobileFormFactor>
         </Host>
       </Hosts>
 
@@ -225,19 +203,13 @@
           <bt:Image id="residIcon16" DefaultValue="https://app.filemy.email/images/icon-16.png" />
           <bt:Image id="residIcon32" DefaultValue="https://app.filemy.email/images/icon-32.png" />
           <bt:Image id="residIcon80" DefaultValue="https://app.filemy.email/images/icon-80.png" />
-          <bt:Image id="residIcon25" DefaultValue="https://app.filemy.email/images/icon-25.png" />
-          <bt:Image id="residIcon48" DefaultValue="https://app.filemy.email/images/icon-48.png" />
-          <bt:Image id="residIcon50" DefaultValue="https://app.filemy.email/images/icon-50.png" />
-          <bt:Image id="residIcon64" DefaultValue="https://app.filemy.email/images/icon-64.png" />
-          <bt:Image id="residIcon75" DefaultValue="https://app.filemy.email/images/icon-75.png" />
-          <bt:Image id="residIcon96" DefaultValue="https://app.filemy.email/images/icon-96.png" />
-          <bt:Image id="residIcon144" DefaultValue="https://app.filemy.email/images/icon-144.png" />
         </bt:Images>
         <bt:Urls>
           <bt:Url id="residFunctionUrl" DefaultValue="https://app.filemy.email/" />
           <bt:Url id="residTaskpaneUrl" DefaultValue="https://app.filemy.email/" />
           <bt:Url id="residComposeTaskpaneUrl" DefaultValue="https://app.filemy.email/compose" />
           <bt:Url id="residRuntimeUrl" DefaultValue="https://app.filemy.email/send-event.html" />
+          <bt:Url id="residRuntimeJsUrl" DefaultValue="https://app.filemy.email/js/send-event.js" />
         </bt:Urls>
         <bt:ShortStrings>
           <bt:String id="residGroupLabel" DefaultValue="FileMy.Email" />

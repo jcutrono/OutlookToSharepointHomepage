@@ -66,7 +66,7 @@
                 "name": "Can I file by client and engagement year?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Yes. The add-in browses any SharePoint folder structure — Client / Year / Engagement is a common pattern. Save once and the add-in suggests the same folder for future mail with that client. Star active engagements for one-click filing during busy season."
+                    "text": "Yes. The add-in browses any SharePoint folder structure — Client / Year / Engagement is a common pattern. Save once and the add-in suggests the same folder for future mail with that client. During busy season, your most-used engagement folders stay one click away in Quick Access."
                 }
             },
             {
@@ -91,6 +91,14 @@
                 "acceptedAnswer": {
                     "@type": "Answer",
                     "text": "Yes. Configure a naming template once — for example {YYYY} - {SenderName} - {AttachmentName} produces names like '2026 - Acme Corp - W-9.pdf'. Every saved attachment follows the template."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Does it work with shared and delegate mailboxes?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. Open the email in a shared mailbox, such as an admin@ intake mailbox, or in a mailbox you have delegate access to, and file it from the FileMy.Email pane: the email, its attachments or the whole thread. Each person files with their own seat; the shared mailbox needs none. Inbox Cleanup and Auto-Archive cover only your own mailbox. It works in Outlook on the web, the new Outlook for Windows, classic Outlook for Windows (version 2304 or later) and Outlook for Mac, but not in Outlook for iOS or Android. A Microsoft 365 admin approves one extra permission the first time anyone files from a shared or delegate mailbox."
                 }
             }
         ]
@@ -207,7 +215,7 @@
                 </div>
                 <div class="why-item">
                     <h3>Save on Send for outgoing</h3>
-                    <p>The completed return sent to the client, the e-file confirmation, the engagement letter — all file themselves to the client folder the second you hit Send.</p>
+                    <p>The completed return sent to the client, the e-file confirmation, the engagement letter — all file themselves to the client folder seconds after you hit Send.</p>
                 </div>
                 <div class="why-item">
                     <h3>Consistent file names</h3>
@@ -240,11 +248,11 @@
             </div>
             <div class="workflow-step">
                 <h3>Backlog filing</h3>
-                <p>Admin runs Inbox Cleanup against a shared mailbox or a partner's inbox. Suggested destinations preview side-by-side. Hundreds of emails file in one pass instead of one drag at a time.</p>
+                <p>Each partner runs Inbox Cleanup on their own inbox. Suggested destinations preview side-by-side, and up to 200 emails file in one pass instead of one drag at a time.</p>
             </div>
             <div class="workflow-step">
                 <h3>Auto-archive over weekends</h3>
-                <p>Partner is offline Saturday. Auto-Archive is on for known clients. Documents that arrive over the weekend file themselves to the right folders by Monday morning — only senders the partner already mapped, never new ones.</p>
+                <p>Partner is offline Saturday. Auto-Archive is on. Documents that arrive over the weekend from clients the partner has filed before file themselves to the right folders by Monday morning. Mail no rule matches stays in the Inbox.</p>
             </div>
         </section>
 
@@ -272,7 +280,7 @@
             </div>
             <div class="faq-item">
                 <h3>Does it work with shared and delegate mailboxes?</h3>
-                <p>Yes. Works in any mailbox the user has access to in Outlook, including admin@ shared mailboxes that intake client documents.</p>
+                <p>Yes. Open the email in a shared mailbox, such as an admin@ intake mailbox, or in a mailbox you have delegate access to, and file it from the FileMy.Email pane: the email, its attachments or the whole thread. Each person files with their own seat; the shared mailbox needs none. Inbox Cleanup and Auto-Archive cover only your own mailbox. It works in Outlook on the web, the new Outlook for Windows, classic Outlook for Windows (version 2304 or later) and Outlook for Mac, but not in Outlook for iOS or Android. A Microsoft 365 admin approves one extra permission the first time anyone files from a shared or delegate mailbox.</p>
             </div>
         </section>
 

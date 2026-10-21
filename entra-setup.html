@@ -152,6 +152,10 @@
         <h2 id="consent">Grant admin consent (required, one-time)</h2>
         <p>FileMy.Email can't read or file anyone's mail until a Microsoft 365 admin grants it permission on behalf of your organization. The add-in never asks users for these permissions itself, so this step is needed whatever your tenant's user consent settings are. Until it's done, everyone who opens the add-in sees a message that FileMy.Email can't continue until a Microsoft 365 admin in your organization grants it permission.</p>
 
+        <div class="info-box">
+            <strong>Sent here from a message in a shared or delegate mailbox?</strong> That mailbox needs one more permission, which the steps below don't grant. Do them first if your organization hasn't yet, then see <a href="#shared-mailboxes">Shared and delegate mailboxes</a>.
+        </div>
+
         <ol>
             <li>
                 Go to the <a href="https://entra.microsoft.com" target="_blank" rel="noopener">Microsoft Entra admin center</a>.
@@ -173,7 +177,7 @@
                 <p class="step-detail">This grants every permission listed below in one go. You don't add permissions yourself: the list comes from FileMy.Email, which is why an enterprise app has no <strong>Add a permission</strong> button.</p>
             </li>
             <li>
-                Check the <strong>Admin consent</strong> tab on the same page. It should list 9 Microsoft Graph permissions: the eight below as <strong>Delegated</strong>, plus <strong>Sites.Read.All</strong> a second time as <strong>Application</strong>.
+                Check the <strong>Admin consent</strong> tab on the same page. It should list 9 Microsoft Graph permissions: the eight below as <strong>Delegated</strong>, plus <strong>Sites.Read.All</strong> a second time as <strong>Application</strong>. Once the <a href="#shared-mailboxes">shared-mailbox permission</a> is approved, <strong>Mail.ReadWrite.Shared</strong> is listed there too.
                 <p class="step-detail">Consent given any other way, such as from a sign-in prompt, can cover only signing in. If the tab lists fewer than 9, click <strong>Grant admin consent for [your organization]</strong> again. Then ask anyone who already had the add-in open to close it and open it again.</p>
             </li>
         </ol>
@@ -186,6 +190,14 @@
             <li><strong>MailboxSettings.ReadWrite</strong>, <strong>offline_access</strong> &mdash; required for Auto-Archive: read Out-of-Office state, and keep filing matching mail while a user is away.</li>
         </ul>
         <p class="step-detail">These are delegated permissions &mdash; the add-in acts as the signed-in user and can only reach what that person can already reach. <strong>Sites.Read.All</strong> is additionally requested as an application permission, used only to list the sites in your tenant so the site picker shows all of them rather than just the ones a user happens to follow.</p>
+
+        <h2 id="shared-mailboxes">Shared and delegate mailboxes (one more permission, when needed)</h2>
+        <p>Filing from a shared mailbox, or from a mailbox shared with a user as a delegate, needs one more delegated permission:</p>
+        <ul>
+            <li><strong>Mail.ReadWrite.Shared</strong> &mdash; read the message being filed in that mailbox, and tag it once it has been saved.</li>
+        </ul>
+        <p>It's needed only for shared and delegate mailboxes, so it isn't part of the consent above, and <strong>Grant admin consent</strong> doesn't include it. Instead, the first time anyone in your organization saves from a shared or delegate mailbox, FileMy.Email shows them an <strong>Approve for my organization</strong> link. An admin opens it, reviews this one permission, and clicks <strong>Accept</strong>. The user then opens FileMy.Email on the message again.</p>
+        <p class="step-detail">Because it's a delegated permission, a <strong>Cloud Application Administrator</strong> or <strong>Application Administrator</strong> can approve it, as well as a Global Administrator or Privileged Role Administrator. Filing from people's own mailboxes keeps working throughout, and people can file only from mailboxes they can already open in Outlook. If the permission is ever missing, the next save from a shared mailbox shows the link again. If your organization never files from shared mailboxes, you never see this request.</p>
 
         <h2>How access works</h2>
         <p>Access to FileMy.Email is your subscription and its seats &mdash; not an Entra role. Once your subscription is active and an admin has <a href="#consent">granted consent</a>, anyone in your organization can open the add-in and start filing mail. They take one of your seats the first time they do, and seats are claimed first come, first served.</p>
