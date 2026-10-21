@@ -7,7 +7,7 @@
     xsi:type="MailApp">
 
   <Id>a0915be9-3d7b-473f-9cb1-3b7baf3a55cb</Id>
-  <Version>1.4.0.0</Version>
+  <Version>1.5.0.0</Version>
   <ProviderName>Practical Software Solutions LLC</ProviderName>
   <DefaultLocale>en-US</DefaultLocale>
   <DisplayName DefaultValue="FileMy.Email" />
@@ -123,7 +123,12 @@
       <Hosts>
         <Host xsi:type="MailHost">
           <Runtimes>
-            <Runtime resid="residRuntimeUrl" lifetime="short" />
+            <!-- Outlook on the web, the new Outlook and Mac load send-event.html. Classic
+                 Outlook for Windows runs only the Override script, which must also be
+                 listed at /.well-known/microsoft-officeaddins-allowed.json. -->
+            <Runtime resid="residRuntimeUrl" lifetime="short">
+              <Override type="javascript" resid="residRuntimeJsUrl" />
+            </Runtime>
           </Runtimes>
           <DesktopFormFactor>
             <FunctionFile resid="residFunctionUrl" />
@@ -238,6 +243,7 @@
           <bt:Url id="residTaskpaneUrl" DefaultValue="https://app.filemy.email/" />
           <bt:Url id="residComposeTaskpaneUrl" DefaultValue="https://app.filemy.email/compose" />
           <bt:Url id="residRuntimeUrl" DefaultValue="https://app.filemy.email/send-event.html" />
+          <bt:Url id="residRuntimeJsUrl" DefaultValue="https://app.filemy.email/js/send-event.js" />
         </bt:Urls>
         <bt:ShortStrings>
           <bt:String id="residGroupLabel" DefaultValue="FileMy.Email" />
