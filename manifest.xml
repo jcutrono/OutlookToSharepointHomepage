@@ -7,7 +7,7 @@
     xsi:type="MailApp">
 
   <Id>a0915be9-3d7b-473f-9cb1-3b7baf3a55cb</Id>
-  <Version>1.5.1.0</Version>
+  <Version>1.6.0.0</Version>
   <ProviderName>Practical Software Solutions LLC</ProviderName>
   <DefaultLocale>en-US</DefaultLocale>
   <DisplayName DefaultValue="FileMy.Email" />
@@ -131,6 +131,9 @@
             </Runtime>
           </Runtimes>
           <DesktopFormFactor>
+            <!-- Shows the add-in on mail in shared and delegate mailboxes. It goes only in this
+                 1.1 block: Exchange refuses the element in the 1.0 block's DesktopFormFactor. -->
+            <SupportsSharedFolders>true</SupportsSharedFolders>
             <FunctionFile resid="residFunctionUrl" />
 
             <!-- Message Read surface -->
