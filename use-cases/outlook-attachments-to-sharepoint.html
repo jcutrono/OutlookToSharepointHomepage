@@ -19,7 +19,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Save Outlook Attachments to SharePoint Automatically</title>
-    <meta name="description" content="Save Outlook email attachments to SharePoint without leaving your inbox. Smart folder routing, custom file naming, attachment-only or with-email modes, and Save on Send for outgoing files.">
+    <meta name="description" content="Save Outlook email attachments to SharePoint without leaving your inbox. Smart folder routing, custom file naming, attachments saved as their own files, and Save on Send for outgoing files.">
     <link rel="canonical" href="https://filemy.email/use-cases/outlook-attachments-to-sharepoint">
     <link rel="icon" type="image/png" href="/assets/favicon.png">
     <meta property="og:type" content="website">
@@ -67,7 +67,7 @@
                 "name": "Can attachments be renamed automatically when saved?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Yes. The add-in uses a file-naming template you control. Available tokens include sender name, subject, date, attachment name, and any SharePoint column you've mapped. For example, '{MM-DD-YYYY} - {Subject} - {AttachmentName}' produces names like '05-02-2026 - Invoice Q1 2026 - report.pdf'."
+                    "text": "Yes. The add-in uses a file-naming template you control. Available tokens include the sender's and recipient's name or address, the subject, the date and time, and the attachment's original name. For example, '{MM-DD-YYYY} - {Subject} - {AttachmentName}' produces names like '05-02-2026 - Invoice Q1 2026 - report.pdf'."
                 }
             },
             {
@@ -75,7 +75,7 @@
                 "name": "Will it save attachments from sent mail too?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Yes. Turn on Save on Send while composing. The attachments and email file themselves to your chosen SharePoint folder seconds after it sends."
+                    "text": "Yes. Turn on Save on Send while composing. Seconds after it sends, the email, attachments included, is filed to your chosen SharePoint folder. To get each attachment as its own file too, turn on saving attachments separately by default in Settings."
                 }
             },
             {
@@ -83,7 +83,7 @@
                 "name": "Can I save attachments without saving the email?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Yes. In Save Format settings choose to save attachments only, save the email only, or save both. The setting is configurable per save and as a default."
+                    "text": "No. The email is always filed too, as an .eml or a .pdf. Choose to also save attachments as separate files, per save or as your default in Settings, and each attachment is filed as its own file beside the email."
                 }
             },
             {
@@ -91,7 +91,7 @@
                 "name": "Are duplicate attachments detected?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Yes. The add-in detects duplicate uploads by file name and content and skips them, so you never accidentally save the same attachment twice."
+                    "text": "Per email, not per file. Filing the same email to the same folder again asks first, so you choose whether to keep both copies or replace the first. A different email carrying the same file, such as a forward, is filed as a new copy beside the first, never over it."
                 }
             },
             {
@@ -195,13 +195,13 @@
         <section class="lede">
             <h2>Attachments are where filing falls apart</h2>
             <p>It's not the email body that anyone needs three months later — it's the signed contract, the W-9, the invoice PDF, the floor plan attached to the email. And those are exactly the files that get lost. They live inside someone's Outlook, the file name is "scan_001.pdf," and nobody knows it exists until a deadline forces a search.</p>
-            <p>This add-in extracts attachments at the moment the email arrives or sends, names them according to a template you control, and uploads them straight to the SharePoint library where they actually belong. No browser uploads, no manual renaming, no "Final_v3_REAL.pdf" sitting on a desktop.</p>
+            <p>This add-in files attachments when you file the email, or on its own with Auto-Archive and Save on Send, names them according to a template you control, and uploads them straight to the SharePoint library where they actually belong. No browser uploads, no manual renaming, no "Final_v3_REAL.pdf" sitting on a desktop.</p>
         </section>
 
         <section>
             <div class="naming-box">
                 <h3>File-naming templates you control</h3>
-                <p style="font-size: 0.92rem; color: #555; margin-bottom: 8px;">Use tokens for sender, subject, date, attachment name, and mapped SharePoint columns:</p>
+                <p style="font-size: 0.92rem; color: #555; margin-bottom: 8px;">Use tokens for sender, recipient, subject, date, and attachment name:</p>
                 <code>{MM-DD-YYYY} - {Subject} - {AttachmentName}</code>
                 <span class="preview">&rarr; <strong>05-02-2026 - Invoice Q1 2026 - report.pdf</strong></span>
                 <code style="margin-top: 14px;">{SenderName} - {YYYY}-{MM}-{DD} - {AttachmentName}</code>
@@ -213,8 +213,8 @@
             <h2>Built for how attachments actually flow</h2>
             <div class="why-grid">
                 <div class="why-item">
-                    <h3>Save attachments only, or with the email</h3>
-                    <p>Some teams want only the PDF. Some want the email thread for context. Toggle per save, or set a default in settings.</p>
+                    <h3>Attachments as their own files</h3>
+                    <p>The email is always filed, so the context is never lost. Want the PDF as its own file in the library too? Tick one box per save, or make it your default in Settings.</p>
                 </div>
                 <div class="why-item">
                     <h3>Dedicated attachment subfolder</h3>
@@ -222,19 +222,19 @@
                 </div>
                 <div class="why-item">
                     <h3>Save on Send for outgoing</h3>
-                    <p>Sending a contract to a client? Pick the matter folder while composing. The attachment lands there seconds after you hit Send.</p>
+                    <p>Sending a contract to a client? Pick the matter folder while composing. The email, contract attached, lands there seconds after it sends.</p>
                 </div>
                 <div class="why-item">
                     <h3>Smart folder suggestions</h3>
-                    <p>The add-in learns which SharePoint folder you use for each contact. After a few saves it suggests the right destination automatically.</p>
+                    <p>The add-in learns which SharePoint folder you use for each contact. File one email from a contact and it suggests that folder for their next one.</p>
                 </div>
                 <div class="why-item">
                     <h3>SharePoint metadata filled in</h3>
-                    <p>Map attachment metadata to library columns once. From then on, every saved file has its sender, date, and subject populated.</p>
+                    <p>Map email fields to library columns once. From then on, every email you file has its sender, date and subject filled in.</p>
                 </div>
                 <div class="why-item">
                     <h3>Duplicate detection</h3>
-                    <p>The same invoice forwarded twice won't end up in SharePoint twice. Duplicates are flagged and skipped on save.</p>
+                    <p>File the same email to the same folder twice and the add-in asks first: keep both copies, or replace the first. A forward is a new email, so its copy of the invoice is filed beside the first, never over it.</p>
                 </div>
             </div>
         </section>
@@ -243,11 +243,11 @@
             <h2>Common scenarios this solves</h2>
             <div class="use-case">
                 <h3>Vendor invoices into an accounting library</h3>
-                <p>Every vendor email lands in a "{Year}/{Vendor}" folder, with the PDF renamed to include the invoice date. Bookkeeper opens SharePoint and sees the month's invoices already organized.</p>
+                <p>Each vendor's email lands in that vendor's folder, with the PDF renamed to include the date it arrived. Bookkeeper opens SharePoint and sees the month's invoices already organized.</p>
             </div>
             <div class="use-case">
                 <h3>Signed contracts from clients</h3>
-                <p>Save on Send sends a copy to the client and the signed PDF to the matter folder simultaneously. No "did we file that?" two weeks later.</p>
+                <p>Send the signed PDF to the client with Save on Send on, and seconds later the email, PDF attached, is in the matter folder. No "did we file that?" two weeks later.</p>
             </div>
             <div class="use-case">
                 <h3>Inspection reports and photos</h3>
@@ -255,7 +255,7 @@
             </div>
             <div class="use-case">
                 <h3>Onboarding documents</h3>
-                <p>I-9s, W-4s, signed offer letters arrive by email. They land directly in the new hire's folder with metadata columns set, ready for HR review.</p>
+                <p>I-9s, W-4s, signed offer letters arrive by email. They land in the new hire's folder, with the email's sender, subject and date in your library columns, ready for HR review.</p>
             </div>
         </section>
 
@@ -271,19 +271,19 @@
             </div>
             <div class="faq-item">
                 <h3>Does it work for sent mail?</h3>
-                <p>Yes. Turn on Save on Send and your outgoing attachments file themselves seconds after you hit Send.</p>
+                <p>Yes. Turn on Save on Send while composing. Seconds after it sends, the email, attachments included, is filed to your chosen SharePoint folder. To get each attachment as its own file too, turn on saving attachments separately by default in Settings.</p>
             </div>
             <div class="faq-item">
                 <h3>Can I save attachments without saving the email body?</h3>
-                <p>Yes. Save Format settings let you choose attachments only, email only, or both.</p>
+                <p>No. The email is always filed too, as an .eml or a .pdf. Choose to also save attachments as separate files, per save or as your default in Settings, and each attachment is filed as its own file beside the email.</p>
             </div>
             <div class="faq-item">
                 <h3>What about duplicate attachments?</h3>
-                <p>The add-in detects duplicates by name and content and skips them on save.</p>
+                <p>Per email, not per file. Filing the same email to the same folder again asks first, so you choose whether to keep both copies or replace the first. A different email carrying the same file, such as a forward, is filed as a new copy beside the first, never over it.</p>
             </div>
             <div class="faq-item">
                 <h3>Is there a size limit on attachments?</h3>
-                <p>Limits match SharePoint's own — the add-in passes files straight through, so anything SharePoint accepts uploads cleanly.</p>
+                <p>Large attachments are fine: they upload to SharePoint in chunks. Only file attachments are saved as separate files; an attached email or a cloud link stays inside the saved email.</p>
             </div>
             <div class="faq-item">
                 <h3>Can I save attachments from a shared mailbox?</h3>
