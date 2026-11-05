@@ -7,7 +7,7 @@
     xsi:type="MailApp">
 
   <Id>a0915be9-3d7b-473f-9cb1-3b7baf3a55cb</Id>
-  <Version>1.6.0.0</Version>
+  <Version>1.7.0.0</Version>
   <ProviderName>Practical Software Solutions LLC</ProviderName>
   <DefaultLocale>en-US</DefaultLocale>
   <DisplayName DefaultValue="FileMy.Email" />
@@ -155,6 +155,9 @@
                     <Action xsi:type="ShowTaskpane">
                       <SourceLocation resid="residTaskpaneUrl" />
                       <SupportsPinning>true</SupportsPinning>
+                      <!-- Keeps a pinned pane open on a multi-selection, so one drag carries every
+                           selected email. Compose has no selection, so it goes only on this button. -->
+                      <SupportsMultiSelect>true</SupportsMultiSelect>
                     </Action>
                   </Control>
                 </Group>
