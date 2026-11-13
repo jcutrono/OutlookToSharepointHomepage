@@ -83,7 +83,7 @@
 
     <div class="container">
         <h1>Privacy Policy</h1>
-        <p class="updated">Last updated: November 10, 2026</p>
+        <p class="updated">Last updated: November 13, 2026</p>
 
         <p class="lead">This policy explains how <strong>FileMy.Email</strong> handles personal data across two things: our <strong>website</strong> at filemy.email, and the <strong>Outlook add-in</strong> ("the Add-in") that saves your emails and attachments to SharePoint or OneDrive. The two are very different in what they touch, so we describe them separately below.</p>
 
@@ -137,7 +137,7 @@
             <li>Message identifiers</li>
             <li>The message body and attachments, so they can be copied to your SharePoint or OneDrive</li>
         </ul>
-        <p>The metadata is also used to suggest a destination folder, name the saved file and fill in any SharePoint columns you map. If you turn on <strong>Auto-Archive</strong>, the service also reads the sender and other metadata of each new message in your Inbox to check it against your filing rules. Messages that match no rule are not copied or stored. To help you find folders, the service can also list the names and web addresses of SharePoint sites in your organization, and it offers you only the sites you can open.</p>
+        <p>The metadata is also used to suggest a destination folder, name the saved file and fill in any SharePoint columns you map. If you turn on <strong>Auto-Archive</strong>, the service also reads the sender and other metadata of each new message in your Inbox to check it against your filing rules. Messages that match no rule are not copied or stored. When you scan your Inbox with <strong>Clean up</strong>, or see how many recent emails a rule you're building would match, the service reads the sender, recipients, subject, date and whether there are attachments of up to 200 recent Inbox emails you haven't filed, to show which ones match; nothing from that read is stored. To help you find folders, the service can also list the names and web addresses of SharePoint sites in your organization, and it offers you only the sites you can open.</p>
 
         <h3>How Your Email Is Filed</h3>
         <p>When a message is filed, our service downloads it and its attachments from Microsoft 365 and uploads them to the SharePoint or OneDrive folder you chose, over encrypted connections. The content is held in memory only for that transfer. It is never written to our database and is not kept afterwards. If you save emails as PDF, the conversion runs on our service, which loads any remote images the email refers to, as an email client would. The Add-in does not share your email content with any analytics provider or advertising network, and it adds nothing to the emails you send.</p>
@@ -145,11 +145,11 @@
         <h3>What the Add-in Stores</h3>
         <p>Our database, in Microsoft Azure's East US region, holds:</p>
         <ul>
-            <li><strong>Filing rules</strong>: sender or recipient addresses or domains, and the SharePoint or OneDrive folder each one maps to. Folder names are yours and may include client or project names.</li>
+            <li><strong>Filing rules</strong>: what each rule matches and any exceptions to it (sender or recipient addresses or domains, words or phrases from subject lines, and whether an email has attachments), and the SharePoint or OneDrive folder it files to. Folder names are yours and may include client or project names.</li>
             <li><strong>Filing history</strong>, used to prevent duplicate saves: message identifiers, the saved file name (by default the date, sender name and subject), the folder, a link to the file, and attachment file names.</li>
             <li><strong>Save on Send requests</strong>: the subject, recipient addresses and chosen folder, from when you click Send until the message is filed.</li>
             <li><strong>Activity records</strong>, for the Add-in's Activity tab: for each email Save on Send or Auto-Archive files, or can't file, a message identifier, the folder, whether it was filed (or why not) and when. They never hold the subject, the recipients or the email's contents, and are deleted after 30 days. The Activity tab reads each subject from your mailbox when it shows the list.</li>
-            <li><strong>Settings</strong>: file-naming templates, SharePoint column mappings and other preferences.</li>
+            <li><strong>Settings</strong>: file-naming templates, SharePoint column mappings, starred folders, the sender addresses you've asked not to be offered a filing rule for, and other preferences.</li>
             <li><strong>Encrypted Microsoft sign-in tokens</strong>, so Save on Send and Auto-Archive can work when the Add-in is closed. The encryption keys are held separately from the tokens, and are themselves encrypted with a key held in Azure Key Vault.</li>
             <li><strong>Subscription record</strong>: your organization's Microsoft 365 tenant ID, which users hold licenses, and the billing contact's email address.</li>
         </ul>
