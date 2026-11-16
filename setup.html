@@ -262,10 +262,10 @@
         <p class="step-detail">Installed manually? Your team can start filing once your subscription is active and an admin has granted the one-time consent in <a href="/entra-setup#consent">Entra ID Setup</a>, which also covers admins and restricting who can take a seat.</p>
 
         <h2>Optional: Enable Auto-Archive</h2>
-        <p>Once the add-in is installed and a user has set up at least one mapping rule (sender &rarr; SharePoint folder), they can enable hands-off filing from the add-in's <strong>Settings</strong> tab.</p>
+        <p>Once the add-in is installed and a user has at least one filing rule, whether one they wrote on the <strong>Rules</strong> tab or one the add-in learned from their filing, they can turn on hands-off filing from the add-in's <strong>Settings</strong>.</p>
         <ol>
-            <li>Open the add-in inside Outlook and click <strong>Settings</strong>.</li>
-            <li>Scroll to the <strong>Auto-Archive</strong> section.</li>
+            <li>Open the add-in inside Outlook and click <strong>Settings</strong>, at the foot of the pane.</li>
+            <li>Open the <strong>Auto-Archive</strong> section.</li>
             <li>Pick one or both:
                 <ul>
                     <li><strong>Run automatically while I'm Out of Office</strong> &mdash; uses your Outlook Automatic Replies setting as the trigger. Best for vacation/PTO.</li>
@@ -274,7 +274,7 @@
             </li>
             <li>Click <strong>Apply Auto-Archive</strong>. It uses the permissions your admin approved for FileMy.Email to keep filing while the user is offline and to check their OOF state. If that approval doesn't cover Auto-Archive yet, the pane shows a one-click link to send to an admin.</li>
         </ol>
-        <p class="step-detail">Only emails matching a mapping rule are auto-archived. A rule learned from one person at a company domain also matches their colleagues at that domain (never at public domains like gmail.com). Either toggle can be turned off at any time. Turn both off and press Apply Auto-Archive, and the background subscription is removed straight away.</p>
+        <p class="step-detail">Only emails matching a filing rule are auto-archived. A rule the add-in learned matches only the sender it learned from; to cover everyone at a company, write a rule on its domain. Either toggle can be turned off at any time. Turn both off and press Apply Auto-Archive, and the background subscription is removed straight away.</p>
 
         <h2>Optional: Shared and delegate mailboxes</h2>
         <p>Users can file a message from a shared mailbox, or from a mailbox shared with them as a delegate, the same way they file their own: open the message and use the FileMy.Email pane. This needs one more delegated permission, <strong>Mail.ReadWrite.Shared</strong>, which lets the add-in read the message in that mailbox and tag it once it's filed. It's needed only for shared and delegate mailboxes, so the one-time consent doesn't include it. The first time anyone opens FileMy.Email on a message in a shared or delegate mailbox, the pane shows a one-click link for an admin to approve it. <a href="/entra-setup#shared-mailboxes">Entra ID Setup</a> says who can.</p>
